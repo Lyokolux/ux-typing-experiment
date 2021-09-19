@@ -21,7 +21,7 @@
       const isChunkEmpty = chunkValue.length <= 0
       const isFirstChunck = chunkIndex <= 0
       const isLastChunck = chunkIndex >= chunks.length - 1
-      const isKeyAnArrow = e.key === KEY.left || e.key === KEY.right
+      const isKeyAnArrow = e.key === KEY.left || e.key === KEY.right
       
       if (isChunkFull 
           && !isLastChunck
