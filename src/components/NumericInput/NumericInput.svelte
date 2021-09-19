@@ -8,7 +8,6 @@
 
   let chunks: string[] = chunk(number, chunkLength);
   let chunksRef: EventTarget[] = [];
-  let focusedChunkIndex: number;
   let enteredChunks: string[] = Array(chunks.length).join(".").split("."); // Create array of n empty strings
 
   const jumpToChunk = (index: number): void => {
@@ -60,9 +59,6 @@
       }}
       on:input={() => {
         checkChunk(i);
-      }}
-      on:focus={() => {
-        focusedChunkIndex = i;
       }}
     />
   {/each}
