@@ -4,6 +4,9 @@
 
   export let number: string;
   export let chunkLength: number;
+  let className = ''
+  export { className as class }
+  export let chunkClass: string = ''
   export let onSuccess: () => void;
 
   let chunks: string[] = chunk(number, chunkLength);
@@ -48,10 +51,12 @@
   };
 </script>
 
-<div class="number-input d-flex">
+<div class={`numeric-input ${className}`}>
   {#each chunks as digits, i}
     <input
       type="text"
+      class={`chunk form-control m-2 text-center ${chunkClass}`}
+      style={`--width: ${chunkLength + 1}em`}
       bind:this={chunksRef[i]}
       bind:value={enteredChunks[i]}
       on:keydown={(e) => {
@@ -63,3 +68,13 @@
     />
   {/each}
 </div>
+
+<style lang="scss">
+  .numeric-input {
+    display: flex;
+  }
+
+  .chunk {
+    width: var(--width);
+  }  
+</style>
