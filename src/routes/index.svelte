@@ -24,10 +24,18 @@
   });
 </script>
 
-<Home />
-<UserInfos />
-<FamiliarizationPage />
-<ExperienceBeginning />
+<Page>
+  <Home />
+</Page>
+<Page>
+  <UserInfos />
+</Page>
+<Page>
+  <FamiliarizationPage />
+</Page>
+<Page>
+  <ExperienceBeginning />
+</Page>
 
 {#each [1, 2] as pageId}
   <Page>
@@ -35,4 +43,6 @@
   </Page>
 {/each}
 
-<Gratitude />
+<Page>
+  <Gratitude />
+</Page>
