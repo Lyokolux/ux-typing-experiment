@@ -1,2 +1,26 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { Swiper } from 'swiper';
+  import 'swiper/css';
+
+  import { swiper } from '../stores'
+  import Page from '../components/Page.svelte';
+
+  // P A G E S
+  import Home from '../pages/Home.svelte';
+  import UserInfos from '../pages/UserInfos.svelte';
+  import FamiliarizationPage from '../pages/FamiliarizationPage.svelte';
+  import ExperienceBeginning from '../pages/ExperienceBeginning.svelte';
+  import Gratitude from '../pages/Gratitude.svelte';
+
+  onMount(() => {
+    swiper.set(new Swiper(
+      '.swiper', 
+      {
+        allowTouchMove: true, // TODO: Set to false in prod
+        direction: 'vertical',
+      }
+    ))
+  });
+</script>
+
