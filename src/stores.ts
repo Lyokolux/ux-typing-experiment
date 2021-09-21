@@ -1,5 +1,5 @@
-import { writable } from 'svelte/store';
-import type Swiper from 'swiper';
+import { writable } from 'svelte/store'
+import type Swiper from 'swiper'
 
 const createSwiperStore = () => {
   const { subscribe, update, set } = writable<Swiper | null>({} as Swiper)

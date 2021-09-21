@@ -1,4 +1,4 @@
-import preprocess from 'svelte-preprocess';
+import preprocess from 'svelte-preprocess'
 import adapterStatic from '@sveltejs/adapter-static'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -17,6 +17,6 @@ const config = {
 			fallback: null
 		})
 	}
-};
+}
 
-export default config;
+export default config

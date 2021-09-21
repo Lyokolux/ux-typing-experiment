@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { Swiper } from 'swiper';
-  import 'swiper/css';
+  import { onMount } from 'svelte'
+  import { Swiper } from 'swiper'
+  import 'swiper/css'
 
   import { swiper } from '../stores'
-  import Page from '../components/Page.svelte';
+  import Page from '../components/Page.svelte'
 
   // P A G E S
-  import Home from '../pages/Home.svelte';
-  import UserInfos from '../pages/UserInfos.svelte';
-  import FamiliarizationPage from '../pages/FamiliarizationPage.svelte';
-  import ExperienceBeginning from '../pages/ExperienceBeginning.svelte';
-  import Gratitude from '../pages/Gratitude.svelte';
+  import Home from '../pages/Home.svelte'
+  import UserInfos from '../pages/UserInfos.svelte'
+  import FamiliarizationPage from '../pages/FamiliarizationPage.svelte'
+  import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
+  import Gratitude from '../pages/Gratitude.svelte'
 
   onMount(() => {
     swiper.set(new Swiper(
@@ -21,7 +21,7 @@
         direction: 'vertical',
       }
     ))
-  });
+  })
 </script>
 
 <Page>
