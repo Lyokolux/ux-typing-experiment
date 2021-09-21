@@ -9,9 +9,12 @@
 </script>
 <script lang="ts">
   import '../global.scss'
+  import LocaleSelect from '../components/LocaleSelect.svelte'
 </script>
 
-<div class="swiper w-100 h-100 bg-dark text-light">
+<div class="swiper w-100 h-100 bg-dark text-light position-relative">
+  <LocaleSelect class="position-absolute top-0 end-0" />
+
   <div class="swiper-wrapper">
     <slot></slot>
   </div>
