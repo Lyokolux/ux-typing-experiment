@@ -16,5 +16,10 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true
+	},
+	rules: {
+		"no-unused-vars": "off",
+		semi: ["error", "never"],
+		"@typescript-eslint/no-unused-vars": ["error"]
 	}
 };
