@@ -24,3 +24,15 @@
   });
 </script>
 
+<Home />
+<UserInfos />
+<FamiliarizationPage />
+<ExperienceBeginning />
+
+{#each [1, 2] as pageId}
+  <Page>
+    Slide {pageId}
+  </Page>
+{/each}
+
+<Gratitude />
