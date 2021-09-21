@@ -10,8 +10,6 @@
   import QuestionComponent from "./Question.svelte"
 
   export let questions: Question[]
-
-  $: console.log(questions)
 </script>
 
 <table>
