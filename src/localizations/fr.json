@@ -8,6 +8,18 @@
       "female": "Une femme",
       "else": "Aucun des sexes mentionnés",
       "no_answer": "Je préfère ne pas me prononcer",
+      "is_required": "Merci de remplir le champ concernant votre sexe."
+    },
+    "age": {
+      "-15": "Moins de 15 ans",
+      "15-17": "Entre 15 et 17 ans",
+      "18-24": "Entre 18 et 24 ans",
+      "25-34": "Entre 25 et 34 ans",
+      "35-44": "Entre 35 et 44 ans",
+      "45-54": "Entre 45 et 54 ans",
+      "55-64": "Entre 55 et 64 ans",
+      "+65": "Plus de 65 ans",
+      "what_is_your_age": "Quel est votre âge",
       "is_required": "Merci de remplir le champ concernant votre âge."
     }
   },
