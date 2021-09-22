@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { dev } from '$app/env'
   import { Swiper } from 'swiper'
   import 'swiper/css'
 
@@ -17,7 +18,7 @@
     swiper.set(new Swiper(
       '.swiper', 
       {
-        allowTouchMove: true, // TODO: Set to false in prod
+        allowTouchMove: dev,
         direction: 'vertical',
       }
     ))
