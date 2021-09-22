@@ -1,1 +1,14 @@
-<h2>Start the experience</h2>
+<section>
+    <h2>{$_('experience_beginning.experiment_will_begin')}</h2>
+
+    <p>{$_('experience_beginning.start_if_you_are_ready')}</p>
+
+    <NextButton>
+        🠗 {$_('next')} 🠗
+    </NextButton>
+</section>
+
+<script>
+  import { _ } from 'svelte-i18n'
+  import NextButton from '../components/NextButton.svelte'
+</script>
