@@ -12,6 +12,8 @@
   export let values: string[] | Value[]
   export let icon: SvelteComponent | undefined
 
+  let selectedLabel: string
+
   const getValues = (): Value[] => {
     if (typeof values[0] === 'string') {
       return values.map((value) => {
@@ -24,13 +26,17 @@
 
     return values as Value[]
   }
+
+  $: selectedLabel = getValues().find((_value) => {
+    return _value.value === value
+  })?.label
 </script>
 
 <div 
   class={`select position-relative btn btn-light d-flex justify-content-center align-items-center p-1 ${className}`}
   title="Update language"
 >
-  <select bind:value={value} class="opacity-0 p-0 position-absolute w-100 h-100">
+  <select bind:value class="opacity-0 p-0 position-absolute w-100 h-100">
     {#each getValues() as { value, label }}
       <option {value}>{label}</option>
     {/each}
@@ -39,10 +45,14 @@
   {#if icon}
      <svelte:component this={icon} />
   {/if}
-  <span class="ms-1">{value}</span>
+  <span class="ms-1">{selectedLabel}</span>
 </div>
 
 <style lang="scss">
+  .select {
+    width: fit-content;
+  }
+
   select {
     opacity: 0;
     cursor: pointer;
