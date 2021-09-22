@@ -32,6 +32,7 @@
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
     "firebase": "^9.0.2",
-    "swiper": "^7.0.6"
+    "swiper": "^7.0.6",
+    "yup": "^0.32.9"
   }
 }
