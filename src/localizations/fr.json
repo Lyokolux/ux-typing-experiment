@@ -1,3 +1,13 @@
 {
-  "title": "Bienvenue"
+  "title": "Bienvenue",
+  "user_infos": {
+    "sexe": {
+      "you_are": "Vous êtes",
+      "male": "Un homme",
+      "female": "Une femme",
+      "else": "Aucun des sexes mentionnés",
+      "no_answer": "Je préfère ne pas me prononcer"
+    }
+  },
+  "continue": "Continuer"
 }
