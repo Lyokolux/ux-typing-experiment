@@ -19,6 +19,7 @@ module.exports = {
 	},
 	rules: {
 		"no-unused-vars": "off",
+		"indent": ["error", 2],
 		semi: ["error", "never"],
 		"@typescript-eslint/no-unused-vars": ["error"]
 	}
