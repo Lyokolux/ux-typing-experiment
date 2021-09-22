@@ -2,9 +2,8 @@
   import '../i18n' 
   import { waitLocale } from 'svelte-i18n'
 
-  export async function load() {
+  export async function load(): Promise<void> {
     await waitLocale()
-    return {}
   }
 </script>
 <script lang="ts">
