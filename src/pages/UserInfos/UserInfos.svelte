@@ -5,7 +5,7 @@
   import FormErrors from './FormErrors.svelte'
 
   const AGE_RANGES = ['-15', '15-17', '18-24', '25-34', '35-44', '45-54', '55-64', '+65'] as const
-  const SEXES = ['m', 'f', 'no-answer', 'else'] as const
+  const SEXES = ['m', 'f', 'no-answer', 'else'] as const
 
   interface UserInfos {
     sexe: typeof SEXES[number]

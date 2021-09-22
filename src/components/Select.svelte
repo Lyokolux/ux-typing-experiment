@@ -5,7 +5,7 @@
   export { className as class }
   export let value: string | undefined
   export let values: string[]
-  export let icon: SvelteComponent | undefined
+  export let icon: SvelteComponent | undefined
 </script>
 
 <div 
