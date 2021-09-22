@@ -1,12 +1,14 @@
 {
   "title": "Bienvenue",
   "user_infos": {
+    "errors_in_form": "Merci de bien vouloir résoudre les points suivant et renvoyer le formulaire",
     "sexe": {
       "you_are": "Vous êtes",
       "male": "Un homme",
       "female": "Une femme",
       "else": "Aucun des sexes mentionnés",
-      "no_answer": "Je préfère ne pas me prononcer"
+      "no_answer": "Je préfère ne pas me prononcer",
+      "is_required": "Merci de remplir le champ concernant votre âge."
     }
   },
   "continue": "Continuer"

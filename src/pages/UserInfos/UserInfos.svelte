@@ -1,11 +1,15 @@
-
 <script lang="ts">
+  import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
 
+  import FormErrors from './FormErrors.svelte'
+
   const AGE_RANGES = ['-15', '15-17', '18-24', '25-34', '35-44', '45-54', '55-64', '+65'] as const
+  const SEXES = ['m', 'f', 'no-answer', 'else'] as const
+
   interface UserInfos {
-    sexe: 'm' | 'f' | 'no-answer' | 'else'
-    age:  typeof AGE_RANGES[number];
+    sexe: typeof SEXES[number]
+    age:  typeof AGE_RANGES[number]
   }
   const SEXE_QUESTION: { value: UserInfos['sexe'], label: string }[] = [
     {
@@ -26,11 +30,19 @@
     }
   ]
 
-
   let userInfos: Partial<UserInfos> = {}
+  let errors: string[] = []
+
+  const schema = yup.object().shape({
+    sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required'))
+  })
 
   const onSubmit = (): void => {
-    console.log(userInfos)
+    schema.validate(userInfos).then(() => {
+      console.log(userInfos)
+    }).catch((err) => {
+      errors = err.errors
+    })
   }
 </script>
 
@@ -46,12 +58,15 @@
           class="form-check-input" 
           name="user_sexe" 
           value={value}
-          bind:group={userInfos.sexe} 
+          required
+          bind:group={userInfos.sexe}
         >
         {label}
       </label>
     {/each}
   </fieldset>
+
+  <FormErrors {errors} />
 
   <button class="btn btn-primary mt-3">{$_('continue')}</button>
 </form>
