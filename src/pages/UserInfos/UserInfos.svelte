@@ -7,10 +7,12 @@
   import AgeQuestion, { AGES } from './questions/Age.svelte'
   import type { Age } from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
+  import AnyExperience from './questions/AnyExperience.svelte'
 
   interface UserInfos {
     sexe: Sexe
-    age:  Age
+    age: Age
+    anyExperience: number
   }
 
   let userInfos: Partial<UserInfos> = {}
@@ -39,6 +41,10 @@
 
   <fieldset class="d-flex flex-column mt-3">
     <AgeQuestion bind:age={userInfos.age} />
+  </fieldset>
+
+  <fieldset class="d-flex flex-column mt-3">
+    <AnyExperience bind:grade={userInfos.anyExperience} />
   </fieldset>
 
   <FormErrors {errors} />

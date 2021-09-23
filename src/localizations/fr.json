@@ -21,6 +21,11 @@
       "+65": "Plus de 65 ans",
       "what_is_your_age": "Quel est votre âge",
       "is_required": "Merci de remplir le champ concernant votre âge."
+    },
+    "any_experience": {
+      "any_experience": "Vous arrive-t-il de devoir saisir des informations de type alphanumérique (chiffres et lettres) sur Internet, comme par exemple un identifiant, un numéro de commande, un numéro de contrat, etc. ?",
+      "never": "Non jamais",
+      "often": "Oui très souvent"
     }
   },
   "continue": "Continuer"
