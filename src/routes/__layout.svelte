@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
   import '../i18n'
   import { waitLocale } from 'svelte-i18n'
 

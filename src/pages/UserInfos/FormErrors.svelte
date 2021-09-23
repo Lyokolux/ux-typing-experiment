@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* eslint-disable no-use-before-define, no-multiple-empty-lines */
   import { _ } from 'svelte-i18n'
 
   export let errors: string[] = []

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
 
-  import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte';
+  import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
   export let grade: number | null = null
 

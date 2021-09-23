@@ -16,10 +16,10 @@
 
   const getValues = (): Value[] => {
     if (typeof values[0] === 'string') {
-      return values.map((value) => {
+      return values.map((v) => {
         return {
-          value,
-          label: value
+          value: v,
+          label: v
         }
       })
     }
