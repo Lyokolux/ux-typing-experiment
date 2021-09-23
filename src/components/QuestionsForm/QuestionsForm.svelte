@@ -7,7 +7,7 @@
   }
 </script>
 <script lang="ts">
-  import QuestionComponent from "./Question.svelte"
+  import QuestionComponent from './Question.svelte'
 
   export let questions: Question[]
 </script>
