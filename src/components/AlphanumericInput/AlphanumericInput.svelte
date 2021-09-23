@@ -19,12 +19,22 @@
 
   const handleKeydown = (e: KeyboardEvent, chunkIndex: number): void => {
     setTimeout(() => {
+      const key = e.key
       const chunkValue = enteredChunks[chunkIndex]
+      const allChunksFull = enteredChunks.join('').length === value.length
       const isChunkFull = chunkValue.length >= chunkLength
       const isChunkEmpty = chunkValue.length <= 0
       const isFirstChunck = chunkIndex <= 0
       const isLastChunck = chunkIndex >= chunks.length - 1
-      const isKeyAnArrow = e.key === KEY.left || e.key === KEY.right
+      const isKeyAnArrow = key === KEY.left || key === KEY.right
+      const isKeyIgnored = key === KEY.shift || key === KEY.tab
+
+      if (isKeyIgnored) return
+
+      if (allChunksFull) {
+        onSuccess()
+        return
+      }
   
       if (isChunkFull
           && !isLastChunck
@@ -32,7 +42,7 @@
         jumpToChunk(chunkIndex + 1)
         return
       }
-      if (isChunkEmpty && e.key === KEY.backspace && !isFirstChunck) {
+      if (isChunkEmpty && key === KEY.backspace && !isFirstChunck) {
         jumpToChunk(chunkIndex - 1)
       }
     }, 0)
@@ -40,12 +50,13 @@
 
   const checkChunk = (i: number): void => {
     const chunckValue = enteredChunks[i]
+    let newChunckValue = chunckValue.toUpperCase()
 
-    enteredChunks[i] = enteredChunks[i].toUpperCase()
-
-    if (chunckValue.length > chunkLength) {
-      enteredChunks[i] = chunckValue.substring(0, chunkLength)
+    if (newChunckValue.length > chunkLength) {
+      newChunckValue = newChunckValue.substring(0, chunkLength)
     }
+
+    enteredChunks[i] = newChunckValue
   }
 </script>
 
