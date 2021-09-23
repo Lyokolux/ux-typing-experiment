@@ -27,6 +27,16 @@ npm run dev
 npm run dev -- --open
 ```
 
+### eslint
+
+#### eslint-disable
+
+Do not use `eslint-disable` for another reason mentionned below:
+
+- `no-multiple-empty-lines` can be disabled in a svelte component that has both `script` (ts and module) due to a bug
+- `no-use-before-define` can be disabled in some weird occasion 
+
+
 ## Building
 
 Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
