@@ -26,7 +26,24 @@
       "any_experience": "Vous arrive-t-il de devoir saisir des informations de type alphanumérique (chiffres et lettres) sur Internet, comme par exemple un identifiant, un numéro de commande, un numéro de contrat, etc. ?",
       "never": "Non jamais",
       "often": "Oui très souvent"
+    },
+    "experience_grade": {
+      "question": "Quand vous devez saisir des informations de type alphanumérique sur Internet, comment qualifieriez-vous cette expérience de manière générale ?"
     }
+  },
+  "questions": {
+    "pleasant": "Agréable",
+    "unpleasant": "Désagréable",
+    "simple": "Simple",
+    "complicated": "Compliquée",
+    "practical": "Pratique",
+    "not-practical": "Pas pratique",
+    "tedious": "Fastidieuse",
+    "effective": "Efficace",
+    "good": "Bonne",
+    "bad": "Mauvaise",
+    "motivating": "Motivante",
+    "discouraging": "Décourageante"
   },
   "continue": "Continuer"
 }
