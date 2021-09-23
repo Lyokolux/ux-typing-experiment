@@ -1,5 +1,14 @@
 {
   "title": "Bienvenue",
+  "home": {
+    "title": "Bonjour,",
+    "paragraph_1": "merci de participer à cette étude qui s'intéresse à la saisie de suites alphanumériques sur Internet.",
+    "paragraph_2": "Votre tâche consistera à recopier, le plus rapidement possible et sans erreur, une série de 18 chiffres et lettres qui vous sera présentée en haut de votre écran.<br>Vous devrez recopier ces chiffres et lettres dans un ou plusieurs champs vides affichés au milieu de l'écran.",
+    "paragraph_3": "Notez que lorsque vous aurez fini de saisir le 18ième caractère, vous passerez automatiquement à un court questionnaire qui permettra de recueillir votre avis sur la façon dont les informations étaient présentées et sur votre expérience de saisie.<br>Après ce questionnaire, vous passerez à un nouvel écran de saisie, puis de nouveau à un court questionnaire… et ainsi de suite 16 fois.",
+    "paragraph_4": "Votre participation ne vous prendra toutefois que 4 à 5 minutes.",
+    "paragraph_5": "Notez qu'à chaque fois, la suite alphanumérique à recopier sera différente (elle est générée aléatoirement par le système).",
+    "paragraph_6": "Avant de commencer, merci de renseigner quelques informations sur votre profil…"
+  },
   "user_infos": {
     "errors_in_form": "Merci de bien vouloir résoudre les points suivant et renvoyer le formulaire",
     "sexe": {
