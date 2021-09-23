@@ -15,10 +15,10 @@
 
   onMount(() => {
     swiper.set(new Swiper(
-      '.swiper', 
+      '.swiper',
       {
         allowTouchMove: true, // TODO: Set to false in prod
-        direction: 'vertical',
+        direction: 'vertical'
       }
     ))
   })
