@@ -2,27 +2,13 @@
   import { _ } from 'svelte-i18n'
   import { swiper } from '../stores'
 
-  import QuestionsForm from '../components/QuestionsForm/QuestionsForm.svelte'
+  const PARAGRAPH_AMOUNT = 6
+  const I18N_KEYS = 'home.paragraph-'
+  const PARAGRAPHS_KEYS = Array(PARAGRAPH_AMOUNT).fill(undefined).map((_, i) => `${I18N_KEYS}${i+1}`);
 </script>
 
 <h1>{$_('title')}</h1>
-<h2>Home</h2>
+{#each PARAGRAPHS_KEYS as paragraphKey}
+<p>{@html $_(paragraphKey)}</p>
+{/each}
 <button class="btn btn-primary" on:click={() => $swiper.slideNext() }>next</button>
-
-<QuestionsForm 
-  questions={[
-    {
-      labels: ['Déplaisante', 'Plaisante'],
-      inverted: true,
-      grade: null
-    },
-    {
-      labels: ['Déplaisante', 'Plaisante'],
-      grade: null
-    },
-    {
-      labels: ['pas cool', 'cool'],
-      grade: 4
-    }
-  ]}
-/>
