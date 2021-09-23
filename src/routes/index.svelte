@@ -14,6 +14,10 @@
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
   import Gratitude from '../pages/Gratitude.svelte'
 
+  import { api } from '../store/api'
+
+  api.storeIt({ test: 'Hello world!' })
+
   onMount(() => {
     swiper.set(new Swiper(
       '.swiper', 
