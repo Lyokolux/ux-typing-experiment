@@ -48,7 +48,7 @@
     }, 0)
   }
 
-  const checkChunk = (i: number): void => {
+  const normalizeChunk = (i: number): void => {
     const chunckValue = enteredChunks[i]
     let newChunckValue = chunckValue.toUpperCase()
 
@@ -72,7 +72,7 @@
         handleKeydown(e, i)
       }}
       on:input={() => {
-        checkChunk(i)
+        normalizeChunk(i)
       }}
     />
   {/each}
