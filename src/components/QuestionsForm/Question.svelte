@@ -1,6 +1,7 @@
 <script lang="ts">
   import { reverseArray } from '../../utils'
   import type { Question } from './QuestionsForm.svelte'
+
   export let question: Question
 
   const HIGHER_GRADE = 6
@@ -15,9 +16,11 @@
   <td>{labels[0]}</td>
   <td class="px-2">
     {#each grades as grade}
-      <input 
-        type="radio" 
-        class="form-check-input m-1" 
+      <input
+        name={`${question.labels[0]}-${question.labels[1]}`}
+        type="radio"
+        class="form-check-input m-1"
+        required
         bind:group={question.grade} value={grade}
       >
     {/each}
