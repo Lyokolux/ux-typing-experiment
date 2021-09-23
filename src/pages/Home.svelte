@@ -1,6 +1,6 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
-  import { swiper } from '../stores'
+  import NextButton from '../components/NextButton.svelte';
 
   const PARAGRAPH_AMOUNT = 6
   const I18N_KEYS = 'home.paragraph-'
@@ -11,4 +11,6 @@
 {#each PARAGRAPHS_KEYS as paragraphKey}
 <p>{@html $_(paragraphKey)}</p>
 {/each}
-<button class="btn btn-primary" on:click={() => $swiper.slideNext() }>next</button>
+<NextButton>
+  { $_('continue') }
+</NextButton>
