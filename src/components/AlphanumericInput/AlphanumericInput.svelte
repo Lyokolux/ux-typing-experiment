@@ -3,13 +3,14 @@
   import { KEY } from '../../const'
 
   export let value: string
+  const normalized_value = value.replace(' ', '')
   export let chunkLength: number
   let className = ''
   export { className as class }
   export let chunkClass: string = ''
   export let onSuccess: () => void
 
-  let chunks: string[] = getChunk(value, chunkLength)
+  let chunks: string[] = getChunk(normalized_value, chunkLength)
   let chunksRef: HTMLInputElement[] = []
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
 
@@ -21,7 +22,7 @@
     setTimeout(() => {
       const key = e.key
       const chunkValue = enteredChunks[chunkIndex]
-      const allChunksFull = enteredChunks.join('').length === value.length
+      const allChunksFull = enteredChunks.join('').length === normalized_value.length
       const isChunkFull = chunkValue.length >= chunkLength
       const isChunkEmpty = chunkValue.length <= 0
       const isFirstChunck = chunkIndex <= 0
