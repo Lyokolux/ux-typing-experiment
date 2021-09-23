@@ -1,3 +1,8 @@
+<script>
+  import { _ } from 'svelte-i18n'
+  import NextButton from '../components/NextButton.svelte'
+</script>
+
 <section>
     <h2>{$_('experience_beginning.experiment_will_begin')}</h2>
 
@@ -7,8 +12,3 @@
         {$_('continue')}
     </NextButton>
 </section>
-
-<script>
-  import { _ } from 'svelte-i18n'
-  import NextButton from '../components/NextButton.svelte'
-</script>
