@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount } from 'svelte'
   import { _ } from 'svelte-i18n'
-  import { collection, getDocs } from 'firebase/firestore/lite';
-
+  import { collection, getDocs } from 'firebase/firestore/lite'
 
   import { initFirestore } from '../firestore'
   import NextButton from '../components/NextButton.svelte'
