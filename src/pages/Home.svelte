@@ -2,7 +2,6 @@
   import { _ } from 'svelte-i18n'
   import NextButton from '../components/NextButton.svelte'
 
-  import QuestionsForm from '../components/QuestionsForm/QuestionsForm.svelte'
   import AlphanumericInput from '../components/AlphanumericInput/AlphanumericInput.svelte'
   const PARAGRAPH_AMOUNT = 6
   const I18N_KEYS = 'home.paragraph_'

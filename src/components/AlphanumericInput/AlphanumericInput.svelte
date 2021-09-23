@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { chunk, isNumeric, removeAllNonNumeric } from '../../utils'
+  import { chunk } from '../../utils'
   import { KEY } from '../../const'
 
   export let value: string
@@ -65,7 +65,7 @@
     <input
       type="text"
       class={`chunk form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
-      style={`--width: ${chunk.length + .7}em`}
+      style={`--width: ${chunk.length + 0.7}em`}
       bind:this={chunksRef[i]}
       bind:value={enteredChunks[i]}
       on:keydown={(e) => {
