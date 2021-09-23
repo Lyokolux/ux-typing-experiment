@@ -1,4 +1,4 @@
-<div class="row justify-center mt-8">
+<div class="row justify-center">
     <button class="btn btn-primary my-auto" on:click={() => $swiper.slideNext() }>
         <slot></slot>
     </button>
