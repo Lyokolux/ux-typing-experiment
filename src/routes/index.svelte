@@ -8,7 +8,7 @@
 
   // P A G E S
   import Home from '../pages/Home.svelte'
-  import UserInfos from '../pages/UserInfos.svelte'
+  import UserInfos from '../pages/UserInfos/UserInfos.svelte'
   import FamiliarizationPage from '../pages/FamiliarizationPage.svelte'
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
   import Gratitude from '../pages/Gratitude.svelte'

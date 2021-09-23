@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
   import '../i18n'
   import { waitLocale } from 'svelte-i18n'
 
@@ -14,7 +15,7 @@
 </script>
 
 <div class="swiper w-100 h-100 bg-dark text-light position-relative">
-  <LocaleSelect class="position-absolute top-0 end-0" />
+  <LocaleSelect />
 
   <div class="swiper-wrapper">
     <slot />

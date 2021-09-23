@@ -8,3 +8,8 @@ html, body {
   height: 100vh;
   width: 100vw;
 }
+
+.locale-select {
+  z-index: 1000;
+  min-width: 50px;
+}

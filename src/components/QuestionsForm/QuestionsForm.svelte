@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  /* eslint-disable no-multiple-empty-lines */
   export interface Question {
     labels: string[] // like ['Plaisante', 'Déplaisante']
     // the labels are inverted
