@@ -27,13 +27,13 @@
   ]
 </script>
 
-<h3>{$_('user_infos.sexe.you_are')}:</h3>
+<h4>{$_('user_infos.sexe.you_are')}:</h4>
 {#each SEXE_QUESTION as { value, label }}
   <label>
-    <input 
-      type="radio" 
-      class="form-check-input" 
-      name="user_sexe" 
+    <input
+      type="radio"
+      class="form-check-input"
+      name="user_sexe"
       value={value}
       required
       bind:group={sexe}
