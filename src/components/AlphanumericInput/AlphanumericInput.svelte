@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { chunk } from '../../utils'
+  import { getChunk } from '../../utils'
   import { KEY } from '../../const'
 
   export let value: string
@@ -9,7 +9,7 @@
   export let chunkClass: string = ''
   export let onSuccess: () => void
 
-  let chunks: string[] = chunk(value, chunkLength)
+  let chunks: string[] = getChunk(value, chunkLength)
   let chunksRef: HTMLInputElement[] = []
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
 

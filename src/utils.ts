@@ -1,4 +1,4 @@
-export const chunk = (str: string, size: number): string[] => {
+export const getChunk = (str: string, size: number): string[] => {
   return str.match(new RegExp('.{1,' + size + '}', 'g'))
 }
 
