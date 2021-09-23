@@ -61,11 +61,11 @@
 </script>
 
 <div class={`numeric-input d-flex ${className}`}>
-  {#each chunks as digits, i}
+  {#each chunks as chunk, i}
     <input
       type="text"
       class={`chunk form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
-      style={`--width: ${chunkLength + .7}em`}
+      style={`--width: ${chunk.length + .7}em`}
       bind:this={chunksRef[i]}
       bind:value={enteredChunks[i]}
       on:keydown={(e) => {
