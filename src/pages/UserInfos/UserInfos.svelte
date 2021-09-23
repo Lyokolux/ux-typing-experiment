@@ -30,6 +30,7 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
+      // TODO: Store data in firestore
       console.log(userInfos)
     }).catch((err) => {
       errors = err.errors
