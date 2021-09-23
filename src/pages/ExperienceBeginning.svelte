@@ -4,7 +4,7 @@
     <p>{$_('experience_beginning.start_if_you_are_ready')}</p>
 
     <NextButton>
-        🠗 {$_('next')} 🠗
+        {$_('continue')}
     </NextButton>
 </section>
 
