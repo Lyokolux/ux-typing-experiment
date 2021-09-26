@@ -14,7 +14,7 @@
 <p class="numeric-readable fs-5">{SEQUENCE}</p>
 
 <AlphanumericInput
-  value={SEQUENCE}
+  value={SEQUENCE.replace(' ', '')}
   chunkLength={CHUNK_LENGTH}
   onSuccess={() => { $swiper.slideNext() }}
 />
