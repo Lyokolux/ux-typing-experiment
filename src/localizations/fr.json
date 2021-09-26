@@ -40,6 +40,10 @@
       "question": "Quand vous devez saisir des informations de type alphanumérique sur Internet, comment qualifieriez-vous cette expérience de manière générale ?"
     }
   },
+  "familirization_page": {
+    "here_an_example": "Voici un exemple d'écran qui vous sera présenté.",
+    "instructions": "Consigne : Merci de recopier, le plus rapidement possible et sans erreur, la suite alphanumérique dans le(s) champ(s) vide(s) ci-dessous."
+  },
   "questions": {
     "pleasant": "Agréable",
     "unpleasant": "Désagréable",
