@@ -11,7 +11,7 @@
 
 <p>{$_('familirization_page.instructions')}</p>
 
-<p class="numeric-readable fs-5">{SEQUENCE}</p>
+<p class="digit-readable-font fs-5">{SEQUENCE}</p>
 
 <AlphanumericInput
   value={SEQUENCE.replace(' ', '')}

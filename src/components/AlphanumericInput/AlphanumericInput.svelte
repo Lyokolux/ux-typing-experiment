@@ -64,7 +64,7 @@
   {#each chunks as chunk, i}
     <input
       type="text"
-      class={`chunk numeric-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
+      class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
       style={`--width: ${chunk.length + 0.7}em`}
       bind:this={chunksRef[i]}
       bind:value={enteredChunks[i]}
