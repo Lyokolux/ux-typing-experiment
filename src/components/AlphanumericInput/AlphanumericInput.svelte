@@ -1,8 +1,12 @@
 <script lang="ts">
+  import type { Event } from './utils'
+
   import { getChunk } from '../../utils'
+  import { getNewEventFromInput } from './utils'
   import { KEY } from '../../const'
 
   export let value: string
+  export let events: Event[] = []
   export let chunkLength: number
   let className = ''
   export { className as class }
@@ -12,6 +16,10 @@
   let chunks: string[] = getChunk(value, chunkLength)
   let chunksRef: HTMLInputElement[] = []
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
+
+  const getEnteredAlphanumeric = (): string => {
+    return enteredChunks.join('').toUpperCase()
+  }
 
   const jumpToChunk = (index: number): void => {
     chunksRef[index].focus()
@@ -56,6 +64,9 @@
       newChunckValue = newChunckValue.substring(0, chunkLength)
     }
 
+    const newEvent = getNewEventFromInput(value, getEnteredAlphanumeric(), events.at(-1))
+
+    events = [...events, newEvent]
     enteredChunks[i] = newChunckValue
   }
 </script>
