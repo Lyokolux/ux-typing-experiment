@@ -12,6 +12,7 @@
   import FamiliarizationPage from '../pages/FamiliarizationPage.svelte'
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
   import Gratitude from '../pages/Gratitude.svelte'
+  import PostExperience from '../pages/PostExperience.svelte'
 
   onMount(() => {
     swiper.set(new Swiper(
@@ -40,6 +41,9 @@
 {#each [1, 2] as pageId}
   <Page>
     Slide {pageId}
+  </Page>
+  <Page>
+    <PostExperience />
   </Page>
 {/each}
 
