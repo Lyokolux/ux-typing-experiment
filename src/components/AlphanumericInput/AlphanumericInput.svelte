@@ -18,7 +18,7 @@
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
 
   const getEnteredAlphanumeric = (): string => {
-    return enteredChunks.join('')
+    return enteredChunks.join('').toUpperCase()
   }
 
   const jumpToChunk = (index: number): void => {
