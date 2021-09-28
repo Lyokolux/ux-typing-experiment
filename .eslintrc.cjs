@@ -5,6 +5,7 @@ module.exports = {
 	plugins: ['svelte3', '@typescript-eslint'],
 	ignorePatterns: ['*.cjs'],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+	extends: "airbnb-base/legacy",
 	settings: {
 		'svelte3/typescript': () => require('typescript')
 	},
@@ -16,5 +17,11 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true
+	},
+	rules: {
+		"no-unused-vars": "off",
+		"indent": ["error", 2],
+		semi: ["error", "never"],
+		"@typescript-eslint/no-unused-vars": ["error"]
 	}
 };

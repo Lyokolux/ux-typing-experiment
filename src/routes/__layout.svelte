@@ -1,9 +1,23 @@
-<script>
-  import '../global.scss'
+<script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
+  import '../i18n'
+  import { waitLocale } from 'svelte-i18n'
+
+  export async function load(): Promise<Record<string, never>> {
+    await waitLocale()
+    return {}
+  }
 </script>
 
-<div class="swiper w-100 h-100 bg-dark text-light">
+<script lang="ts">
+  import '../global.scss'
+  import LocaleSelect from '../components/LocaleSelect.svelte'
+</script>
+
+<div class="swiper w-100 h-100 bg-dark text-light position-relative">
+  <LocaleSelect />
+
   <div class="swiper-wrapper">
-    <slot></slot>
+    <slot />
   </div>
 </div>
