@@ -6,8 +6,6 @@
     const CHUNK_LENGTH = 9
     const SEQUENCE = 'T890SOLA6 RF6628GB8'
     let events = []
-
-    $: console.log(events[events.length - 1])
 </script>
 
 <p>{$_('familirization_page.here_an_example')}</p>

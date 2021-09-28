@@ -1,23 +1,26 @@
+<script context="module" lang="ts">
+  export interface UserInfos {
+    sexe: Sexe
+    age: Age
+    anyExperience: number
+    experienceGrades: Pick<CustomQuestion, 'ids' | 'grade'>[]
+  }
+</script>
 <script lang="ts">
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
+  import { api } from '../../store/api'
 
   import type { Sexe } from './questions/Sexe.svelte'
   import type { Age } from './questions/Age.svelte'
   import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
 
   import SexeQuestion, { SEXES } from './questions/Sexe.svelte'
   import AgeQuestion, { AGES } from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
-
-  interface UserInfos {
-    sexe: Sexe
-    age: Age
-    anyExperience: number
-    experienceGrades: Question[]
-  }
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
@@ -30,8 +33,16 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
-      // TODO: Store data in firestore
-      console.log(userInfos)
+      const payload = {
+        age: userInfos.age,
+        sexe: userInfos.sexe,
+        anyExperience: userInfos.anyExperience,
+        experienceGrades: userInfos.experienceGrades.map<Question>((experienceGrade) => ({
+          ids: experienceGrade.ids,
+          grade: experienceGrade.grade
+        }))
+      }
+      api.addUserRequest(payload)
     }).catch((err) => {
       errors = err.errors
     })

@@ -1,14 +1,14 @@
+<script context="module" lang="ts">
+  export type CustomQuestion = Question & { labels: string[] };
+</script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
 
-  import type { Qualification } from '../../../const'
   import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
-  type CustomQuestion = Omit<Question, 'labels'> & {ids: Qualification[]}
-
-  const QUESTIONS: CustomQuestion[] = [
+  const QUESTIONS: Question[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: null,
@@ -17,7 +17,7 @@
     {
       ids: ['complicated', 'simple'],
       grade: null,
-      inverted: true
+      inverted: false
     },
     {
       ids: ['not-practical', 'practical'],
@@ -26,7 +26,8 @@
     },
     {
       ids: ['tedious', 'effective'],
-      grade: null
+      grade: null,
+      inverted: false,
     },
     {
       ids: ['bad', 'good'],
@@ -36,11 +37,11 @@
     {
       ids: ['discouraging', 'motivating'],
       grade: null,
-      inverted: true
+      inverted: false
     }
   ]
 
-  export let questions: Question[] = QUESTIONS.map(question => {
+  export let questions: CustomQuestion[] = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]

@@ -1,7 +1,9 @@
 <script lang="ts" context="module">
+import type { Qualification } from '../../const';
+
   /* eslint-disable no-multiple-empty-lines */
   export interface Question {
-    labels: string[] // like ['Plaisante', 'Déplaisante']
+    ids: [Qualification, Qualification]
     // the labels are inverted
     inverted?: boolean
     grade: number | null

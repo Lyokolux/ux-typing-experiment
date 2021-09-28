@@ -9,7 +9,6 @@
 
   let onSubmit = (): void => {
     // TODO: send to firestore
-    console.log(questions)
   }
 </script>
 
