@@ -1,4 +1,9 @@
 <script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
+  import type { Sexe } from './questions/Sexe.svelte'
+  import type { Age } from './questions/Age.svelte'
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
+
   export interface UserInfos {
     sexe: Sexe
     age: Age
@@ -11,10 +16,7 @@
   import { _ } from 'svelte-i18n'
   import { api } from '../../store/api'
 
-  import type { Sexe } from './questions/Sexe.svelte'
-  import type { Age } from './questions/Age.svelte'
   import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
-  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
 
   import SexeQuestion, { SEXES } from './questions/Sexe.svelte'
   import AgeQuestion, { AGES } from './questions/Age.svelte'
