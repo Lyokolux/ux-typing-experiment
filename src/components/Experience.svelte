@@ -3,7 +3,7 @@
 
   import type { Event } from '../utils'
 
-  import { swiper } from '../stores';
+  import { swiper } from '../stores'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'
 

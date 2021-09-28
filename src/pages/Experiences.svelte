@@ -3,7 +3,7 @@
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
 
-  import { swiper } from '../stores';
+  import { swiper } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
