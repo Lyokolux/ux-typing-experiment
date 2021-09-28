@@ -13,6 +13,7 @@
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
   import Gratitude from '../pages/Gratitude.svelte'
   import PostExperience from '../pages/PostExperience.svelte'
+  import LastScreen from '../pages/LastScreen.svelte'
 
   onMount(() => {
     swiper.set(new Swiper(
@@ -49,4 +50,7 @@
 
 <Page>
   <Gratitude />
+</Page>
+<Page>
+  <LastScreen />
 </Page>
