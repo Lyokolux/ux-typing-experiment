@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ChunkLength, EXPERIENCES_AMOUNT } from '../const'
 
-  import type { Event } from '../utils'
+  import type { Event } from '../components/AlphanumericInput/utils'
 
   import { swiper } from '../stores'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
