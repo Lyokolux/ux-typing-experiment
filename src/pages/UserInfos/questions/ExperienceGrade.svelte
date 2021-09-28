@@ -1,11 +1,12 @@
+<script context="module" lang="ts">
+  export type CustomQuestion = Question & { labels: string[] };
+</script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
-
-  type CustomQuestion = Question & { labels: string[] }
 
   const QUESTIONS: Question[] = [
     {

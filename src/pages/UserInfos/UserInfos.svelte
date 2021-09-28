@@ -3,7 +3,7 @@
     sexe: Sexe
     age: Age
     anyExperience: number
-    experienceGrades: Question[]
+    experienceGrades: Pick<CustomQuestion, 'ids' | 'grade'>[]
   }
 </script>
 <script lang="ts">
@@ -14,6 +14,7 @@
   import type { Sexe } from './questions/Sexe.svelte'
   import type { Age } from './questions/Age.svelte'
   import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
 
   import SexeQuestion, { SEXES } from './questions/Sexe.svelte'
   import AgeQuestion, { AGES } from './questions/Age.svelte'
@@ -36,7 +37,7 @@
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
-        experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
+        experienceGrades: userInfos.experienceGrades.map<Question>((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade
         }))
