@@ -1,3 +1,11 @@
+<script context="module" lang="ts">
+  export interface UserInfos {
+    sexe: Sexe
+    age: Age
+    anyExperience: number
+    experienceGrades: Question[]
+  }
+</script>
 <script lang="ts">
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
@@ -12,13 +20,6 @@
   import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
-
-  interface UserInfos {
-    sexe: Sexe
-    age: Age
-    anyExperience: number
-    experienceGrades: Question[]
-  }
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
