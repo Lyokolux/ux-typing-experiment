@@ -21,4 +21,9 @@
   bind:events
   chunkLength={CHUNK_LENGTH}
   onSuccess={() => { $swiper.slideNext() }}
+  onCancel={() => {
+    setTimeout(() => {
+      $swiper.slideNext()
+    }, 1500)
+  }}
 />
