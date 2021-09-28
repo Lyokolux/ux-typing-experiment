@@ -1,3 +1,4 @@
+import { writable } from 'svelte/store'
 import { initFirestore } from '../firestore'
 import {
   collection,
@@ -7,7 +8,6 @@ import {
   DocumentReference
 } from 'firebase/firestore'
 import { USER_COLLECTION_NAME } from '../const'
-import { writable } from 'svelte/store'
 import type { UserInfos } from '../pages/UserInfos/UserInfos.svelte'
 
 function createApi() {
