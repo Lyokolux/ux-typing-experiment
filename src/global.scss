@@ -21,14 +21,6 @@ html, body {
 }
 
 .form-control {
-  &.success {
-    border-color: $success;
-
-    &:focus {
-      box-shadow: rgba($success, .25) 0px 0px 0px 0.25rem;
-    }
-  }
-
   &.danger {
     border-color: $danger;
 
