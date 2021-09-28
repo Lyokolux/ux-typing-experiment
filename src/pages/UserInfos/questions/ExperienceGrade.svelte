@@ -16,7 +16,7 @@
     {
       ids: ['complicated', 'simple'],
       grade: null,
-      inverted: true
+      inverted: false
     },
     {
       ids: ['not-practical', 'practical'],
@@ -25,7 +25,8 @@
     },
     {
       ids: ['tedious', 'effective'],
-      grade: null
+      grade: null,
+      inverted: false,
     },
     {
       ids: ['bad', 'good'],
@@ -35,7 +36,7 @@
     {
       ids: ['discouraging', 'motivating'],
       grade: null,
-      inverted: true
+      inverted: false
     }
   ]
 
