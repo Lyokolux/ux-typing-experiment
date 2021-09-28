@@ -14,7 +14,7 @@
   import Gratitude from '../pages/Gratitude.svelte'
   import PostExperience from '../pages/PostExperience.svelte'
   import LastScreen from '../pages/LastScreen.svelte'
-  import { dev } from '$app/env';
+  import { dev } from '$app/env'
 
   onMount(() => {
     swiper.set(new Swiper(
