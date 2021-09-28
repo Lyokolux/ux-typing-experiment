@@ -1,37 +1,37 @@
 import { initFirestore } from '../firestore'
 import {
-  arrayUnion,
   collection,
-  CollectionReference,
-  doc,
-  DocumentReference,
+  addDoc,
   updateDoc,
-  getDocs
+  arrayUnion,
+  DocumentReference
 } from 'firebase/firestore'
-import { COLLECTION_NAMES } from '../const'
+import { USER_COLLECTION_NAME } from '../const'
+import { writable } from 'svelte/store'
 
 function createApi() {
   const { db } = initFirestore()
-  const usersCollection = collection(db, COLLECTION_NAMES.USERS)
+  const dbCollection = collection(db, USER_COLLECTION_NAME)
 
-  const fetchTheMostRecentDocument = async <T>(inCollection: CollectionReference<T>): Promise<DocumentReference<T>> => {
-    const { docs } = await getDocs(inCollection)
-    if (docs.length > 0) {
-      return docs[docs.length - 1].ref
-    }
-    return doc(inCollection, new Date().toString())
-  }
+  const currentUserDoc = writable<DocumentReference>()
 
   const addUserRequest = async (user) => {
-    // TODO: type to UserInfo
-    const document = await fetchTheMostRecentDocument<any>(usersCollection)
-    return updateDoc(document, {
-      users: arrayUnion(user)
-    })
+    currentUserDoc.set(await addDoc(dbCollection, user))
   }
 
+  /**
+   * @param currentUserDoc provided in the store
+   */
+  const addExperimentRequest = async (userDoc, experiment) => (
+    updateDoc(userDoc, {
+      experiments: arrayUnion(experiment)
+    })
+  )
+
   return {
-    addUserRequest
+    currentUserDoc,
+    addUserRequest,
+    addExperimentRequest
   }
 }
 

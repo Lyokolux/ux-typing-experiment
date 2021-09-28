@@ -11,6 +11,4 @@ export type Qualification = typeof QUALIFICATION[number]
 
 // WTF eslint
 // eslint-disable-next-line no-shadow
-export enum COLLECTION_NAMES {
-  USERS='users'
-}
+export const USER_COLLECTION_NAME = 'users'

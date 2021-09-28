@@ -31,8 +31,16 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
-      // TODO: userInfos should not be Partial here anymore
-      api.addUserRequest(userInfos)
+      const payload = {
+        age: userInfos.age,
+        sexe: userInfos.sexe,
+        anyExperience: userInfos.anyExperience,
+        experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
+          labels: experienceGrade.labels,
+          grade: experienceGrade.grade
+        }))
+      }
+      api.addUserRequest(payload)
     }).catch((err) => {
       errors = err.errors
     })
