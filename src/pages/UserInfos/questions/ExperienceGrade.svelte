@@ -6,7 +6,7 @@
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
-  type CustomQuestion = Omit<Question, 'labels'> & {ids: Qualification[]}
+  type CustomQuestion = Omit<Question, 'labels'> & {ids: [Qualification, Qualification]}
 
   const QUESTIONS: CustomQuestion[] = [
     {
