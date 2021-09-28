@@ -7,9 +7,10 @@
   import Experience from '../components/Experience.svelte'
 </script>
 
-{#each CHUNK_SIZES as chunkSize}
+{#each CHUNK_SIZES as chunkSize, i}
   <Page>
     <Experience
+      currentIndex={i}
       value={getGeneratedRandomString()}
       displayChunkSize={chunkSize}
       inputChunkSize={chunkSize}

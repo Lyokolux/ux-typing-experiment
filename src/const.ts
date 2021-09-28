@@ -18,3 +18,5 @@ export const USER_COLLECTION_NAME = dev ? 'staging' : 'users'
 
 export const CHUNK_SIZES = [2, 3, 4, 6, 9, 18] as const
 export type ChunkSize = typeof CHUNK_SIZES[number]
+
+export const EXPERIENCES_AMOUNT = 16
