@@ -19,3 +19,13 @@ html, body {
 .font-digit-readable {
   font-family: 'Inconsolata', monospace;
 }
+
+.form-control {
+  &.danger {
+    border-color: $danger;
+
+    &:focus {
+      box-shadow: rgba($danger, .25) 0px 0px 0px 0.25rem;
+    }
+  }
+}

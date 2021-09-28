@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n'
   import type { Event } from './utils'
 
   import { getChunk } from '../../utils'
@@ -12,10 +13,21 @@
   export { className as class }
   export let chunkClass: string = ''
   export let onSuccess: () => void
+  export let onCancel: () => void
+
+  const TRACK_EVENTS_LIMIT = 70
 
   let chunks: string[] = getChunk(value, chunkLength)
   let chunksRef: HTMLInputElement[] = []
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
+  let isLimitReached = false
+
+  $: {
+    isLimitReached = events.length >= TRACK_EVENTS_LIMIT
+    if (isLimitReached) {
+      onCancel()
+    }
+  }
 
   const getEnteredAlphanumeric = (): string => {
     return enteredChunks.join('').toUpperCase()
@@ -71,22 +83,30 @@
   }
 </script>
 
-<div class={`d-flex ${className}`}>
-  {#each chunks as chunk, i}
-    <input
-      type="text"
-      class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
-      style={`--width: ${chunk.length + 0.7}em`}
-      bind:this={chunksRef[i]}
-      bind:value={enteredChunks[i]}
-      on:keydown={(e) => {
-        handleKeydown(e, i)
-      }}
-      on:input={() => {
-        normalizeChunk(i)
-      }}
-    />
-  {/each}
+<div class={`d-flex flex-column ${className}`}>
+  <div class="chunks-ctn d-flex">
+    {#each chunks as chunk, i}
+      <input
+        type="text"
+        class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
+        class:danger={isLimitReached}
+        style={`--width: ${chunk.length + 0.7}em`}
+        disabled={isLimitReached}
+        bind:this={chunksRef[i]}
+        bind:value={enteredChunks[i]}
+        on:keydown={(e) => {
+          handleKeydown(e, i)
+        }}
+        on:input={() => {
+          normalizeChunk(i)
+        }}
+      />
+    {/each}
+  </div>
+
+  {#if isLimitReached}
+    <p class="text-danger">{$_('events_limit_reached')}</p>
+  {/if}
 </div>
 
 <style lang="scss">
