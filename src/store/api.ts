@@ -8,10 +8,11 @@ import {
   updateDoc,
   getDocs
 } from 'firebase/firestore'
+import { COLLECTION_NAMES } from '../const'
 
 function createApi() {
   const { db } = initFirestore()
-  const usersCollection = collection(db, 'users')
+  const usersCollection = collection(db, COLLECTION_NAMES.USERS)
 
   const fetchTheMostRecentDocument = async <T>(inCollection: CollectionReference<T>): Promise<DocumentReference<T>> => {
     const { docs } = await getDocs(inCollection)
