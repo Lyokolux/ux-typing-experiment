@@ -1,4 +1,5 @@
 import type { SEXES, AGES } from './const'
+import type { ChunkLength, ALPHANUMERIC_LENGTH } from './const'
 // @ts-ignore
 import type { Question } from './components/QuestionsForm/QuestionsForm.svelte'
 
@@ -20,4 +21,9 @@ export interface User {
 // TODO
 export interface Experiment {
 
+
+export interface ExperienceConfig {
+  value: string
+  displayChunkLength: ChunkLength | typeof ALPHANUMERIC_LENGTH
+  inputChunkLength: ChunkLength | typeof ALPHANUMERIC_LENGTH
 }

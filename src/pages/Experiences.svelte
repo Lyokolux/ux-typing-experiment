@@ -1,19 +1,23 @@
 <script lang="ts">
-  import { CHUNK_SIZES } from '../const'
+  import { getExperiencesConfigs } from '../utils'
 
-  import { getGeneratedRandomString } from '../utils';
-
-  import Page from '../components/Page.svelte';
+  import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
+  import PostExperience from './PostExperience.svelte'
+
+  const experiences = getExperiencesConfigs()
 </script>
 
-{#each CHUNK_SIZES as chunkSize, i}
+{#each experiences as { value, displayChunkLength, inputChunkLength}, i}
   <Page>
     <Experience
       currentIndex={i}
-      value={getGeneratedRandomString()}
-      displayChunkSize={chunkSize}
-      inputChunkSize={chunkSize}
+      {value}
+      {displayChunkLength}
+      {inputChunkLength}
     />
+  </Page>
+  <Page>
+    <PostExperience />
   </Page>
 {/each}
