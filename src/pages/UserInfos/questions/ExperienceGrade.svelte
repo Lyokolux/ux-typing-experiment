@@ -1,10 +1,11 @@
 <script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
+  import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
+  
   export type CustomQuestion = Question & { labels: string[] };
 </script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
-
-  import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
@@ -27,7 +28,7 @@
     {
       ids: ['tedious', 'effective'],
       grade: null,
-      inverted: false,
+      inverted: false
     },
     {
       ids: ['bad', 'good'],
