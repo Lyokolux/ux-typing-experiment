@@ -27,7 +27,7 @@
 
 <Page>
   <Home />
-</Page>
+</Page >
 <Page>
   <UserInfos />
 </Page>

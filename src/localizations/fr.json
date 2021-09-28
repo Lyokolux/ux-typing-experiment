@@ -63,5 +63,11 @@
     "experiment_will_begin": "L'étude va pouvoir commencer !",
     "start_if_you_are_ready": "Dès que vous êtes prêt•e, cliquez sur le bouton \"Commencer\"."
   },
+  
+  "last_screen": {
+    "merci": "Merci pour votre participation !",
+    "contact": "Pour toute question sur cette étude, merci de contacter Guillaume Gronier, chercheur en UX Design (guillaume.gronier@gmail.com)."
+    
+  },
   "continue": "Continuer"
 }
