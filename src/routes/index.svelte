@@ -14,12 +14,13 @@
   import Gratitude from '../pages/Gratitude.svelte'
   import PostExperience from '../pages/PostExperience.svelte'
   import LastScreen from '../pages/LastScreen.svelte'
+  import { dev } from '$app/env';
 
   onMount(() => {
     swiper.set(new Swiper(
       '.swiper',
       {
-        allowTouchMove: true, // TODO: Set to false in prod
+        allowTouchMove: dev,
         direction: 'vertical'
       }
     ))
