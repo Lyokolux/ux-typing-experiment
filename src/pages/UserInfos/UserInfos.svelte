@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
+  import { api } from '../../store/api'
 
   import type { Sexe } from './questions/Sexe.svelte'
   import type { Age } from './questions/Age.svelte'
@@ -30,8 +31,8 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
-      // TODO: Store data in firestore
-      console.log(userInfos)
+      // TODO: userInfos should not be Partial here anymore
+      api.addUserRequest(userInfos)
     }).catch((err) => {
       errors = err.errors
     })
