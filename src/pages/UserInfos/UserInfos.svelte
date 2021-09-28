@@ -37,7 +37,7 @@
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
-          labels: experienceGrade.labels,
+          ids: experienceGrade.ids,
           grade: experienceGrade.grade
         }))
       }
