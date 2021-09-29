@@ -5,9 +5,12 @@
   export type CustomQuestion = Question & { labels: string[] };
 </script>
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import { _ } from 'svelte-i18n'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
+
+	const dispatch = createEventDispatcher();
 
   const QUESTIONS: Question[] = [
     {
@@ -42,15 +45,24 @@
     }
   ]
 
-  export let questions: CustomQuestion[] = QUESTIONS.map(question => {
+  let questionForForm: CustomQuestion[] = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
     }
   })
+
+  export let questions: Question[]
+  $: {
+    questions = questionForForm.map(q => {
+      const { labels, ...rest } = q
+      return rest
+    })
+  }
 </script>
+
 <h4>{$_('user_infos.experience_grade.question')}</h4>
 
 <QuestionsForm 
-  bind:questions
+  bind:questions={questionForForm}
 />

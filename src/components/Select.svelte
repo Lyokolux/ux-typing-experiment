@@ -15,6 +15,7 @@
   let selectedLabel: string
 
   const getValues = (): Value[] => {
+    // TODO: improve this type checking
     if (typeof values[0] === 'string') {
       return values.map((v) => {
         return {

@@ -1,8 +1,9 @@
 <script lang="ts">
+  
   import { reverseArray } from '../../utils'
-  import type { Question } from './QuestionsForm.svelte'
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte';
 
-  export let question: Question
+  export let question: CustomQuestion
 
   const HIGHER_GRADE = 6
   const GRADES_RANGE = Array.from(Array(HIGHER_GRADE).keys()) // generate [0,1,2, ..., HIGHER_GRADE-1]

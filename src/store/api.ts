@@ -24,7 +24,7 @@ function createApi() {
    * @param currentUserDoc provided in the store
    */
   // TODO: type experiment when the type will be defined
-  const addExperimentRequest = async (userDoc: DocumentReference, experiment) => (
+  const addExperimentRequest = async (userDoc: DocumentReference, experiment: any) => (
     updateDoc(userDoc, {
       experiments: arrayUnion(experiment)
     })
