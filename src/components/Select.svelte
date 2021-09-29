@@ -34,7 +34,7 @@
 </script>
 
 <div 
-  class={`select position-relative btn btn-light d-flex justify-content-center align-items-center p-1 ${className}`}
+  class={`select position-relative btn btn-light d-flex justify-content-center align-items-center w-fit-content p-1 ${className}`}
   title="Update language"
 >
   <select bind:value class="opacity-0 p-0 position-absolute w-100 h-100">
@@ -50,10 +50,6 @@
 </div>
 
 <style lang="scss">
-  .select {
-    width: fit-content;
-  }
-
   select {
     opacity: 0;
     cursor: pointer;
