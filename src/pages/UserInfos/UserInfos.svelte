@@ -2,13 +2,12 @@
   /* eslint-disable no-multiple-empty-lines */
   import type { Sexe } from './questions/Sexe.svelte'
   import type { Age } from './questions/Age.svelte'
-  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
 
   export interface UserInfos {
     sexe: Sexe
     age: Age
     anyExperience: number
-    experienceGrades: Pick<CustomQuestion, 'ids' | 'grade'>[]
+    experienceGrades: Pick<Question, 'ids' | 'grade'>[]
   }
 </script>
 <script lang="ts">
