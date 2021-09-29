@@ -2,7 +2,7 @@
   /* eslint-disable no-multiple-empty-lines */
   import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
   
-  export type CustomQuestion = Question & { labels: string[] };
+  export type CustomQuestion = Question & { labels: [string, string] };
 </script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
