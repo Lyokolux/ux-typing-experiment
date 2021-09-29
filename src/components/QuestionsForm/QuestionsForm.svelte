@@ -10,7 +10,7 @@ export interface Question {
   }
 </script>
 <script lang="ts">
-  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte';
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
   import QuestionComponent from './Question.svelte'
 
   export let questions: CustomQuestion[]

@@ -5,12 +5,9 @@
   export type CustomQuestion = Question & { labels: string[] };
 </script>
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
   import { _ } from 'svelte-i18n'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
-
-	const dispatch = createEventDispatcher();
 
   const QUESTIONS: Question[] = [
     {
@@ -55,6 +52,7 @@
   export let questions: Question[]
   $: {
     questions = questionForForm.map(q => {
+      // eslint-disable-next-line
       const { labels, ...rest } = q
       return rest
     })

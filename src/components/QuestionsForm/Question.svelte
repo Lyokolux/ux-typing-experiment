@@ -1,7 +1,6 @@
 <script lang="ts">
-  
   import { reverseArray } from '../../utils'
-  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte';
+  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
 
   export let question: CustomQuestion
 
