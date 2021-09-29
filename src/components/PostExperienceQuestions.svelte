@@ -3,7 +3,6 @@
   /* eslint-disable no-use-before-define */
   import { _ } from 'svelte-i18n'
 
-  import type { Qualification } from '../const'
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
 
   import QuestionsForm from '../components/QuestionsForm/QuestionsForm.svelte'
