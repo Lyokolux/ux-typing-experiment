@@ -7,6 +7,7 @@
 
   let questions = [
     {
+      ids: ['any_experience', 'lot_of_experience'],
       labels: [$_('user_infos.any_experience.never'), $_('user_infos.any_experience.often')],
       grade: null
     }
