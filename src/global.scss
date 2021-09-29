@@ -20,6 +20,11 @@ html, body {
   font-family: 'Inconsolata', monospace;
 }
 
+.w-fit-content {
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
 .form-control {
   &.danger {
     border-color: $danger;

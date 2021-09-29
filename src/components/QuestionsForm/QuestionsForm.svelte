@@ -4,6 +4,7 @@ import type { Qualification } from '../../const'
 /* eslint-disable no-multiple-empty-lines */
 export interface Question {
     ids: [Qualification, Qualification]
+    labels: [string, string]
     // the labels are inverted
     inverted?: boolean
     grade: number | null

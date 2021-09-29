@@ -1,25 +1,23 @@
 <script context="module" lang="ts">
   /* eslint-disable no-multiple-empty-lines */
-  import type { Sexe } from './questions/Sexe.svelte'
-  import type { Age } from './questions/Age.svelte'
-  import type { CustomQuestion } from '../../pages/UserInfos/questions/ExperienceGrade.svelte'
+  import type { Sexe, Age, User } from '../../types'
+  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
 
   export interface UserInfos {
     sexe: Sexe
     age: Age
     anyExperience: number
-    experienceGrades: Pick<CustomQuestion, 'ids' | 'grade'>[]
+    experienceGrades: Pick<Question, 'ids' | 'grade'>[]
   }
 </script>
 <script lang="ts">
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
+
   import { api } from '../../store/api'
-
-  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
-
-  import SexeQuestion, { SEXES } from './questions/Sexe.svelte'
-  import AgeQuestion, { AGES } from './questions/Age.svelte'
+  import { AGES, SEXES } from '../../const'
+  import SexeQuestion from './questions/Sexe.svelte'
+  import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
@@ -35,11 +33,11 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
-      const payload = {
+      const payload: User = {
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
-        experienceGrades: userInfos.experienceGrades.map<Question>((experienceGrade) => ({
+        experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade
         }))
