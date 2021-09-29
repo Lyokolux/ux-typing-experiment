@@ -3,9 +3,7 @@
 
   import QuestionsForm from '../components/QuestionsForm/QuestionsForm.svelte'
 
-  type CustomQuestion = Question & { labels: [string, string] }
-
-  export let questions: CustomQuestion[]
+  export let questions: Question[]
 </script>
 
 <QuestionsForm

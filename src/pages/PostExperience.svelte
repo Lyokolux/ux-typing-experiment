@@ -2,11 +2,10 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-  import type { CustomQuestion } from './UserInfos/questions/ExperienceGrade.svelte'
-  
+
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
 
-  const QUESTIONS: Question[] = [
+  const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: null,
@@ -23,7 +22,7 @@
     }
   ]
 
-  let questions: CustomQuestion[] = QUESTIONS.map(question => {
+  let questions: Question[] = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]

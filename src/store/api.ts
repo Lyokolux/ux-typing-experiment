@@ -8,7 +8,7 @@ import {
   DocumentReference
 } from 'firebase/firestore'
 import { USER_COLLECTION_NAME } from '../const'
-import type { UserInfos } from '../pages/UserInfos/UserInfos.svelte'
+import type { User, Experiment } from '../types'
 
 function createApi() {
   const { db } = initFirestore()
@@ -16,7 +16,7 @@ function createApi() {
 
   const currentUserDoc = writable<DocumentReference>()
 
-  const addUserRequest = async (user: UserInfos) => {
+  const addUserRequest = async (user: User) => {
     currentUserDoc.set(await addDoc(dbCollection, user))
   }
 
@@ -24,7 +24,7 @@ function createApi() {
    * @param currentUserDoc provided in the store
    */
   // TODO: type experiment when the type will be defined
-  const addExperimentRequest = async (userDoc: DocumentReference, experiment: any) => (
+  const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
     updateDoc(userDoc, {
       experiments: arrayUnion(experiment)
     })

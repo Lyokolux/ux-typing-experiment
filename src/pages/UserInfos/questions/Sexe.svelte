@@ -1,10 +1,7 @@
-<script lang="ts" context="module">
-  /* eslint-disable no-multiple-empty-lines */
-  export const SEXES = ['m', 'f', 'no-answer', 'else'] as const
-  export type Sexe = typeof SEXES[number]
-</script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
+
+  import type { Sexe } from '../../../types';
 
   export let sexe: Sexe
 

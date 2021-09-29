@@ -1,10 +1,6 @@
-<script lang="ts" context="module">
-  /* eslint-disable no-multiple-empty-lines */
-  export const AGES = ['-15', '15-17', '18-24', '25-34', '35-44', '45-54', '55-64', '+65'] as const
-  export type Age = typeof AGES[number]
-</script>
-
 <script lang="ts">
+import type { Age } from '../../../types';
+
   import { _ } from 'svelte-i18n'
 
   import Select from '../../../components/Select.svelte'
