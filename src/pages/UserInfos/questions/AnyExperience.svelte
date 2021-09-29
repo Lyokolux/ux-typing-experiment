@@ -2,7 +2,7 @@
   import { _ } from 'svelte-i18n'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
-  import type { CustomQuestion } from '../questions/ExperienceGrade.svelte';
+  import type { CustomQuestion } from '../questions/ExperienceGrade.svelte'
 
   export let grade: number | null = null
 

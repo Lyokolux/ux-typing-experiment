@@ -2,7 +2,7 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-  import type { CustomQuestion } from './UserInfos/questions/ExperienceGrade.svelte';
+  import type { CustomQuestion } from './UserInfos/questions/ExperienceGrade.svelte'
   
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
 
