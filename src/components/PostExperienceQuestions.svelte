@@ -8,9 +8,9 @@
 
   import QuestionsForm from '../components/QuestionsForm/QuestionsForm.svelte'
 
-  type CustomQuestion = Omit<Question, 'labels'> & {ids: Qualification[]}
+  type CustomQuestion = Question & { labels: [string, string] }
 
-  const QUESTIONS: CustomQuestion[] = [
+  const QUESTIONS: Question[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: null,
@@ -27,7 +27,7 @@
     }
   ]
 
-  export let questions: Question[] = QUESTIONS.map(question => {
+  export let questions: CustomQuestion[] = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
