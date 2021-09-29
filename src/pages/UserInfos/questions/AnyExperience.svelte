@@ -2,10 +2,11 @@
   import { _ } from 'svelte-i18n'
 
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
+  import type { CustomQuestion } from '../questions/ExperienceGrade.svelte';
 
   export let grade: number | null = null
 
-  let questions = [
+  let questions: CustomQuestion[] = [
     {
       ids: ['any_experience', 'lot_of_experience'],
       labels: [$_('user_infos.any_experience.never'), $_('user_infos.any_experience.often')],

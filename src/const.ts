@@ -8,7 +8,7 @@ export const KEY = {
   tab: 'Tab'
 }
 
-export const QUALIFICATION = ['pleasant', 'unpleasant', 'simple', 'complicated', 'practical', 'not-practical', 'tedious', 'effective', 'good', 'bad', 'motivating', 'discouraging'] as const
+export const QUALIFICATION = ['pleasant', 'unpleasant', 'simple', 'complicated', 'practical', 'not-practical', 'tedious', 'effective', 'good', 'bad', 'motivating', 'discouraging', 'any_experience', 'lot_of_experience'] as const
 export type Qualification = typeof QUALIFICATION[number]
 
 export const USER_COLLECTION_NAME = dev ? 'staging' : 'users'
