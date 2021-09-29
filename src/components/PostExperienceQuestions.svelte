@@ -9,29 +9,7 @@
 
   type CustomQuestion = Question & { labels: [string, string] }
 
-  const QUESTIONS: Question[] = [
-    {
-      ids: ['unpleasant', 'pleasant'],
-      grade: null,
-      inverted: true
-    },
-    {
-      ids: ['not-practical', 'practical'],
-      grade: null,
-      inverted: true
-    },
-    {
-      ids: ['tedious', 'effective'],
-      grade: null
-    }
-  ]
-
-  export let questions: CustomQuestion[] = QUESTIONS.map(question => {
-    return {
-      ...question,
-      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
-    }
-  })
+  export let questions: CustomQuestion[];
 </script>
 
 <QuestionsForm

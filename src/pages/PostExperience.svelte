@@ -2,10 +2,33 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
+  import type { CustomQuestion } from './UserInfos/questions/ExperienceGrade.svelte';
   
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
 
-  let questions: Question[]
+  const QUESTIONS: Question[] = [
+    {
+      ids: ['unpleasant', 'pleasant'],
+      grade: null,
+      inverted: true
+    },
+    {
+      ids: ['not-practical', 'practical'],
+      grade: null,
+      inverted: true
+    },
+    {
+      ids: ['tedious', 'effective'],
+      grade: null
+    }
+  ]
+
+  let questions: CustomQuestion[] = QUESTIONS.map(question => {
+    return {
+      ...question,
+      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
+    }
+  })
 
   let onSubmit = (): void => {
     // TODO: send to firestore
