@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
   /* eslint-disable no-multiple-empty-lines */
   import type { Sexe, Age, User } from '../../types'
+  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
 
   export interface UserInfos {
     sexe: Sexe
@@ -13,11 +14,8 @@
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
 
-
-  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
-
   import { api } from '../../store/api'
-  import { AGES, SEXES } from '../../const';
+  import { AGES, SEXES } from '../../const'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
