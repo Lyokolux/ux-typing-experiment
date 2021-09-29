@@ -13,8 +13,9 @@
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
 
-  const onPageAppLeave = (): void => {
+  const onPageAppLeave = (e): void => {
     // here browser show default message --> not possible to use a custom one
+    (e || window.event).returnValue = ''
   }
 </script>
 
