@@ -1,5 +1,10 @@
-import type { SEXES, AGES } from './const'
-import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from './const'
+import type {
+  SEXES,
+  AGES,
+  ALPHANUMERIC_LENGTH,
+  CHUNK_SIZES
+} from './const'
+// @ts-ignore
 import type { Question } from './components/QuestionsForm/QuestionsForm.svelte'
 import type { Event } from './components/AlphanumericInput/utils'
 
