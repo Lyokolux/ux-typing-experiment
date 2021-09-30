@@ -21,6 +21,7 @@ export interface User {
 // TODO
 export interface Experiment {
 
+}
 
 export interface ExperienceConfig {
   value: string
