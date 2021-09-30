@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
 
-  let className = ''
-  export { className as class }
-  export let type: string = 'primary'
-  export let onClick: () => void
-  export let isLoading: boolean = false
+let className = ''
+export { className as class }
+export let type: string = 'primary'
+export let onClick: () => void
+export let isLoading: boolean = false
 </script>
 
 <button
