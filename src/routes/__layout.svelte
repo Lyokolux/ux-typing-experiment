@@ -12,6 +12,7 @@
   import '../global.scss'
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
+  import Blob from '../components/Blob/Blob.svelte';
 
   const onPageAppLeave = (e): void => {
     // here browser show default message --> not possible to use a custom one
@@ -21,8 +22,9 @@
 
 <svelte:window on:beforeunload={onPageAppLeave}/>
 
-<div class="swiper w-100 h-100 bg-dark text-light position-relative">
+<div class="swiper w-100 h-100 text-primary position-relative">
   <LocaleSelect />
+  <Blob type="stacked-waves" class="position-absolute w-100" />
 
   <div class="swiper-wrapper">
     <slot />
