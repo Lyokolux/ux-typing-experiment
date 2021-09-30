@@ -15,7 +15,7 @@
 
   let selectedLabel: string
 
-  // type any as tyescript does not detect that the value is a string
+  // type any as typescript does not infer value as a string
   $: selectOptions = (typeof values[0] === 'string') ? values.map((v: any) => ({
     value: v,
     label: v
