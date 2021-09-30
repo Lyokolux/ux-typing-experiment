@@ -20,7 +20,7 @@
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
   <Page class="d-flex justify-content-center">
-    <section style="margin-top: 20vh;">
+    <section class="mt-5">
       <Experience
         currentIndex={i}
         {value}
@@ -36,3 +36,11 @@
     />
   </Page>
 {/each}
+
+<style>
+  @media screen and (min-width: 992px) {
+    section {
+      margin-top: 20vh!important;
+    }
+  }
+</style>
