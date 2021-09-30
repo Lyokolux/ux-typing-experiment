@@ -16,6 +16,7 @@
 
   import { api } from '../../store/api'
   import { AGES, SEXES } from '../../const'
+  import { swiper } from '../../stores';
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
@@ -32,7 +33,7 @@
   })
 
   const onSubmit = (): void => {
-    schema.validate(userInfos).then(() => {
+    schema.validate(userInfos).then(async () => {
       const payload: User = {
         age: userInfos.age,
         sexe: userInfos.sexe,
@@ -43,6 +44,7 @@
         }))
       }
       api.addUserRequest(payload)
+      $swiper.slideNext()
     }).catch((err) => {
       errors = err.errors
     })
