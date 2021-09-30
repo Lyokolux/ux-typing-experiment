@@ -2,10 +2,10 @@
   import type { ChunkLength, Experiment } from '../types'
 
   import type { Event } from '../components/AlphanumericInput/utils'
-  import type { DocumentData, DocumentReference } from 'firebase/firestore';
+  import type { DocumentData, DocumentReference } from 'firebase/firestore'
 
   import { swiper } from '../stores'
-  import { api } from '../store/api';
+  import { api } from '../store/api'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'
   import ExperienceCount from './ExperienceCount.svelte'
@@ -16,8 +16,8 @@
   export let currentIndex: number
 
   let events: Event[]
-  let userDoc: DocumentReference<DocumentData>;
-  api.currentUserDoc((v) => (userDoc = v))
+  let userDoc: DocumentReference<DocumentData>
+  api.currentUserDoc((v) => { userDoc = v })
 
   const sendResults = () => {
     const experimentResult: Experiment = {
