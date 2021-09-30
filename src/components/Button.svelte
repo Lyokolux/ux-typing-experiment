@@ -9,7 +9,7 @@ export let isLoading: boolean = false
 </script>
 
 <button
-  class={`btn btn-${type} position-relative`}
+  class={`btn btn-${type} ${className} position-relative`}
   on:click={onClick}
   class:loading={isLoading}
 >
