@@ -5,6 +5,9 @@
 
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
 
+  export let onSubmit: () => void
+  export let questions: Question[]
+
   const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
@@ -22,16 +25,12 @@
     }
   ]
 
-  let questions: Question[] = QUESTIONS.map(question => {
+  questions = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
     }
   })
-
-  let onSubmit = (): void => {
-    // TODO: send to firestore
-  }
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
