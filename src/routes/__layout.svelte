@@ -11,6 +11,9 @@
 <script lang="ts">
   import '../global.scss'
 
+  import { screen } from '../stores'
+  import { isScreenMobile } from '../utils'
+
   import LocaleSelect from '../components/LocaleSelect.svelte'
   import Blob from '../components/Blob/Blob.svelte'
 
@@ -18,11 +21,25 @@
     // here browser show default message --> not possible to use a custom one
     (e || window.event).returnValue = ''
   }
+
+  $: {
+    screen.set({
+      height: $screen.height,
+      width: $screen.width,
+      isMobile: isScreenMobile($screen.width, $screen.height)
+    })
+  }
 </script>
 
-<svelte:window on:beforeunload={onPageAppLeave}/>
+<svelte:window 
+  on:beforeunload={onPageAppLeave}
+/>
 
-<div class="swiper w-100 h-100 text-primary position-relative">
+<div
+  class="swiper w-100 h-100 text-primary position-relative"
+  bind:offsetHeight={$screen.height}
+  bind:offsetWidth={$screen.width}
+>
   <LocaleSelect />
   <Blob type="stacked-waves" class="position-absolute w-100" />
 
