@@ -1,6 +1,5 @@
-import type { SEXES, AGES, QUALIFICATION, CHUNK_SIZES } from './const'
-import type { ALPHANUMERIC_LENGTH } from './const'
-// @ts-ignore
+import type { SEXES, AGES } from './const'
+import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from './const'
 import type { Question } from './components/QuestionsForm/QuestionsForm.svelte'
 import type { Event } from './components/AlphanumericInput/utils'
 
@@ -9,7 +8,7 @@ import type { Event } from './components/AlphanumericInput/utils'
 // ------------
 export type Sexe = typeof SEXES[number]
 export type Age = typeof AGES[number]
-export type Qualification = typeof QUALIFICATION[number]
+export type Qualification = 'pleasant' | 'unpleasant' | 'simple' | 'complicated' | 'practical' | 'not-practical' | 'tedious' | 'effective' | 'good' | 'bad' | 'motivating' | 'discouraging' | 'any_experience' | 'lot_of_experience'
 
 // ------------
 //  Experience
@@ -24,21 +23,14 @@ export interface ExperienceConfig {
 // -----
 //  API
 // -----
+/** Format: "chunkLength of the display" - "chunk length of the inputs" */
+export type ExperimentID = `${ChunkLength}-${ChunkLength}`
+export type Experiments = Record<ExperimentID, Event[]>
 
 export interface User {
     sexe: Sexe
     age: Age
     anyExperience: number
     experienceGrades: Pick<Question, 'ids' | 'grade'>[]
-}
-
-// TODO
-export interface Experiment {
-
-}
-
-export interface ExperienceConfig {
-  value: string
-  displayChunkLength: ChunkLength | typeof ALPHANUMERIC_LENGTH
-  inputChunkLength: ChunkLength | typeof ALPHANUMERIC_LENGTH
+    experiments: Experiments
 }
