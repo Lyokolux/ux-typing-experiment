@@ -26,8 +26,8 @@
   })?.label
 </script>
 
-<div 
-  class={`select position-relative btn btn-light d-flex justify-content-center align-items-center w-fit-content p-1 ${className}`}
+<div
+  class={`select position-relative btn btn-light btn-outline-primary d-flex justify-content-center align-items-center w-fit-content p-1 ${className}`}
   title="Update language"
 >
   <select bind:value class="opacity-0 p-0 position-absolute w-100 h-100">

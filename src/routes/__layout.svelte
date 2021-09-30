@@ -12,7 +12,7 @@
   import '../global.scss'
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
-  import Blob from '../components/Blob/Blob.svelte';
+  import Blob from '../components/Blob/Blob.svelte'
 
   const onPageAppLeave = (e): void => {
     // here browser show default message --> not possible to use a custom one

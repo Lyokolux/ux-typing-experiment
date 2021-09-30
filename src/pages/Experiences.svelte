@@ -19,13 +19,15 @@
 </script>
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
-  <Page>
-    <Experience
-      currentIndex={i}
-      {value}
-      {displayChunkLength}
-      {inputChunkLength}
-    />
+  <Page class="d-flex justify-content-center">
+    <section style="margin-top: 20vh;">
+      <Experience
+        currentIndex={i}
+        {value}
+        {displayChunkLength}
+        {inputChunkLength}
+      />
+    </section>
   </Page>
   <Page>
     <PostExperience 

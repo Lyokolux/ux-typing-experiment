@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { ChunkLength, EXPERIENCES_AMOUNT } from '../const'
-
+  import type { ChunkLength } from '../const'
   import type { Event } from '../components/AlphanumericInput/utils'
 
   import { swiper } from '../stores'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'
+  import ExperienceCount from './ExperienceCount.svelte'
 
   export let value: string
   export let displayChunkLength: ChunkLength
@@ -23,10 +23,11 @@
   }
 </script>
 
-<h2 class="mt-5">{currentIndex + 1}/{EXPERIENCES_AMOUNT}</h2>
+<ExperienceCount count={currentIndex + 1} />
 <AlphanumericDisplay
   {value}
   chunkLength={displayChunkLength}
+  class="fs-2 fw-bold mt-4 text-center"
 />
 <AlphanumericInput 
   {value}
