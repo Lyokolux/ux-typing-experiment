@@ -8,7 +8,7 @@ import {
   DocumentReference
 } from 'firebase/firestore'
 import { USER_COLLECTION_NAME } from '../const'
-import type { User, Experiments } from '../types'
+import type { User, Experiment } from '../types'
 
 function createApi() {
   const { db } = initFirestore()
@@ -23,15 +23,14 @@ function createApi() {
   /**
    * @param currentUserDoc provided in the store
    */
-  // TODO: type experiment when the type will be defined
-  const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiments) => (
+  const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
     updateDoc(userDoc, {
       experiments: arrayUnion(experiment)
     })
   )
 
   return {
-    currentUserDoc,
+    currentUserDoc: currentUserDoc.subscribe,
     addUserRequest,
     addExperimentRequest
   }

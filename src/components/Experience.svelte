@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type { ChunkLength } from '../types'
+  import type { ChunkLength, Experiment } from '../types'
 
   import type { Event } from '../components/AlphanumericInput/utils'
+  import type { DocumentData, DocumentReference } from 'firebase/firestore';
 
   import { swiper } from '../stores'
+  import { api } from '../store/api';
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'
   import ExperienceCount from './ExperienceCount.svelte'
@@ -14,10 +16,20 @@
   export let currentIndex: number
 
   let events: Event[]
+  let userDoc: DocumentReference<DocumentData>;
+  api.currentUserDoc((v) => (userDoc = v))
+
+  const sendResults = () => {
+    const experimentResult: Experiment = {
+      id: `${displayChunkLength}-${inputChunkLength}`,
+      events
+    }
+    api.addExperimentRequest(userDoc, experimentResult)
+  }
 
   const onFilled = (): void => {
     $swiper.slideNext()
-    // TODO: Store events in firestore
+    sendResults()
   }
   const onCancel = (): void => {
     // TODO: smthg
