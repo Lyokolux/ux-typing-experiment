@@ -18,7 +18,7 @@
   value={SEQUENCE.replace(' ', '')}
   bind:events
   chunkLength={CHUNK_LENGTH}
-  onSuccess={() => { $swiper.slideNext() }}
+  onFilled={() => { $swiper.slideNext() }}
   onCancel={() => {
     setTimeout(() => {
       $swiper.slideNext()

@@ -12,7 +12,7 @@
   let className = ''
   export { className as class }
   export let chunkClass: string = ''
-  export let onSuccess: () => void
+  export let onFilled: () => void
   export let onCancel: () => void
 
   const TRACK_EVENTS_LIMIT = 70
@@ -52,7 +52,7 @@
       if (isKeyIgnored) return
 
       if (allChunksFull) {
-        onSuccess()
+        onFilled()
         return
       }
   
