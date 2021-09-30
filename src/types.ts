@@ -37,5 +37,5 @@ export interface User {
     age: Age
     anyExperience: number
     experienceGrades: Pick<Question, 'ids' | 'grade'>[]
-    experiments: Experiment[]
+    experiments?: Experiment[]
 }
