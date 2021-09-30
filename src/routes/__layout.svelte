@@ -30,3 +30,11 @@
     <slot />
   </div>
 </div>
+
+<style lang="scss">
+  @media screen and (max-width: 992px) {
+    .swiper :global(.stacked-waves) {
+      width: 250%!important;
+    }
+  }
+</style>
