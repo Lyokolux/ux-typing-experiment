@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SvelteComponent } from 'svelte'
 
-  interface Value {
+  interface SelectOption {
     value: string
     label: string
   }
@@ -9,26 +9,19 @@
   let className = ''
   export { className as class }
   export let value: string | undefined
-  export let values: string[] | Value[]
+  export let values: string[] | SelectOption[]
+  let selectOptions: SelectOption[]
   export let icon: SvelteComponent | undefined
 
   let selectedLabel: string
 
-  // TODO: refactor this as reactive declaration
-  const getValues = (): Value[] => {
-    if (typeof values[0] === 'string') {
-      return values.map((v: any) => {
-        return {
-          value: v,
-          label: v
-        }
-      })
-    }
+  // type any as typescript does not infer value as a string
+  $: selectOptions = (typeof values[0] === 'string') ? values.map((v: any) => ({
+    value: v,
+    label: v
+  })) : values as unknown as SelectOption[]
 
-    return values as Value[]
-  }
-
-  $: selectedLabel = getValues().find((_value) => {
+  $: selectedLabel = selectOptions.find((_value) => {
     return _value.value === value
   })?.label
 </script>
@@ -38,7 +31,7 @@
   title="Update language"
 >
   <select bind:value class="opacity-0 p-0 position-absolute w-100 h-100">
-    {#each getValues() as { value, label }}
+    {#each selectOptions as { value, label }}
       <option {value}>{label}</option>
     {/each}
   </select>
