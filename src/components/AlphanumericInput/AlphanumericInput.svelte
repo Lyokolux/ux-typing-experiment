@@ -90,7 +90,7 @@
         type="text"
         class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
         class:danger={isLimitReached}
-        style={`--width: ${chunk.length + 0.7}em`}
+        style={`--width: ${chunk.length / 1.3 + 0.7}em`}
         disabled={isLimitReached}
         bind:this={chunksRef[i]}
         bind:value={enteredChunks[i]}
