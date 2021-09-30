@@ -8,11 +8,18 @@
     return {}
   }
 </script>
-
 <script lang="ts">
   import '../global.scss'
+
   import LocaleSelect from '../components/LocaleSelect.svelte'
+
+  const onPageAppLeave = (e): void => {
+    // here browser show default message --> not possible to use a custom one
+    (e || window.event).returnValue = ''
+  }
 </script>
+
+<svelte:window on:beforeunload={onPageAppLeave}/>
 
 <div class="swiper w-100 h-100 bg-dark text-light position-relative">
   <LocaleSelect />
