@@ -39,7 +39,7 @@
   {#if icon}
      <svelte:component this={icon} />
   {/if}
-  <span class="ms-1">{selectedLabel}</span>
+  <span class="label ms-1">{selectedLabel}</span>
 </div>
 
 <style lang="scss">
