@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { ChunkLength } from '../const'
+  import type { ChunkLength } from '../types'
+
   import type { Event } from '../components/AlphanumericInput/utils'
 
   import { swiper } from '../stores'

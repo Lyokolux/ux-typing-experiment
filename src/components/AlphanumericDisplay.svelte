@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ChunkLength } from '../const'
+  import type { ChunkLength } from '../types'
 
   import { getChunk } from '../utils'
 

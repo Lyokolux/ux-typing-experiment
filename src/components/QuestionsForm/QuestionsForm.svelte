@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-import type { Qualification } from '../../const'
+import type { Qualification } from '../../types'
 
 /* eslint-disable no-multiple-empty-lines */
 export interface Question {
