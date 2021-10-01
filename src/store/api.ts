@@ -24,13 +24,14 @@ function createApi() {
    * @param currentUserDoc provided in the store
    */
   const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
+    // arrayUnion(experiment)
     updateDoc(userDoc, {
       experiments: arrayUnion(experiment)
     })
   )
 
   return {
-    subscribe: currentUserDoc.subscribe,
+    subscribeUserDoc: currentUserDoc.subscribe,
     addUserRequest,
     addExperimentRequest
   }

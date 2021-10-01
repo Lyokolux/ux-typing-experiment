@@ -16,15 +16,17 @@
   let questions: Question[][] = []
   let events: Event[][] = []
 
-  let userDoc: DocumentReference<DocumentData> = $api
-
+  let userDoc: DocumentReference<DocumentData>
+  api.subscribeUserDoc((v) => { userDoc = v })
+  
   const onFormSubmit = (index: number): void => {
+    console.log(userDoc)
     const experience = experiences[index]
     const experimentResult: Experiment = {
       id: `${experience.displayChunkLength}-${experience.inputChunkLength}`,
-      questions: questions[index],
+      questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
-    }
+    }    
     api.addExperimentRequest(userDoc, experimentResult)
 
     $swiper.slideNext()
