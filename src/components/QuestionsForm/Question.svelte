@@ -27,12 +27,3 @@
   </div>
   <span class="text-left">{labels[1]}</span>
 </li>
-
-<style>
-  .question {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 16px;
-  }
-</style>
