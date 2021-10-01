@@ -4,7 +4,7 @@
   import type { Event } from '../components/AlphanumericInput/utils'
   import type { DocumentData, DocumentReference } from 'firebase/firestore'
 
-  import { swiper } from '../stores'
+  import { swiper } from '../store'
   import { api } from '../store/api'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'

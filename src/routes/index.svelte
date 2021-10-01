@@ -3,7 +3,7 @@
   import { Swiper } from 'swiper'
   import 'swiper/css'
 
-  import { swiper } from '../stores'
+  import { swiper } from '../store'
   import Page from '../components/Page.svelte'
 
   // P A G E S

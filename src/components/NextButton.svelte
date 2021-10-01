@@ -5,5 +5,5 @@
 </div>
 
 <script>
-    import { swiper } from '../stores'
+    import { swiper } from '../store'
 </script>

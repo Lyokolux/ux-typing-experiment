@@ -1,7 +1,7 @@
 <script lang="ts">
     import { _ } from 'svelte-i18n'
     import AlphanumericInput from '../components/AlphanumericInput/AlphanumericInput.svelte'
-    import { swiper } from '../stores'
+    import { swiper } from '../store'
 
     const CHUNK_LENGTH = 9
     const SEQUENCE = 'T890SOLA6 RF6628GB8'
