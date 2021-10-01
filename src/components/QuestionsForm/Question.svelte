@@ -34,5 +34,6 @@
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 16px;
+    font-weight: 500;
   }
 </style>

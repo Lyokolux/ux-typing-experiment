@@ -43,5 +43,10 @@
 <style>
 .sexe {
   display: flex;
+  font-weight: 500;
+}
+
+.sexe .form-check-input {
+  margin-right: 0.5rem !important
 }
 </style>
