@@ -12,9 +12,9 @@
 </script>
 
 
-<tr>
-  <td>{labels[0]}</td>
-  <td class="px-2">
+<li class="row">
+  <span class="col-3">{labels[0]}</span>
+  <div class="col-6 px-2">
     {#each grades as grade}
       <input
         name={`${question.labels[0]}-${question.labels[1]}`}
@@ -24,6 +24,6 @@
         bind:group={question.grade} value={grade}
       >
     {/each}
-  </td>
-  <td>{labels[1]}</td>
-</tr>
+  </div>
+  <span class="col-3">{labels[1]}</span>
+</li>
