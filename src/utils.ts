@@ -1,4 +1,4 @@
-import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from './const'
+import { ALPHANUMERIC_LENGTH, CHUNK_SIZES, DESKTOP_SCREEN_MIN_WIDTH } from './const'
 import type { ExperienceConfig } from './types'
 
 export const getChunk = (str: string, size: number): string[] => {
@@ -62,4 +62,8 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
   )
 
   return getShuffledArray(config)
+}
+
+export const isScreenMobile = (width: number, height: number): boolean => {
+  return height > width && width <= DESKTOP_SCREEN_MIN_WIDTH
 }

@@ -5,8 +5,16 @@
 </script>
 
 <Select 
-  class="locale-select position-absolute top-0 end-0 m-2"
+  class="locale-select position-absolute top-0 end-0 m-2 btn-outline-primary"
   bind:value={$locale}
   values={$locales}
   icon={Globe2}
 />
+
+<style lang="scss">
+  @media screen and (max-width: 992px) {
+    :global(.locale-select .label) {
+      display: none;
+    }
+  }
+</style>

@@ -21,3 +21,4 @@ export const CHUNK_SIZES = [2, 3, 4, 6, 9] as const
 export type ChunkLength = typeof CHUNK_SIZES[number] | typeof ALPHANUMERIC_LENGTH
 
 export const EXPERIENCES_AMOUNT = 16
+export const DESKTOP_SCREEN_MIN_WIDTH = 992

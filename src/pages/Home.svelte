@@ -1,5 +1,6 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
+
   import NextButton from '../components/NextButton.svelte'
 
   const PARAGRAPH_AMOUNT = 6
