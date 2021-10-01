@@ -16,8 +16,8 @@ export interface Question {
   export let questions: Question[]
 </script>
 
-<table>
+<ul>
   {#each questions as question}
     <QuestionComponent bind:question />
   {/each}
-</table>
+</ul>
