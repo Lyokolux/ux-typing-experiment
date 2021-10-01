@@ -10,7 +10,6 @@
   export { className as class }
   export let value: string | undefined
   export let values: string[] | SelectOption[]
-  export let id: string
   let selectOptions: SelectOption[]
   export let icon: SvelteComponent | undefined
 
@@ -31,7 +30,7 @@
   class={`select position-relative btn btn-light btn-outline-primary d-flex justify-content-center align-items-center w-fit-content p-1 ${className}`}
   title="Update language"
 >
-  <select bind:value {id} class="opacity-0 p-0 position-absolute w-100 h-100">
+  <select bind:value class="opacity-0 p-0 position-absolute w-100 h-100">
     {#each selectOptions as { value, label }}
       <option {value}>{label}</option>
     {/each}
