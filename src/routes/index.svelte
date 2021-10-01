@@ -3,7 +3,7 @@
   import { Swiper } from 'swiper'
   import 'swiper/css'
 
-  import { swiper } from '../stores'
+  import { swiper, swiperReactive } from '../stores'
   import Page from '../components/Page.svelte'
 
   // P A G E S
@@ -18,13 +18,18 @@
   import { dev } from '$app/env'
 
   onMount(() => {
-    swiper.set(new Swiper(
+    const swiperInstance = new Swiper(
       '.swiper',
       {
         allowTouchMove: dev,
         direction: 'vertical'
       }
-    ))
+    )
+    swiperInstance.on('slideChange', () => {
+      $swiperReactive.activeIndex = swiperInstance.activeIndex
+    })
+
+    swiper.set(swiperInstance)
   })
 </script>
 
