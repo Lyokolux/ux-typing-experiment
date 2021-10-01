@@ -22,6 +22,7 @@
   let enteredChunks: string[] = Array(chunks.length).join('.').split('.') // Create array of n empty strings
   let isLimitReached = false
 
+  $: allChunksFilled = enteredChunks.join('').length === value.length
   $: {
     isLimitReached = events.length >= TRACK_EVENTS_LIMIT
     if (isLimitReached) {
@@ -41,7 +42,6 @@
     setTimeout(() => {
       const key = e.key
       const chunkValue = enteredChunks[chunkIndex]
-      const allChunksFull = enteredChunks.join('').length === value.length
       const isChunkFull = chunkValue.length >= chunkLength
       const isChunkEmpty = chunkValue.length <= 0
       const isFirstChunck = chunkIndex <= 0
@@ -51,7 +51,7 @@
 
       if (isKeyIgnored) return
 
-      if (allChunksFull) {
+      if (allChunksFilled) {
         onFilled()
         return
       }
@@ -76,7 +76,7 @@
       newChunckValue = newChunckValue.substring(0, chunkLength)
     }
 
-    const newEvent = getNewEventFromInput(value, getEnteredAlphanumeric(), events.at(-1))
+    const newEvent = getNewEventFromInput(value, getEnteredAlphanumeric(), events[events.length - 1])
 
     events = [...events, newEvent]
     enteredChunks[i] = newChunckValue
@@ -91,7 +91,7 @@
         class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-5 fw-bold ${chunkClass}`}
         class:danger={isLimitReached}
         style={`--width: ${chunk.length + 0.7}em`}
-        disabled={isLimitReached}
+        disabled={isLimitReached || allChunksFilled}
         bind:this={chunksRef[i]}
         bind:value={enteredChunks[i]}
         on:keydown={(e) => {
