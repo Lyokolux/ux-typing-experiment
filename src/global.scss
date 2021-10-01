@@ -12,6 +12,10 @@ html, body {
   background-color: #FCF5E0;
 }
 
+ul {
+  padding-left: 0; // reset padding
+}
+
 .locale-select {
   z-index: 1000;
   min-width: 50px;
