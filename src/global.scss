@@ -35,3 +35,12 @@ html, body {
     }
   }
 }
+
+.form-check-input {
+  width: 1.3em;
+  height: 1.3em;
+  border: 3px solid var(--bs-primary);
+  background-color: transparent;
+  padding: initial;
+  margin: 0.25rem !important;
+}

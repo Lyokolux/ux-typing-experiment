@@ -12,9 +12,9 @@
 </script>
 
 
-<li class="row">
-  <span class="col-3">{labels[0]}</span>
-  <div class="col-6 px-2">
+<li class="fs-5 question">
+  <span class="text-end">{labels[0]}</span>
+  <div>
     {#each grades as grade}
       <input
         name={`${question.labels[0]}-${question.labels[1]}`}
@@ -25,5 +25,14 @@
       >
     {/each}
   </div>
-  <span class="col-3">{labels[1]}</span>
+  <span class="text-left">{labels[1]}</span>
 </li>
+
+<style>
+  .question {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+</style>
