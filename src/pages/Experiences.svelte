@@ -3,7 +3,7 @@
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
   import type { DocumentData, DocumentReference } from 'firebase/firestore'
-  import type { Experiment } from '../types';
+  import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
   import { swiper, api } from '../store'
@@ -26,7 +26,7 @@
       id: `${experience.displayChunkLength}-${experience.inputChunkLength}`,
       questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
-    }    
+    }
     api.addExperimentRequest(userDoc, experimentResult)
 
     $swiper.slideNext()

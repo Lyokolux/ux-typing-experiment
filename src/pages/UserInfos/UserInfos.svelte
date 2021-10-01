@@ -1,6 +1,8 @@
 <script context="module" lang="ts">
   /* eslint-disable no-multiple-empty-lines */
-  import type { Sexe, Age, User, Experiment } from '../../types'
+  import type {
+    Sexe, Age, User, Experiment
+} from '../../types'
   import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
 
   export interface UserInfos {
