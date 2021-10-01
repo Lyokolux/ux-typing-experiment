@@ -30,7 +30,7 @@ export interface ExperienceConfig {
 // -----
 /** Format: "chunkLength of the display" - "chunk length of the inputs" */
 export type ExperimentID = `${ChunkLength}-${ChunkLength}`
-export type Experiment = { id: ExperimentID, events: Event[] }
+export type Experiment = { id: ExperimentID, events: Event[], questions: Question[] }
 
 export interface User {
     sexe: Sexe

@@ -30,7 +30,7 @@ function createApi() {
   )
 
   return {
-    currentUserDoc: currentUserDoc.subscribe,
+    subscribe: currentUserDoc.subscribe,
     addUserRequest,
     addExperimentRequest
   }
