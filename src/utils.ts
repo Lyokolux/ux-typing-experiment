@@ -67,3 +67,8 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
 export const isScreenMobile = (width: number, height: number): boolean => {
   return height > width && width <= DESKTOP_SCREEN_MIN_WIDTH
 }
+
+export const isNumberInt = (n: number): boolean => {
+  return n % 1 === 0
+}
+
