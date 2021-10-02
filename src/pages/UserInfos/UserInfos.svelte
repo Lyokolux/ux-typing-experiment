@@ -54,8 +54,6 @@
   }
 </script>
 
-<h2>User infos</h2>
-
 <form on:submit|preventDefault={onSubmit}>
   <fieldset class="d-flex flex-column">
     <SexeQuestion bind:sexe={userInfos.sexe} />
