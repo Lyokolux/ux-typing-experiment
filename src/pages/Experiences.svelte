@@ -2,8 +2,11 @@
   import { getExperiencesConfigs } from '../utils'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
+  import type { DocumentData, DocumentReference } from 'firebase/firestore'
+  import type { Experiment } from '../types'
+  import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper } from '../stores'
+  import { swiper, api } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
@@ -11,28 +14,42 @@
   const experiences = getExperiencesConfigs()
 
   let questions: Question[][] = []
+  let events: Event[][] = []
 
-  const onFormSubmit = (questionIndex: number): void => {
+  let userDoc: DocumentReference<DocumentData>
+  api.subscribeUserDoc((v) => { userDoc = v })
+  
+  const onFormSubmit = (index: number): void => {
+    console.log(userDoc)
+    const experience = experiences[index]
+    const experimentResult: Experiment = {
+      id: `${experience.displayChunkLength}-${experience.inputChunkLength}`,
+      questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
+      events: events[index]
+    }
+    api.addExperimentRequest(userDoc, experimentResult)
+
     $swiper.slideNext()
-    console.log(questions[questionIndex])
   }
 </script>
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
-  <Page class="d-flex justify-content-center">
+  <Page>
     <section class="mt-5">
       <Experience
         currentIndex={i}
         {value}
         {displayChunkLength}
         {inputChunkLength}
+        bind:events={events[i]}
+        onSuccess={() => { $swiper.slideNext() }}
       />
-    </section>
+  </section>
   </Page>
   <Page>
     <PostExperience 
-      onSubmit={() => onFormSubmit(i)}
       bind:questions={questions[i]} 
+      onSubmit={() => onFormSubmit(i)}
     />
   </Page>
 {/each}

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { ChunkLength } from '../const'
+  import type { ChunkLength } from '../types'
+
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper } from '../stores'
   import AlphanumericDisplay from './AlphanumericDisplay.svelte'
   import AlphanumericInput from './AlphanumericInput/AlphanumericInput.svelte'
   import ExperienceCount from './ExperienceCount.svelte'
@@ -11,13 +11,11 @@
   export let displayChunkLength: ChunkLength
   export let inputChunkLength: ChunkLength
   export let currentIndex: number
+  export let onSuccess: () => void
 
-  let events: Event[]
+  export let events: Event[]
 
-  const onFilled = (): void => {
-    $swiper.slideNext()
-    // TODO: Store events in firestore
-  }
+  const onFilled = (): void => { onSuccess() }
   const onCancel = (): void => {
     // TODO: smthg
   }
