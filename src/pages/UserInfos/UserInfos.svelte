@@ -19,6 +19,7 @@
 
   import { api } from '../../stores/api'
   import { AGES, SEXES } from '../../const'
+  import { swiper } from '../../stores'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
@@ -47,6 +48,7 @@
         experiments: []
       }
       api.addUserRequest(payload)
+      $swiper.slideNext()
     }).catch((err) => {
       errors = err.errors
     })
