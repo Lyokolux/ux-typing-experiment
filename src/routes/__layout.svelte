@@ -11,7 +11,7 @@
 <script lang="ts">
   import '../global.scss'
 
-  import { screen } from '../stores'
+  import { screen } from '../store'
   import { isScreenMobile } from '../utils'
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
