@@ -21,7 +21,7 @@ function createApi() {
   }
 
   /**
-   * @param currentUserDoc provided in the store
+   * @param currentUserDoc provided in the stores
    */
   const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
     // arrayUnion(experiment)

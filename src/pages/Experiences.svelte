@@ -6,7 +6,7 @@
   import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper, api } from '../store'
+  import { swiper, api } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'

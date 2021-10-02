@@ -17,7 +17,7 @@
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
 
-  import { api } from '../../store/api'
+  import { api } from '../../stores/api'
   import { AGES, SEXES } from '../../const'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'

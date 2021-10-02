@@ -2,7 +2,7 @@
   import { _ } from 'svelte-i18n'
   import type { Event } from './utils'
 
-  import { screen } from '../../store'
+  import { screen } from '../../stores'
   import { getChunk } from '../../utils'
   import { getNewEventFromInput } from './utils'
   import { KEY } from '../../const'
