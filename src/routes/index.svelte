@@ -14,8 +14,11 @@
   import Gratitude from '../pages/Gratitude.svelte'
   import LastScreen from '../pages/LastScreen.svelte'
   import Experiences from '../pages/Experiences.svelte'
+  import LoadingScreen from '../components/LoadingScreen.svelte'
 
   import { dev } from '$app/env'
+
+  let isScreenReady = false
 
   onMount(() => {
     const swiperInstance = new Swiper(
@@ -25,11 +28,16 @@
         direction: 'vertical'
       }
     )
+
     swiperInstance.on('slideChange', () => {
       $swiperReactive.activeIndex = swiperInstance.activeIndex
     })
 
     swiper.set(swiperInstance)
+
+    setTimeout(() => {
+      isScreenReady = true
+    }, 200)
   })
 </script>
 
@@ -54,3 +62,5 @@
 <Page>
   <LastScreen />
 </Page>
+
+<LoadingScreen visible={!isScreenReady} />
