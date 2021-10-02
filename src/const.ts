@@ -18,3 +18,4 @@ export const CHUNK_SIZES = [2, 3, 4, 6, 9] as const
 
 export const EXPERIENCES_AMOUNT = 16
 export const DESKTOP_SCREEN_MIN_WIDTH = 992
+export const FIRST_EXPERIENCES_PAGE_INDEX = 4

@@ -30,5 +30,19 @@ const createScreenStore = () => {
   }
 }
 
+interface SwiperReactive {
+  activeIndex: number
+}
+const createSwiperReactive = () => {
+  const { subscribe, update, set } = writable<SwiperReactive>({} as SwiperReactive)
+
+  return {
+    subscribe,
+    update,
+    set
+  }
+}
+
 export const swiper = createSwiperStore()
+export const swiperReactive = createSwiperReactive()
 export const screen = createScreenStore()

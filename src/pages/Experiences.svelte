@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { getExperiencesConfigs } from '../utils'
+  import { getExperiencesConfigs, isNumberInt } from '../utils'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
   import type { DocumentData, DocumentReference } from 'firebase/firestore'
   import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper, api } from '../stores'
+  import { swiper, swiperReactive, api } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
+  import { FIRST_EXPERIENCES_PAGE_INDEX } from '../const'
 
   const experiences = getExperiencesConfigs()
 
@@ -31,10 +32,27 @@
 
     $swiper.slideNext()
   }
+
+  const focusCurrentAlphanumericInput = (pageIndex: number): void => {
+    const experiencePageIndex = (pageIndex - FIRST_EXPERIENCES_PAGE_INDEX) / 2
+
+    if (isNumberInt(experiencePageIndex)) {
+      const pageRef = document.getElementById(`experienceInput${experiencePageIndex}`)
+
+      if (pageRef) {
+        // 🐛 without the setTimeout, swiper jump to next slide on focus
+        setTimeout(() => {
+          pageRef.querySelector<HTMLInputElement>('input.chunk')?.focus()
+        }, 500)
+      }
+    }
+  }
+
+  $: focusCurrentAlphanumericInput($swiperReactive.activeIndex)
 </script>
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
-  <Page>
+  <Page id={`experienceInput${i}`} class="d-flex justify-content-center">
     <section class="mt-5">
       <Experience
         currentIndex={i}
