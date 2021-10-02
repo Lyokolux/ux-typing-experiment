@@ -27,7 +27,7 @@
 
 <h4>{$_('user_infos.sexe.you_are')}:</h4>
 {#each SEXE_QUESTION as { value, label }}
-  <label class="sexe d-flex align-items-center fs-5">
+  <label class="d-flex fw-500 align-items-center fs-5">
     <input
       type="radio"
       class="form-check-input"
@@ -36,17 +36,6 @@
       required
       bind:group={sexe}
     >
-    <span class="pl-2">{label}</span>
+    <span class="px-2">{label}</span>
   </label>
 {/each}
-
-<style>
-.sexe {
-  display: flex;
-  font-weight: 500;
-}
-
-.sexe .form-check-input {
-  margin-right: 0.5rem !important
-}
-</style>

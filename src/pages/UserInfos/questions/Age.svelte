@@ -43,7 +43,7 @@ const AGE_QUESTION: { value: Age, label: string }[] = [
 ]
 </script>
 
-<div class="d-flex age">
+<div class="d-flex fw-500">
     <label class="col-sm-2 col-form-label fs-5">{$_('user_infos.age.what_is_your_age')}:</label>
     <Select 
       bind:value={age}
@@ -51,9 +51,3 @@ const AGE_QUESTION: { value: Age, label: string }[] = [
       icon={undefined}
     />
 </div>
-
-<style>
-.age {
-  font-weight: 500;
-}
-</style>

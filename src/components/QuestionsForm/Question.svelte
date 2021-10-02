@@ -12,7 +12,7 @@
 </script>
 
 
-<li class="fs-5 question">
+<li class="question fs-5 fw-500">
   <span class="text-end">{labels[0]}</span>
   <div>
     {#each grades as grade}
@@ -34,6 +34,5 @@
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 16px;
-    font-weight: 500;
   }
 </style>
