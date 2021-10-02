@@ -60,10 +60,12 @@
   </section>
   </Page>
   <Page>
-    <PostExperience 
-      bind:questions={questions[i]} 
-      onSubmit={() => onFormSubmit(i)}
-    />
+    <section class="mt-5">
+      <PostExperience 
+        onSubmit={() => onFormSubmit(i)}
+        bind:questions={questions[i]} 
+      />
+    </section>
   </Page>
 {/each}
 
