@@ -59,7 +59,7 @@
     <SexeQuestion bind:sexe={userInfos.sexe} />
   </fieldset>
 
-  <fieldset class="d-flex flex-column mt-3">
+  <fieldset class="d-flex flex-column my-3">
     <AgeQuestion bind:age={userInfos.age} />
   </fieldset>
 

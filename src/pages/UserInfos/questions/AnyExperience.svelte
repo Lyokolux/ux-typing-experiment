@@ -17,7 +17,7 @@
   $: grade = questions[0].grade
 </script>
 
-<h4>{$_('user_infos.any_experience.any_experience')}:</h4>
+<h4>{$_('user_infos.any_experience.any_experience')}</h4>
 
 <QuestionsForm 
   bind:questions
