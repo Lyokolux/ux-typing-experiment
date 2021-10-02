@@ -33,7 +33,7 @@
   })
 
   const onSubmit = (): void => {
-    schema.validate(userInfos).then(async () => {
+    schema.validate(userInfos).then(() => {
       const payload: User = {
         age: userInfos.age,
         sexe: userInfos.sexe,
