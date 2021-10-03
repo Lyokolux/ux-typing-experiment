@@ -35,6 +35,7 @@ p {
 .font-digit-readable {
   font-family: 'Inconsolata', monospace;
   font-size: 1.4em;
+  margin-left: 0.25rem !important; // same as alphanumeric-input
 }
 
 .fw-500 {
