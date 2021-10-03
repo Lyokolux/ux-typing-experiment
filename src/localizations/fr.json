@@ -42,7 +42,8 @@
   },
   "familirization_page": {
     "here_an_example": "Voici un exemple d'écran qui vous sera présenté.",
-    "instructions": "Consigne : Merci de recopier, le plus rapidement possible et sans erreur, la suite alphanumérique dans le(s) champ(s) vide(s) ci-dessous."
+    "instructions": "Consigne : Merci de recopier, le plus rapidement possible et sans erreur, la suite alphanumérique dans le(s) champ(s) vide(s) ci-dessous.",
+    "begin": "Commencer"
   },
   "questions": {
     "pleasant": "Agréable",
