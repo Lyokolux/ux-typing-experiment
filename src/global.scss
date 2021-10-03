@@ -14,14 +14,16 @@ html, body {
 
 ul {
   margin: 0;
+  padding-left: 0;
+
+}
+
+p {
+  font-weight: 500;
 }
 
 .bg-background {
   background-color: $bg-color;
-}
-
-ul {
-  padding-left: 0; // reset padding
 }
 
 .locale-select {
@@ -31,6 +33,7 @@ ul {
 
 .font-digit-readable {
   font-family: 'Inconsolata', monospace;
+  font-size: 1.4em;
 }
 
 .fw-500 {
