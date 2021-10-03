@@ -14,10 +14,10 @@ const createApi = () => {
   const { db } = initFirestore()
   const dbCollection = collection(db, USER_COLLECTION_NAME)
 
-  const currentUserDoc = writable<DocumentReference>()
+  const { set, subscribe } = writable<DocumentReference>()
 
   const addUserRequest = async (user: User) => {
-    currentUserDoc.set(await addDoc(dbCollection, user))
+    set(await addDoc(dbCollection, user))
   }
 
   /**
@@ -30,7 +30,8 @@ const createApi = () => {
   )
 
   return {
-    subscribeUserDoc: currentUserDoc.subscribe,
+    set,
+    subscribe,
     addUserRequest,
     addExperimentRequest
   }
