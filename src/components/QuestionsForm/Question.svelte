@@ -33,6 +33,6 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 </style>
