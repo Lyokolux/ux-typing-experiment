@@ -4,4 +4,19 @@
   let className = ''
   export { className as class }
 </script>
-<div class={`page swiper-slide h-100 w-100 container ${className}`} {id}><slot></slot></div>
+
+<div class={`page swiper-slide h-100 w-100 container ${className}`} {id}>
+  <section><slot></slot></section>
+</div>
+
+<style class="">
+  section {
+      margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    section {
+      margin-top: 20vh!important;
+    }
+  }
+</style>
