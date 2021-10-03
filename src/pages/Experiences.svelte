@@ -48,7 +48,6 @@
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
   <Page id={`experienceInput${i}`} class="d-flex justify-content-center">
-    <section class="mt-5">
       <Experience
         currentIndex={i}
         {value}
@@ -57,22 +56,11 @@
         bind:events={events[i]}
         onSuccess={() => { $swiper.slideNext() }}
       />
-  </section>
   </Page>
   <Page>
-    <section class="mt-5">
       <PostExperience 
         onSubmit={() => onFormSubmit(i)}
         bind:questions={questions[i]} 
       />
-    </section>
   </Page>
 {/each}
-
-<style>
-  @media screen and (min-width: 768px) {
-    section {
-      margin-top: 20vh!important;
-    }
-  }
-</style>
