@@ -43,9 +43,7 @@
 <Page>
   <Home />
 </Page >
-<Page>
-  <UserInfos />
-</Page>
+<UserInfos />
 <Page>
   <FamiliarizationPage />
 </Page>

@@ -19,11 +19,13 @@
 
   import { AGES, SEXES } from '../../const'
   import { swiper, user } from '../../stores'
+  import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
+  import NextButton from '../../components/NextButton.svelte'
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
@@ -54,24 +56,32 @@
   }
 </script>
 
-<form on:submit|preventDefault={onSubmit}>
-  <fieldset class="d-flex flex-column">
-    <SexeQuestion bind:sexe={userInfos.sexe} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column">
+      <SexeQuestion bind:sexe={userInfos.sexe} />
+    </fieldset>
+    <NextButton></NextButton>
+  </Page>
 
-  <fieldset class="d-flex flex-column my-3">
-    <AgeQuestion bind:age={userInfos.age} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column my-3">
+      <AgeQuestion bind:age={userInfos.age} />
+    </fieldset>
+    <NextButton></NextButton>
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <AnyExperience bind:grade={userInfos.anyExperience} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column mt-3">
+      <AnyExperience bind:grade={userInfos.anyExperience} />
+    </fieldset>
+    <NextButton class="justify-content-center"></NextButton>
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <ExperienceGrade bind:questions={userInfos.experienceGrades} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column mt-3">
+      <ExperienceGrade bind:questions={userInfos.experienceGrades} />
+    </fieldset>
+    <NextButton class="justify-content-center"></NextButton>
+  </Page>
 
   <FormErrors {errors} />
-
-  <button class="btn btn-primary mt-3">{$_('continue')}</button>
-</form>
