@@ -10,7 +10,7 @@ import {
 import { USER_COLLECTION_NAME } from '../const'
 import type { User, Experiment } from '../types'
 
-function createApi() {
+const createApi = () => {
   const { db } = initFirestore()
   const dbCollection = collection(db, USER_COLLECTION_NAME)
 
@@ -21,10 +21,9 @@ function createApi() {
   }
 
   /**
-   * @param currentUserDoc provided in the stores
+   * @param userDoc provided in the stores
    */
   const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
-    // arrayUnion(experiment)
     updateDoc(userDoc, {
       experiments: arrayUnion(experiment)
     })
