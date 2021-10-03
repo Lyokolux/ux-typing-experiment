@@ -2,11 +2,10 @@
   import { getExperiencesConfigs, isNumberInt } from '../utils'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-  import type { DocumentData, DocumentReference } from 'firebase/firestore'
   import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper, swiperReactive, api } from '../stores'
+  import { swiper, swiperReactive, user } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
@@ -17,18 +16,14 @@
   let questions: Question[][] = []
   let events: Event[][] = []
 
-  let userDoc: DocumentReference<DocumentData>
-  api.subscribeUserDoc((v) => { userDoc = v })
-  
   const onFormSubmit = (index: number): void => {
-    console.log(userDoc)
     const experience = experiences[index]
     const experimentResult: Experiment = {
       id: `${experience.displayChunkLength}-${experience.inputChunkLength}`,
       questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
     }
-    api.addExperimentRequest(userDoc, experimentResult)
+    user.addExperience(experimentResult)
 
     $swiper.slideNext()
   }

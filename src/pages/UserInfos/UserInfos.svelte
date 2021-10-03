@@ -17,9 +17,8 @@
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
 
-  import { api } from '../../stores/api'
   import { AGES, SEXES } from '../../const'
-  import { swiper } from '../../stores'
+  import { swiper, user } from '../../stores'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import FormErrors from './FormErrors.svelte'
@@ -47,7 +46,7 @@
         })),
         experiments: []
       }
-      api.addUserRequest(payload)
+      user.store(payload)
       $swiper.slideNext()
     }).catch((err) => {
       errors = err.errors
