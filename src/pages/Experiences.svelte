@@ -70,7 +70,7 @@
 {/each}
 
 <style>
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     section {
       margin-top: 20vh!important;
     }
