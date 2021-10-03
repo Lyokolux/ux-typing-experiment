@@ -12,7 +12,7 @@
 </script>
 
 
-<li class="question fs-5 fw-500">
+<li class="question fs-5 fw-500 mb-2">
   <span class="text-end">{labels[0]}</span>
   <div>
     {#each grades as grade}
