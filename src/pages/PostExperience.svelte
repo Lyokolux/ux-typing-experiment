@@ -37,5 +37,5 @@
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  <NextButton>{$_('continue')}</NextButton>
+  <NextButton class="justify-content-center">{$_('continue')}</NextButton>
 </form>
