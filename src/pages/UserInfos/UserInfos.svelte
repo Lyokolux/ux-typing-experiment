@@ -18,7 +18,7 @@
   import { _ } from 'svelte-i18n'
 
   import { AGES, SEXES } from '../../const'
-  import { swiper, user } from '../../stores'
+  import { api } from '../../stores'
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'

@@ -10,5 +10,5 @@
 
     let className = ''
     export { className as class }
-    export let onClick: () => void  = () => {};
+    export let onClick: () => void = () => {}
 </script>
