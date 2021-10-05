@@ -40,9 +40,7 @@
   })
 </script>
 
-<Page>
-  <Home />
-</Page >
+<Home />
 <UserInfos />
 <Page>
   <FamiliarizationPage />

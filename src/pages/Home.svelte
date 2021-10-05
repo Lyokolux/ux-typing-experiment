@@ -1,17 +1,24 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
+  import Page from '../components/Page.svelte'
 
   import NextButton from '../components/NextButton.svelte'
 
-  const PARAGRAPH_AMOUNT = 6
-  const I18N_KEYS = 'home.paragraph_'
-  const PARAGRAPHS_KEYS = Array(PARAGRAPH_AMOUNT).fill(undefined).map((__, i) => `${I18N_KEYS}${i + 1}`)
+  const PARAGRAPH_AMOUNT = 4
+  const I18N_PARAGRAPH_KEY = 'home.paragraph_'
 </script>
 
-<h1>{$_('title')}</h1>
-{#each PARAGRAPHS_KEYS as paragraphKey}
-  <p>{@html $_(paragraphKey)}</p>
+{#each Array(PARAGRAPH_AMOUNT) as __, i}
+<Page>
+  {#if i === 0}
+  <h1>
+    {$_('title')}
+  </h1>
+  {/if}
+
+  <p>{@html $_(`${I18N_PARAGRAPH_KEY}${i + 1}`)}</p>
+  <NextButton>
+    { $_('continue') }
+  </NextButton>
+</Page>
 {/each}
-<NextButton>
-  { $_('continue') }
-</NextButton>
