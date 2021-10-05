@@ -81,7 +81,7 @@
     <fieldset class="d-flex flex-column mt-3">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    <NextButton class="justify-content-center"></NextButton>
+    <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
   </Page>
 
   <FormErrors {errors} />

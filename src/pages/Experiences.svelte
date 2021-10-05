@@ -23,9 +23,7 @@
       questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
     }
-    user.addExperience(experimentResult)
-
-    $swiper.slideNext()
+    api.addExperimentRequest(experimentResult)
   }
 
   const focusCurrentAlphanumericInput = (pageIndex: number): void => {
