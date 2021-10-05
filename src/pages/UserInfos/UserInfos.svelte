@@ -48,8 +48,7 @@
         })),
         experiments: []
       }
-      user.store(payload)
-      $swiper.slideNext()
+      api.addUserRequest(payload)
     }).catch((err) => {
       errors = err.errors
     })
