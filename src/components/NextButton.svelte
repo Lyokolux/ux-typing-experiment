@@ -8,6 +8,6 @@
     import { _ } from 'svelte-i18n'
     import { swiper } from '../stores'
 
-    let className = ""
+    let className = ''
     export { className as class }
 </script>
