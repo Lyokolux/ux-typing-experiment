@@ -12,8 +12,6 @@
 <style class="">
   section {
     margin-top: 3rem;
-    height: 88vh;
-    overflow-y: scroll;
   }
 
   @media screen and (min-width: 992px), (min-height: 600px) {
