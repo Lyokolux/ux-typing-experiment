@@ -15,7 +15,7 @@
 
   let questions: Question[][] = []
   let events: Event[][] = []
-
+  
   const onFormSubmit = (index: number): void => {
     const experience = experiences[index]
     const experimentResult: Experiment = {
