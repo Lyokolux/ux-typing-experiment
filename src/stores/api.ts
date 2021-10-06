@@ -30,7 +30,6 @@ const createApi = () => {
   }
 
   return {
-    set,
     addUserRequest,
     addExperimentRequest
   }
