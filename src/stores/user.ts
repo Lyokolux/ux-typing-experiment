@@ -1,4 +1,4 @@
-import { writable, get } from 'svelte/store'
+import { writable } from 'svelte/store'
 
 import { api } from './api'
 import type { User, Experiment } from '../types'
@@ -24,7 +24,7 @@ const createUserStore = () => {
           ]
         }
       })
-      api.addExperimentRequest(get(api), experience)
+      api.addExperimentRequest(experience)
     }
   }
 }
