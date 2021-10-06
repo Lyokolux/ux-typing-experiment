@@ -22,7 +22,6 @@
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
-  import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
   import NextButton from '../../components/NextButton.svelte'
@@ -83,4 +82,4 @@
     <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
   </Page>
 
-  <FormErrors {errors} />
+<!-- <FormErrors {errors} /> -->
