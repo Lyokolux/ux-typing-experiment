@@ -27,7 +27,7 @@
   import NextButton from '../../components/NextButton.svelte'
 
   let userInfos: Partial<UserInfos> = {}
-  let errors: string[] = []
+  // let errors: string[] = []
 
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
