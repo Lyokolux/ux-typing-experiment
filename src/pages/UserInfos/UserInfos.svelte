@@ -19,6 +19,7 @@
 
   import { AGES, SEXES } from '../../const'
   import { api } from '../../stores'
+  import { isScreenMobile } from '../../utils';
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -42,6 +43,7 @@
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
+        isMobileDevice: isScreenMobile(),
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade
