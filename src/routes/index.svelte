@@ -32,6 +32,7 @@
       $swiperReactive.activeIndex = swiperInstance.activeIndex
     })
 
+    $swiperReactive.slidesAmount = swiperInstance.slides.length
     swiper.set(swiperInstance)
 
     setTimeout(() => {
