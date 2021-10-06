@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import Highcharts from 'highcharts'
+
 
   import type { ChunkLength, Experiment } from '../../types'
 
@@ -99,4 +101,4 @@
   })
 </script>
 
-<div id="container" class="mt-5" />
+<div id="container" class="rounded" transition:fade />
