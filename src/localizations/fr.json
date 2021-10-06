@@ -25,8 +25,9 @@
       "35-44": "Entre 35 et 44 ans",
       "45-54": "Entre 45 et 54 ans",
       "55-64": "Entre 55 et 64 ans",
-      "+65": "Plus de 65 ans",
+      "65+": "Plus de 65 ans",
       "what_is_your_age": "Quel est votre âge ?",
+      "pick": "Choisir",
       "is_required": "Merci de remplir le champ concernant votre âge."
     },
     "any_experience": {
