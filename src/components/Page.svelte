@@ -5,11 +5,11 @@
   export { className as class }
 </script>
 
-<div class={`page swiper-slide h-100 w-100 container ${className}`} {id}>
+<div class={`page swiper-slide h-100 w-100 container overflow-auto ${className}`} {id}>
   <section class="col"><slot></slot></section>
 </div>
 
-<style class="">
+<style>
   section {
     margin-top: 3rem;
   }
