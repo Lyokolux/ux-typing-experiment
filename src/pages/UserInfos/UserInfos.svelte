@@ -62,7 +62,7 @@
   </Page>
 
   <Page>
-    <fieldset class="d-flex flex-column my-3">
+    <fieldset class="d-flex flex-column align-items-center my-3">
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
     <NextButton></NextButton>

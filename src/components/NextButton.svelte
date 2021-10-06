@@ -1,4 +1,4 @@
-<div class={`d-flex my-5 ${className}`}>
+<div class={`d-flex justify-content-center my-5 ${className}`}>
     <button class="btn btn-primary my-auto" on:click={() => { $swiper.slideNext(); onClick() } }>
         <slot>{$_('continue')}</slot>
     </button>

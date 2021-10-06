@@ -6,7 +6,7 @@
 </script>
 
 <div class={`page swiper-slide h-100 w-100 container ${className}`} {id}>
-  <section><slot></slot></section>
+  <section class="col"><slot></slot></section>
 </div>
 
 <style class="">
