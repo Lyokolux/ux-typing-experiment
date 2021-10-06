@@ -64,8 +64,9 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
   return getShuffledArray(config)
 }
 
-export const isScreenMobile = (): boolean => {
-  return ('ontouchstart' in window) && (window.innerWidth <= DESKTOP_SCREEN_MIN_WIDTH || window.innerHeight <= DESKTOP_SCREEN_MIN_WIDTH)
+export const isScreenMobile = (hasTouchStart: boolean, width: number, height: number): boolean => {
+  return hasTouchStart
+  && (width <= DESKTOP_SCREEN_MIN_WIDTH || height <= DESKTOP_SCREEN_MIN_WIDTH)
 }
 
 export const isNumberInt = (n: number): boolean => {

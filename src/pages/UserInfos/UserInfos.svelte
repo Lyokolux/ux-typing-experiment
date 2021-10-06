@@ -19,7 +19,7 @@
 
   import { AGES, SEXES } from '../../const'
   import { api } from '../../stores'
-  import { isScreenMobile } from '../../utils';
+  import { isScreenMobile } from '../../utils'
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -27,9 +27,17 @@
   import FormErrors from './FormErrors.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
   import NextButton from '../../components/NextButton.svelte'
+import { onMount } from 'svelte'
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
+
+  let windowWidth: number
+  let windowHeight: number
+  let hasOnTouchStartProperty: boolean = false
+  onMount(() => {
+    hasOnTouchStartProperty = ('ontouchstart' in window)
+  })
 
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
@@ -43,7 +51,7 @@
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
-        isMobileDevice: isScreenMobile(),
+        isMobileDevice: isScreenMobile(hasOnTouchStartProperty, windowWidth, windowHeight),
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade
@@ -96,3 +104,5 @@
       <FormErrors {errors} />
     {/if}
   </Page>
+
+  <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} />
