@@ -18,8 +18,7 @@
   import { _ } from 'svelte-i18n'
 
   import { AGES, SEXES } from '../../const'
-  import { api } from '../../stores'
-  import { isScreenMobile } from '../../utils'
+  import { api, screen } from '../../stores'
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -34,10 +33,7 @@ import { onMount } from 'svelte'
 
   let windowWidth: number
   let windowHeight: number
-  let hasOnTouchStartProperty: boolean = false
-  onMount(() => {
-    hasOnTouchStartProperty = ('ontouchstart' in window)
-  })
+
 
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
@@ -51,7 +47,7 @@ import { onMount } from 'svelte'
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
-        isMobileDevice: isScreenMobile(hasOnTouchStartProperty, windowWidth, windowHeight),
+        isMobileDevice: $screen.isMobile,
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade

@@ -10,6 +10,7 @@
 </script>
 <script lang="ts">
   import '../global.scss'
+  import { onMount } from 'svelte';
 
   import { screen } from '../stores'
   import { isScreenMobile } from '../utils'
@@ -22,11 +23,16 @@
     (e || window.event).returnValue = ''
   }
 
+  let hasOnTouchStartProperty: boolean = false
+  onMount(() => {
+    hasOnTouchStartProperty = ('ontouchstart' in window)
+  })
+
   $: {
     screen.set({
       height: $screen.height,
       width: $screen.width,
-      isMobile: isScreenMobile($screen.width, $screen.height)
+      isMobile: isScreenMobile(hasOnTouchStartProperty, $screen.width, $screen.height)
     })
   }
 </script>
