@@ -12,17 +12,17 @@
   const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['not-practical', 'practical'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['tedious', 'effective'],
-      grade: null
+      grade: undefined
     }
   ]
 
@@ -37,5 +37,7 @@
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  <NextButton class="justify-content-center">{$_('continue')}</NextButton>
+  {#if questions.every(({ grade }) => grade !== undefined)}
+    <NextButton class="justify-content-center">{$_('continue')}</NextButton>
+  {/if}
 </form>
