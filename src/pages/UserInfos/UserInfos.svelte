@@ -90,7 +90,7 @@
     <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    {#if userInfos.experienceGrades?.every(({ grade }) => !!grade)}
+    {#if userInfos.experienceGrades?.every(({ grade }) => grade !== undefined)}
       <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
     {/if}
     {#if errors}

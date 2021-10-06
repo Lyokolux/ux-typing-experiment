@@ -7,7 +7,7 @@ export interface Question {
     labels: [string, string]
     // the labels are inverted
     inverted?: boolean
-    grade: number | null
+    grade: number | undefined
   }
 </script>
 <script lang="ts">

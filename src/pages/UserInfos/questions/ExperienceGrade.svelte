@@ -6,32 +6,32 @@
   const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['complicated', 'simple'],
-      grade: null,
+      grade: undefined,
       inverted: false
     },
     {
       ids: ['not-practical', 'practical'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['tedious', 'effective'],
-      grade: null,
+      grade: undefined,
       inverted: false
     },
     {
       ids: ['bad', 'good'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['discouraging', 'motivating'],
-      grade: null,
+      grade: undefined,
       inverted: false
     }
   ]
