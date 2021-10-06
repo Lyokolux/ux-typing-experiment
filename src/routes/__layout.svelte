@@ -10,7 +10,7 @@
 </script>
 <script lang="ts">
   import '../global.scss'
-  import { onMount } from 'svelte';
+  import { onMount } from 'svelte'
 
   import { screen } from '../stores'
   import { isScreenMobile } from '../utils'

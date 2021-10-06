@@ -26,7 +26,6 @@
   import FormErrors from './FormErrors.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
   import NextButton from '../../components/NextButton.svelte'
-import { onMount } from 'svelte'
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
