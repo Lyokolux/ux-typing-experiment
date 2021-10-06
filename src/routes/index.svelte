@@ -13,6 +13,7 @@
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
   import LastScreen from '../pages/LastScreen.svelte'
   import Experiences from '../pages/Experiences.svelte'
+  import Results from '../pages/Results.svelte'
   import LoadingScreen from '../components/LoadingScreen.svelte'
 
   import { dev } from '$app/env'
@@ -52,6 +53,9 @@
 
 <Experiences />
 
+<Page>
+  <Results />
+</Page>
 <Page>
   <LastScreen />
 </Page>
