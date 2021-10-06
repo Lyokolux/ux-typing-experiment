@@ -10,7 +10,7 @@ export let age: Age
 const AGE_QUESTION: { value: Age, label: string }[] = [
   {
     value: undefined,
-    label: $_('user_infos.age.pick')
+    label: $_('user_infos.age.pick_between')
   },
   {
     value: '-15',
