@@ -55,28 +55,28 @@
 </script>
 
   <Page>
-    <fieldset class="d-flex flex-column">
+    <fieldset class="d-flex flex-column align-items-center">
       <SexeQuestion bind:sexe={userInfos.sexe} />
     </fieldset>
     <NextButton></NextButton>
   </Page>
 
   <Page>
-    <fieldset class="d-flex flex-column align-items-center my-3">
+    <fieldset class="d-flex flex-column align-items-center">
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
     <NextButton></NextButton>
   </Page>
 
   <Page>
-    <fieldset class="d-flex flex-column mt-3">
+    <fieldset class="d-flex flex-column align-items-center">
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
     <NextButton class="justify-content-center"></NextButton>
   </Page>
 
   <Page>
-    <fieldset class="d-flex flex-column mt-3">
+    <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
     <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
