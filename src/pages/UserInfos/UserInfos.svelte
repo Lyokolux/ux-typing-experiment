@@ -18,12 +18,14 @@
   import { _ } from 'svelte-i18n'
 
   import { AGES, SEXES } from '../../const'
-  import { swiper, user } from '../../stores'
+  import { api } from '../../stores'
+  import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
-  import FormErrors from './FormErrors.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
+  import FormErrors from './FormErrors.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
+  import NextButton from '../../components/NextButton.svelte'
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
@@ -46,34 +48,49 @@
         })),
         experiments: []
       }
-      user.store(payload)
-      $swiper.slideNext()
+      api.addUserRequest(payload)
     }).catch((err) => {
       errors = err.errors
     })
   }
 </script>
 
-<h2>User infos</h2>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <SexeQuestion bind:sexe={userInfos.sexe} />
+    </fieldset>
+    <NextButton></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
+  </Page>
 
-<form on:submit|preventDefault={onSubmit}>
-  <fieldset class="d-flex flex-column">
-    <SexeQuestion bind:sexe={userInfos.sexe} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <AgeQuestion bind:age={userInfos.age} />
+    </fieldset>
+    <NextButton></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <AgeQuestion bind:age={userInfos.age} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <AnyExperience bind:grade={userInfos.anyExperience} />
+    </fieldset>
+    <NextButton class="justify-content-center"></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <AnyExperience bind:grade={userInfos.anyExperience} />
-  </fieldset>
-
-  <fieldset class="d-flex flex-column mt-3">
-    <ExperienceGrade bind:questions={userInfos.experienceGrades} />
-  </fieldset>
-
-  <FormErrors {errors} />
-
-  <button class="btn btn-primary mt-3">{$_('continue')}</button>
-</form>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <ExperienceGrade bind:questions={userInfos.experienceGrades} />
+    </fieldset>
+    <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
+  </Page>

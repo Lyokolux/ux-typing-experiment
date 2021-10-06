@@ -4,6 +4,7 @@
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
 
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
+  import NextButton from '../components/NextButton.svelte'
 
   export let onSubmit: () => void
   export let questions: Question[]
@@ -36,6 +37,5 @@
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  <!-- TODO: Better text for continue button -->
-  <button class="btn btn-primary mt-3">{$_('continue')}</button>
+  <NextButton class="justify-content-center">{$_('continue')}</NextButton>
 </form>

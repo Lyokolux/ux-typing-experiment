@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store'
+import { get, writable } from 'svelte/store'
 import { initFirestore } from '../firestore'
 import {
   collection,
@@ -14,24 +14,22 @@ const createApi = () => {
   const { db } = initFirestore()
   const dbCollection = collection(db, USER_COLLECTION_NAME)
 
-  const { set, subscribe } = writable<DocumentReference>()
+  const userDoc = writable<DocumentReference>()
 
   const addUserRequest = async (user: User) => {
-    set(await addDoc(dbCollection, user))
+    userDoc.set(await addDoc(dbCollection, user))
   }
 
   /**
    * @param userDoc provided in the stores
    */
-  const addExperimentRequest = async (userDoc: DocumentReference, experiment: Experiment) => (
-    updateDoc(userDoc, {
+  const addExperimentRequest = async (experiment: Experiment) => {
+    updateDoc(get(userDoc), {
       experiments: arrayUnion(experiment)
     })
-  )
+  }
 
   return {
-    set,
-    subscribe,
     addUserRequest,
     addExperimentRequest
   }

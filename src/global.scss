@@ -12,12 +12,28 @@ html, body {
   background-color: $bg-color;
 }
 
+ul {
+  margin: 0;
+  padding-left: 0;
+
+}
+
+p {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+h4, .h4 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
 .bg-background {
   background-color: $bg-color;
 }
 
-ul {
-  padding-left: 0; // reset padding
+.container {
+  max-width: 900px;
 }
 
 .locale-select {
@@ -27,6 +43,8 @@ ul {
 
 .font-digit-readable {
   font-family: 'Inconsolata', monospace;
+  font-size: 1.4em;
+  margin-left: 0.25rem !important; // same as alphanumeric-input
 }
 
 .fw-500 {
@@ -49,10 +67,17 @@ ul {
 }
 
 .form-check-input {
-  width: 1.3em;
-  height: 1.3em;
+  width: 1.2em;
+  height: 1.2em;
   border: 3px solid var(--bs-primary);
   background-color: transparent;
   padding: initial;
   margin: 0.25rem !important;
+}
+
+@media screen and (min-width: 997px) {
+  .form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+  } 
 }

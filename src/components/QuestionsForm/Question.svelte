@@ -12,7 +12,7 @@
 </script>
 
 
-<li class="question fs-5 fw-500">
+<li class="question fw-500 mb-2">
   <span class="text-end">{labels[0]}</span>
   <div>
     {#each grades as grade}
@@ -33,6 +33,24 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 576px) {
+    .h4 {
+      font-size: 1.2rem;
+    }
+    .question {
+      font-size: 1.1rem;
+    }
+
+    .question span {
+      font-size: 1rem;
+    }
+  }
+
+  .question span {
+    word-break: break-word;
   }
 </style>

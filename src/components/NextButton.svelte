@@ -1,9 +1,14 @@
-<div class="row justify-center">
-    <button class="btn btn-primary my-auto" on:click={() => $swiper.slideNext() }>
-        <slot></slot>
+<div class={`d-flex justify-content-center my-5 ${className}`}>
+    <button class="btn btn-primary my-auto" on:click={() => { $swiper.slideNext(); onClick() } }>
+        <slot>{$_('continue')}</slot>
     </button>
 </div>
 
-<script>
+<script lang="ts">
+    import { _ } from 'svelte-i18n'
     import { swiper } from '../stores'
+
+    let className = ''
+    export { className as class }
+    export let onClick: () => void = () => {}
 </script>

@@ -25,7 +25,8 @@
   ]
 </script>
 
-<h4>{$_('user_infos.sexe.you_are')}:</h4>
+<h4>{$_('user_infos.sexe.you_are')}</h4>
+<div>
 {#each SEXE_QUESTION as { value, label }}
   <label class="d-flex fw-500 align-items-center fs-5">
     <input
@@ -39,3 +40,4 @@
     <span class="px-2">{label}</span>
   </label>
 {/each}
+</div>

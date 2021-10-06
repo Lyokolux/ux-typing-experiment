@@ -9,6 +9,6 @@
     <p>{$_('experience_beginning.start_if_you_are_ready')}</p>
 
     <NextButton>
-        {$_('continue')}
+        {$_('familirization_page.begin')}
     </NextButton>
 </section>

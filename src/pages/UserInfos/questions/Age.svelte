@@ -43,11 +43,11 @@ const AGE_QUESTION: { value: Age, label: string }[] = [
 ]
 </script>
 
-<div class="d-flex fw-500">
-    <label class="col-sm-2 col-form-label fs-5">{$_('user_infos.age.what_is_your_age')}:</label>
-    <Select 
-      bind:value={age}
-      values={AGE_QUESTION}
-      icon={undefined}
-    />
+<label for="" class="h4">{$_('user_infos.age.what_is_your_age')}</label>
+<div class="">
+  <Select 
+    bind:value={age}
+    values={AGE_QUESTION}
+    icon={undefined}
+  />
 </div>

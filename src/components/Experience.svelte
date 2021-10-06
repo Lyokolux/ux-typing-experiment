@@ -25,7 +25,7 @@
 <AlphanumericDisplay
   {value}
   chunkLength={displayChunkLength}
-  class="fs-2 fw-bold mt-4 text-center"
+  class="fs-2 fw-bold mt-4"
 />
 <AlphanumericInput 
   {value}

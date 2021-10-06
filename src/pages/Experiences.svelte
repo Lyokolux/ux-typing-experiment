@@ -5,7 +5,7 @@
   import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper, swiperReactive, user } from '../stores'
+  import { swiper, swiperReactive, api } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
@@ -15,7 +15,7 @@
 
   let questions: Question[][] = []
   let events: Event[][] = []
-
+  
   const onFormSubmit = (index: number): void => {
     const experience = experiences[index]
     const experimentResult: Experiment = {
@@ -23,9 +23,7 @@
       questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
     }
-    user.addExperience(experimentResult)
-
-    $swiper.slideNext()
+    api.addExperimentRequest(experimentResult)
   }
 
   const focusCurrentAlphanumericInput = (pageIndex: number): void => {
@@ -48,7 +46,6 @@
 
 {#each experiences as { value, displayChunkLength, inputChunkLength}, i}
   <Page id={`experienceInput${i}`} class="d-flex justify-content-center">
-    <section class="mt-5">
       <Experience
         currentIndex={i}
         {value}
@@ -57,20 +54,11 @@
         bind:events={events[i]}
         onSuccess={() => { $swiper.slideNext() }}
       />
-  </section>
   </Page>
   <Page>
-    <PostExperience 
-      bind:questions={questions[i]} 
-      onSubmit={() => onFormSubmit(i)}
-    />
+      <PostExperience 
+        onSubmit={() => onFormSubmit(i)}
+        bind:questions={questions[i]} 
+      />
   </Page>
 {/each}
-
-<style>
-  @media screen and (min-width: 992px) {
-    section {
-      margin-top: 20vh!important;
-    }
-  }
-</style>

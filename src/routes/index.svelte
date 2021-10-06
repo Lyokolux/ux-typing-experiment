@@ -11,7 +11,6 @@
   import UserInfos from '../pages/UserInfos/UserInfos.svelte'
   import FamiliarizationPage from '../pages/FamiliarizationPage.svelte'
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
-  import Gratitude from '../pages/Gratitude.svelte'
   import LastScreen from '../pages/LastScreen.svelte'
   import Experiences from '../pages/Experiences.svelte'
   import LoadingScreen from '../components/LoadingScreen.svelte'
@@ -41,12 +40,8 @@
   })
 </script>
 
-<Page>
-  <Home />
-</Page >
-<Page>
-  <UserInfos />
-</Page>
+<Home />
+<UserInfos />
 <Page>
   <FamiliarizationPage />
 </Page>
@@ -56,9 +51,6 @@
 
 <Experiences />
 
-<Page>
-  <Gratitude />
-</Page>
 <Page>
   <LastScreen />
 </Page>
