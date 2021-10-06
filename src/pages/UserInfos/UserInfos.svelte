@@ -33,7 +33,6 @@
   let windowWidth: number
   let windowHeight: number
 
-
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
     age: yup.mixed().oneOf([...AGES]).required($_('user_infos.age.is_required')),
@@ -64,9 +63,8 @@
     <fieldset class="d-flex flex-column align-items-center">
       <SexeQuestion bind:sexe={userInfos.sexe} />
     </fieldset>
-    <NextButton></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if userInfos.sexe}
+    <NextButton />
     {/if}
   </Page>
 
@@ -74,9 +72,8 @@
     <fieldset class="d-flex flex-column align-items-center">
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
-    <NextButton></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if userInfos.age}
+      <NextButton></NextButton>
     {/if}
   </Page>
 
@@ -84,9 +81,8 @@
     <fieldset class="d-flex flex-column align-items-center">
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
-    <NextButton class="justify-content-center"></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if userInfos.anyExperience}
+      <NextButton class="justify-content-center"></NextButton>
     {/if}
   </Page>
 
@@ -94,7 +90,9 @@
     <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+    {#if userInfos.experienceGrades?.every(({ grade }) => !!grade)}
+      <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+    {/if}
     {#if errors}
       <FormErrors {errors} />
     {/if}
