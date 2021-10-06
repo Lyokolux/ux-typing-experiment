@@ -23,11 +23,12 @@
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
+  import FormErrors from './FormErrors.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
   import NextButton from '../../components/NextButton.svelte'
 
   let userInfos: Partial<UserInfos> = {}
-  // let errors: string[] = []
+  let errors: string[] = []
 
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
@@ -59,6 +60,9 @@
       <SexeQuestion bind:sexe={userInfos.sexe} />
     </fieldset>
     <NextButton></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
   </Page>
 
   <Page>
@@ -66,6 +70,9 @@
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
     <NextButton></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
   </Page>
 
   <Page>
@@ -73,6 +80,9 @@
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
     <NextButton class="justify-content-center"></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
   </Page>
 
   <Page>
@@ -80,6 +90,7 @@
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
     <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
   </Page>
-
-<!-- <FormErrors {errors} /> -->
