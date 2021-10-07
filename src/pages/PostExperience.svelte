@@ -2,7 +2,8 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-
+  
+  import { isDefined } from '../components/AlphanumericInput/utils';
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
   import NextButton from '../components/NextButton.svelte'
 
@@ -12,17 +13,17 @@
   const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
-      grade: undefined,
+      grade: null,
       inverted: true
     },
     {
       ids: ['not-practical', 'practical'],
-      grade: undefined,
+      grade: null,
       inverted: true
     },
     {
       ids: ['tedious', 'effective'],
-      grade: undefined
+      grade: null
     }
   ]
 
@@ -33,7 +34,7 @@
     }
   })
 
-  $: arePostExperienceQuestionsFilled = questions.every(({ grade }) => grade !== undefined)
+  $: areQuestionsFilled = questions.every(({ grade }) => isDefined(grade))
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
