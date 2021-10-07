@@ -19,6 +19,7 @@
 
   import { AGES, SEXES } from '../../const'
   import { user, screen } from '../../stores'
+  import { isDefined } from '../../components/AlphanumericInput/utils';
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -87,7 +88,7 @@
     <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    {#if userInfos.experienceGrades?.every(({ grade }) => grade !== undefined)}
+    {#if userInfos.experienceGrades?.every(({ grade }) => isDefined(grade))}
       <NextButton class="justify-content-center" onClick={onSubmit} />
     {/if}
     {#if errors}
