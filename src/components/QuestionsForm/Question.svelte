@@ -14,7 +14,7 @@
 
 <li class="question fw-500 mb-2">
   <span class="text-end">{labels[0]}</span>
-  <div>
+  <div class="d-flex">
     {#each grades as grade}
       <input
         name={`${question.labels[0]}-${question.labels[1]}`}
@@ -28,13 +28,18 @@
   <span class="text-left">{labels[1]}</span>
 </li>
 
-<style>
+<style lang="scss">
   .question {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 12px;
     font-size: 1.25rem;
+  }
+
+  .question  span {
+    min-width: 7em;
+    white-space: nowrap;
   }
 
   @media (max-width: 576px) {
@@ -48,9 +53,5 @@
     .question span {
       font-size: 1rem;
     }
-  }
-
-  .question span {
-    word-break: break-word;
   }
 </style>

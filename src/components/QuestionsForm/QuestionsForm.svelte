@@ -16,8 +16,14 @@ export interface Question {
   export let questions: Question[]
 </script>
 
-<ul>
+<ul class="d-flex flex-column overflow-auto">
   {#each questions as question}
     <QuestionComponent bind:question />
   {/each}
 </ul>
+
+<style>
+  ul {
+    max-width: 100%;
+  }
+</style>
