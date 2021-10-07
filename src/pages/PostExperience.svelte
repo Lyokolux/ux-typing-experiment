@@ -32,12 +32,14 @@
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
     }
   })
+
+  $: arePostExperienceQuestionsFilled = questions.every(({ grade }) => grade !== undefined)
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  {#if questions.every(({ grade }) => grade !== undefined)}
+  {#if arePostExperienceQuestionsFilled}
     <NextButton class="justify-content-center">{$_('continue')}</NextButton>
   {/if}
 </form>
