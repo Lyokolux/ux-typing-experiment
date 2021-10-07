@@ -30,9 +30,6 @@
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
 
-  let windowWidth: number
-  let windowHeight: number
-
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
     age: yup.mixed().oneOf([...AGES]).required($_('user_infos.age.is_required')),
@@ -97,5 +94,3 @@
       <FormErrors {errors} />
     {/if}
   </Page>
-
-  <svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} />
