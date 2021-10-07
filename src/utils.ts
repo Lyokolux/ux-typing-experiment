@@ -10,6 +10,8 @@ export const reverseArray = <T>(arr: T[]): T[] => {
   return [].concat(arr).reverse()
 }
 
+export const isDefined = (val: any): boolean => val !== undefined && val !== null
+
 // from https://1loc.dev/ → Generate a random string with given length
 export const getGeneratedRandomString = (length = 18): string => Array(length).fill('').map(() => {
   return Math.random().toString(36).charAt(2)

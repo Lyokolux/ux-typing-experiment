@@ -19,7 +19,7 @@
 
   import { AGES, SEXES } from '../../const'
   import { user, screen } from '../../stores'
-  import { isDefined } from '../../components/AlphanumericInput/utils';
+  import { isDefined } from '../../utils';
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
