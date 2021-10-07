@@ -40,7 +40,7 @@
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  {#if arePostExperienceQuestionsFilled}
+  {#if areQuestionsFilled}
     <NextButton class="justify-content-center">{$_('continue')}</NextButton>
   {/if}
 </form>
