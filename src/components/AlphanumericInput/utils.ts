@@ -68,3 +68,5 @@ export const getNewEventFromInput = (
     position: getEventPosition(type, previousValue, newInputValue)
   }
 }
+
+export const isDefined = (val: any): boolean => val !== undefined && val !== null
