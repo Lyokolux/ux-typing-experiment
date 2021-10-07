@@ -79,7 +79,7 @@
     <fieldset class="d-flex flex-column align-items-center">
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
-    {#if userInfos.anyExperience}
+    {#if isDefined(userInfos.anyExperience) }
       <NextButton class="justify-content-center" />
     {/if}
   </Page>
