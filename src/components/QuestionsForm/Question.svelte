@@ -4,7 +4,7 @@
 
   export let question: Question
 
-  const HIGHER_GRADE = 6
+  const HIGHER_GRADE = 7
   const GRADES_RANGE = Array.from(Array(HIGHER_GRADE).keys()) // generate [0,1,2, ..., HIGHER_GRADE-1]
 
   $: labels = question.inverted ? [question.labels[1], question.labels[0]] : question.labels
