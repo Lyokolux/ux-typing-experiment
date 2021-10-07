@@ -62,7 +62,7 @@
       <SexeQuestion bind:sexe={userInfos.sexe} />
     </fieldset>
     {#if userInfos.sexe}
-    <NextButton />
+      <NextButton />
     {/if}
   </Page>
 
