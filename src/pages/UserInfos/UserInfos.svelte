@@ -18,7 +18,7 @@
   import { _ } from 'svelte-i18n'
 
   import { AGES, SEXES } from '../../const'
-  import { api, screen } from '../../stores'
+  import { user, screen } from '../../stores'
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -52,7 +52,7 @@
         })),
         experiments: []
       }
-      api.addUserRequest(payload)
+      user.store(payload)
     }).catch((err) => {
       errors = err.errors
     })
