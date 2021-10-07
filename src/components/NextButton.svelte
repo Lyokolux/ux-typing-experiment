@@ -13,9 +13,3 @@
         <slot>{$_('continue')}</slot>
     </button>
 </div>
-
-<style>
-    .next-btn {
-        transition:  1s ease-in;
-    }
-</style>
