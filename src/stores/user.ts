@@ -7,7 +7,7 @@ const DEFAULT_USER: User = {
   sexe: undefined,
   age: undefined,
   anyExperience: undefined,
-  isMobileDevice: false,
+  device: false,
   experienceGrades: [],
   experiments: []
 }

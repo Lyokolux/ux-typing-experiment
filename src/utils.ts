@@ -1,5 +1,6 @@
 import { ALPHANUMERIC_LENGTH, CHUNK_SIZES, DESKTOP_SCREEN_MIN_WIDTH } from './const'
 import type { ChunkLength, ExperienceConfig, Experiment } from './types'
+import type { User } from './types'
 
 export const getChunk = (str: string, size: number): string[] => {
   return str.match(new RegExp('.{1,' + size + '}', 'g'))
@@ -64,9 +65,9 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
   return getShuffledArray(config)
 }
 
-export const isScreenMobile = (hasTouchStart: boolean, width: number, height: number): boolean => {
+export const getUserDevice = (hasTouchStart: boolean, width: number, height: number): User['device'] => {
   return hasTouchStart
-  && (width <= DESKTOP_SCREEN_MIN_WIDTH || height <= DESKTOP_SCREEN_MIN_WIDTH)
+  && (width <= DESKTOP_SCREEN_MIN_WIDTH || height <= DESKTOP_SCREEN_MIN_WIDTH) ? 'mobile' : 'desktop'
 }
 
 export const isNumberInt = (n: number): boolean => {

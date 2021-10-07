@@ -42,7 +42,7 @@
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
-        isMobileDevice: $screen.isMobile,
+        device: $screen.isMobile,
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade

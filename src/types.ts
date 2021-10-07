@@ -36,7 +36,7 @@ export interface User {
     sexe: Sexe
     age: Age
     anyExperience: number
-    isMobileDevice: boolean
+    device: 'mobile' | 'desktop'
     experienceGrades: Pick<Question, 'ids' | 'grade'>[]
     experiments?: Experiment[]
 }

@@ -13,7 +13,7 @@
   import { onMount } from 'svelte'
 
   import { screen } from '../stores'
-  import { isScreenMobile } from '../utils'
+  import { getUserDevice } from '../utils'
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
   import Blob from '../components/Blob/Blob.svelte'
@@ -32,7 +32,7 @@
     screen.set({
       height: $screen.height,
       width: $screen.width,
-      isMobile: isScreenMobile(hasOnTouchStartProperty, $screen.width, $screen.height)
+      device: isScreenMobile(hasOnTouchStartProperty, $screen.width, $screen.height)
     })
   }
 </script>
