@@ -74,8 +74,8 @@
   },
   "last_screen": {
     "thanks": "Merci pour votre participation !",
-    "contact": "Pour toute question sur cette étude, merci de contacter Guillaume Gronier, chercheur en UX Design (guillaume.gronier@gmail.com)."
-    
+    "contact": "Pour toute question sur cette étude, merci de contacter Guillaume Gronier, chercheur en UX Design (<a href='mailto:abc@example.com'>guillaume.gronier@gmail.com</a>).",
+    "produced_by": "Cette étude et cette interface web ont été réalisées avec ❤️ par:"
   },
   "continue": "Continuer",
   "events_limit_reached": "Vous avez atteint la limite de saisie autorisée!"
