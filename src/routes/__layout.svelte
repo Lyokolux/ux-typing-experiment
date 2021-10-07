@@ -32,7 +32,7 @@
     screen.set({
       height: $screen.height,
       width: $screen.width,
-      device: isScreenMobile(hasOnTouchStartProperty, $screen.width, $screen.height)
+      device: getUserDevice(hasOnTouchStartProperty, $screen.width, $screen.height)
     })
   }
 </script>

@@ -15,14 +15,14 @@ const createSwiperStore = () => {
 interface Screen {
   width: number
   height: number
-  device: User['device']
+  device?: User['device']
 }
 
 const createScreenStore = () => {
   const { subscribe, update, set } = writable<Screen>({
     width: 0,
     height: 0,
-    device: 'desktop'
+    device: undefined
   })
 
   return {
