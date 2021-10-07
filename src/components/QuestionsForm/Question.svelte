@@ -35,11 +35,11 @@
     align-items: center;
     gap: 12px;
     font-size: 1.25rem;
+  }
 
-    span {
-      min-width: 7em;
-      white-space: nowrap;
-    }
+  .question  span {
+    min-width: 7em;
+    white-space: nowrap;
   }
 
   @media (max-width: 576px) {
@@ -48,10 +48,10 @@
     }
     .question {
       font-size: 1.1rem;
+    }
 
-      span {
-        font-size: 1rem;
-      }
+    .question span {
+      font-size: 1rem;
     }
   }
 </style>
