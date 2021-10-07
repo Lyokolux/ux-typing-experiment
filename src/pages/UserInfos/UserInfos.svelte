@@ -73,7 +73,7 @@
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
     {#if userInfos.age}
-      <NextButton></NextButton>
+      <NextButton />
     {/if}
   </Page>
 
@@ -82,7 +82,7 @@
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
     {#if userInfos.anyExperience}
-      <NextButton class="justify-content-center"></NextButton>
+      <NextButton class="justify-content-center" />
     {/if}
   </Page>
 
@@ -91,7 +91,7 @@
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
     {#if userInfos.experienceGrades?.every(({ grade }) => grade !== undefined)}
-      <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+      <NextButton class="justify-content-center" onClick={onSubmit} />
     {/if}
     {#if errors}
       <FormErrors {errors} />
