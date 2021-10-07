@@ -23,6 +23,8 @@
     (e || window.event).returnValue = ''
   }
 
+  let windowHeight: number
+  let windowWidth: number
   let hasOnTouchStartProperty: boolean = false
   onMount(() => {
     hasOnTouchStartProperty = ('ontouchstart' in window)
@@ -30,8 +32,8 @@
 
   $: {
     screen.set({
-      height: $screen.height,
-      width: $screen.width,
+      height: windowHeight,
+      width: windowWidth,
       device: getUserDevice(hasOnTouchStartProperty, $screen.width, $screen.height)
     })
   }
@@ -39,6 +41,8 @@
 
 <svelte:window 
   on:beforeunload={onPageAppLeave}
+  bind:innerHeight={windowHeight}
+  bind:innerWidth={windowWidth}
 />
 
 <div
