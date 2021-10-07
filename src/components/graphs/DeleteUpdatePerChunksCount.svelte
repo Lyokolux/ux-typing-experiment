@@ -11,6 +11,8 @@
 
   export let experiments: Experiment[]
 
+  const CHART_ID = 'deleteUpdatePerChunksCountChart'
+
   const getChartCategories = (): ChunkLength[] => {
     return [...CHUNK_SIZES, ALPHANUMERIC_LENGTH]
   }
@@ -51,7 +53,8 @@
   }
 
   const initChart = (): void => {
-    Highcharts.chart('container', {
+    // @ts-ignore Why is that a problem?
+    Highcharts.chart(CHART_ID, {
       chart: {
         type: 'column'
       },
@@ -104,4 +107,4 @@
   })
 </script>
 
-<div id="container" class="rounded" transition:fade />
+<div id={CHART_ID} class="rounded" transition:fade />
