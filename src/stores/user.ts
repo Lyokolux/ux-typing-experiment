@@ -3,8 +3,15 @@ import { writable } from 'svelte/store'
 import { api } from './api'
 import type { User, Experiment } from '../types'
 
+const DEFAULT_USER: User = {
+  sexe: undefined,
+  age: undefined,
+  anyExperience: undefined,
+  experienceGrades: [],
+  experiments: []
+}
 const createUserStore = () => {
-  const { subscribe, update, set } = writable<User>({} as User)
+  const { subscribe, update, set } = writable<User>(DEFAULT_USER)
 
   return {
     subscribe,
@@ -19,7 +26,7 @@ const createUserStore = () => {
         return {
           ...user,
           experiments: [
-            ...(user.experiments || []),
+            ...user.experiments,
             experience
           ]
         }

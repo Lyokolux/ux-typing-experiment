@@ -32,6 +32,7 @@ const createScreenStore = () => {
 
 interface SwiperReactive {
   activeIndex: number
+  slidesAmount: number
 }
 const createSwiperReactive = () => {
   const { subscribe, update, set } = writable<SwiperReactive>({} as SwiperReactive)

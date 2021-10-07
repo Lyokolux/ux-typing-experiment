@@ -1,5 +1,5 @@
 import { ALPHANUMERIC_LENGTH, CHUNK_SIZES, DESKTOP_SCREEN_MIN_WIDTH } from './const'
-import type { ExperienceConfig } from './types'
+import type { ChunkLength, ExperienceConfig, Experiment } from './types'
 
 export const getChunk = (str: string, size: number): string[] => {
   return str.match(new RegExp('.{1,' + size + '}', 'g'))
@@ -72,3 +72,24 @@ export const isNumberInt = (n: number): boolean => {
   return n % 1 === 0
 }
 
+export const getChunkSizes = (): ChunkLength[] => {
+  return [...CHUNK_SIZES, ALPHANUMERIC_LENGTH]
+}
+
+export const getFilteredEventsByTypes = (events: Experiment['events'], types: Experiment['events'][0]['type'][]): Experiment['events'] => {
+  return events.filter(event => {
+    return types.includes(event.type)
+  })
+}
+
+export const getFilteredExperiencesByChunkSize = (
+  experiments: Experiment[],
+  chunkSize: number,
+  filterBy: 'display' | 'input'
+): Experiment[] => {
+  return experiments.filter((experiment) => {
+    return filterBy === 'input'
+      ? experiment.id.endsWith(chunkSize.toString())
+      : experiment.id.startsWith(chunkSize.toString())
+  })
+}
