@@ -63,7 +63,14 @@
     "start_if_you_are_ready": "Dès que vous êtes prêt•e, cliquez sur le bouton \"Commencer\"."
   },
   "results": {
-    "title": "Voici les résultats suite à votre enquête:"
+    "title": "Voici les résultats suite à votre enquête:",
+    "delete_update_per_chunks_count_graph": {
+      "title": "Nombre de charactères modifiés ou supprimés lors d'une saisie",
+      "yAxis": "Nombre de modifications/suppressions",
+      "xAxis": "Nombre de charactères au sein de chaque chunks",
+      "display": "affichage",
+      "input": "saisie"
+    }
   },
   "last_screen": {
     "thanks": "Merci pour votre participation !",

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { fade } from 'svelte/transition'
+  import { _ } from 'svelte-i18n'
   import Highcharts from 'highcharts'
-
 
   import type { ChunkLength, Experiment } from '../../types'
 
@@ -56,16 +56,19 @@
         type: 'column'
       },
       title: {
-        text: "Nombre de charactères modifiés ou remplacé lors d'une saisie" // TODO: Localize
+        text: $_('results.delete_update_per_chunks_count_graph.title') // TODO: Localize
       },
       xAxis: {
         categories: getChartCategories(),
-        crosshair: true
+        crosshair: true,
+        title: {
+          text: $_('results.delete_update_per_chunks_count_graph.xAxis')
+        }
       },
       yAxis: {
         min: 0,
         title: {
-          text: 'Rainfall (mm)'
+          text: $_('results.delete_update_per_chunks_count_graph.yAxis')
         }
       },
       tooltip: {
@@ -85,11 +88,11 @@
       },
       series: [
         {
-          name: 'Input',
+          name: $_('results.delete_update_per_chunks_count_graph.input'),
           data: getInputSerie()
         },
         {
-          name: 'Display',
+          name: $_('results.delete_update_per_chunks_count_graph.display'),
           data: getDisplaySerie()
         }
       ]
