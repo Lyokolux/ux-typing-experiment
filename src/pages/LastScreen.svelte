@@ -1,6 +1,8 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
 
+  import WavingHand from '../components/WavingHand.svelte'
+
   interface Dev {
     name: string
     link: string
@@ -44,3 +46,4 @@
   {/each}
 </ul>
 
+<WavingHand />
