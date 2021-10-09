@@ -68,10 +68,15 @@
     "delete_update_per_chunks_count_graph": {
       "title": "Nombre de charactères modifiés ou supprimés lors d'une saisie",
       "yAxis": "Nombre de modifications/suppressions",
-      "xAxis": "Nombre de charactères au sein de chaque chunks",
-      "display": "affichage",
-      "input": "saisie"
-    }
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
+    "error_per_chunks_count_graph": {
+      "title": "Nombre de suite alphanumérique recopié avec une erreur",
+      "yAxis": "Nombre d'erreurs",
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
+    "display": "affichage",
+    "input": "saisie"
   },
   "last_screen": {
     "thanks": "Merci pour votre participation !",
