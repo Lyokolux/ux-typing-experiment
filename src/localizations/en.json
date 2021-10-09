@@ -26,7 +26,7 @@
       "45-54": "Between 45 and 54 years old",
       "55-64": "Between 55 and 64 years old",
       "+65": "More than 65 years odl",
-      "what_is_your_age": "How old are you ?",
+      "what_is_your_age": "How old are you?",
       "is_required": "Please fill in the field concerning your age."
     },
     "any_experience": {
@@ -59,7 +59,7 @@
   },
   "experience_beginning": {
     "title": "Welcome",
-    "experiment_will_begin": "The experiment will begin !",
+    "experiment_will_begin": "The experiment will begin!",
     "start_if_you_are_ready": "When you are ready, clic on the \"Begin\" button."
   },
   "results": {
@@ -73,7 +73,7 @@
     }
   },
   "last_screen": {
-    "thanks": "Thanks for your participation !",
+    "thanks": "Thanks for your participation!",
     "contact": "For questions about this study, please contact Guillaume Gronier, UX Design Researcher (<a href='mailto:abc@example.com'>guillaume.gronier@gmail.com</a>).",
     "produced_by": "This study and web interface were conducted with ❤️ by:"
   },
