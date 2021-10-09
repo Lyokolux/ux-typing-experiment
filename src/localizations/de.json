@@ -2,7 +2,7 @@
   "title": "Willkommen",
   "home": {
     "title": "Willkommen",
-    "paragraph_1": "Merci de participer à cette étude qui porte sur la saisie de séquences alphanumériques sur Internet.",
+    "paragraph_1": "Wir danken Ihnen im Voraus für Ihre Teilnahme an dieser Studie über die Eingabe von alphanumerischen Zeichenfolgen im Internet.",
     "paragraph_2": "Ihre Aufgabe besteht darin, so schnell wie möglich und ohne Fehler eine Reihe von 18 Zahlen und Buchstaben zu kopieren, die Ihnen am oberen Rand des Bildschirms angezeigt werden.<br>Sie müssen diese Zahlen und Buchstaben in ein oder mehrere leere Felder in der Mitte des Bildschirms kopieren.",
     "paragraph_3": "Beachten Sie, dass Sie nach Eingabe des 18. Zeichens automatisch zu einem kurzen Fragebogen weitergeleitet werden, in dem Ihr Feedback zur Darstellung der Informationen und zu Ihrer Tipperfahrung erfasst wird.<br><br> Nach diesem Fragebogen gelangen Sie zu einer neuen Eingabemaske, dann wieder zu einem kurzen Fragebogen ... und so weiter 16 Mal.<br><br>Die zu wiederholende alphanumerische Folge ist jedes Mal anders (sie wird vom System zufällig generiert).",
     "paragraph_4": "Ihre Teilnahme wird jedoch nur 4-5 Minuten dauern.<br>Bevor Sie beginnen, füllen Sie bitte einige Informationen über Ihr Profil aus..."
@@ -48,8 +48,8 @@
     "unpleasant": "Unangenehm",
     "simple": "Einfach",
     "complicated": "Kompliziert",
-    "practical": "praktisch",
-    "not-practical": "unpraktisch",
+    "practical": "Praktisch",
+    "not-practical": "Unpraktisch",
     "tedious": "Mühsam",
     "effective": "Wirksam",
     "good": "Gut",
