@@ -19,7 +19,7 @@ export const reverseArray = <T>(arr: T[]): T[] => {
 export const isDefined = (val: any): boolean => val !== undefined && val !== null
 
 export const isAlphanumeric = (str: string): boolean => {
-  return ALPHANUMERIC_REGEX.test(str)
+  return str.match(NON_ALPHANUMERIC_REGEX) === null
 }
 
 export const getWithAlphanumericOnly = (str: string): string => {
