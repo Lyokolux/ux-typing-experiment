@@ -7,7 +7,7 @@
   import type { ChunkLength, Experiment } from '../../types'
 
   import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from '../../const'
-  import { getChunkSizes, getFilteredEventsByTypes, getFilteredExperiencesByChunkSize } from '../../utils'
+  import { getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
 
   export let experiments: Experiment[]
 
@@ -27,8 +27,6 @@
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'display')
 
       let count = 0
-
-      console.log(filteredExperiments, experiments)
 
       filteredExperiments.forEach(filteredExperiment => {
         if (!isExperimentInputValid(filteredExperiment)) {

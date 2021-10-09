@@ -13,9 +13,9 @@
 <div class="overflow-auto p-2">
   <!-- This page is the second to last so -1 and activeIndex start at 0 so again -1 -->
   {#if $user.experiments && $swiperReactive.activeIndex === $swiperReactive.slidesAmount - 2}
-    <DeleteUpdatePerChunksCount experiments={$user.experiments}/>
-    <br />
     <ErrorPerChunksCount experiments={$user.experiments}/>
+    <br />
+    <DeleteUpdatePerChunksCount experiments={$user.experiments}/>
   {/if}
 </div>
 

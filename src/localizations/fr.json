@@ -71,8 +71,8 @@
       "xAxis": "Nombre de charactères au sein de chaque chunks"
     },
     "error_per_chunks_count_graph": {
-      "title": "Nombre de suite alphanumérique recopié avec une erreur",
-      "yAxis": "Nombre d'erreurs",
+      "title": "Nombre de suite alphanumériques recopiées avec une erreur",
+      "yAxis": "Nombre de saisie avec erreur",
       "xAxis": "Nombre de charactères au sein de chaque chunks"
     },
     "display": "affichage",
