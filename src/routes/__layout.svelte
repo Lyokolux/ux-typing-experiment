@@ -10,9 +10,10 @@
 </script>
 <script lang="ts">
   import '../global.scss'
+  import { onMount } from 'svelte'
 
   import { screen } from '../stores'
-  import { isScreenMobile } from '../utils'
+  import { getUserDevice } from '../utils'
 
   import LocaleSelect from '../components/LocaleSelect.svelte'
   import Blob from '../components/Blob/Blob.svelte'
@@ -22,17 +23,26 @@
     (e || window.event).returnValue = ''
   }
 
+  let windowHeight: number
+  let windowWidth: number
+  let hasOnTouchStartProperty: boolean = false
+  onMount(() => {
+    hasOnTouchStartProperty = ('ontouchstart' in window)
+  })
+
   $: {
     screen.set({
-      height: $screen.height,
-      width: $screen.width,
-      isMobile: isScreenMobile($screen.width, $screen.height)
+      height: windowHeight,
+      width: windowWidth,
+      device: getUserDevice(hasOnTouchStartProperty, $screen.width, $screen.height)
     })
   }
 </script>
 
 <svelte:window 
   on:beforeunload={onPageAppLeave}
+  bind:innerHeight={windowHeight}
+  bind:innerWidth={windowWidth}
 />
 
 <div

@@ -43,9 +43,6 @@
   }
 
   @media (max-width: 576px) {
-    .h4 {
-      font-size: 1.2rem;
-    }
     .question {
       font-size: 1.1rem;
     }

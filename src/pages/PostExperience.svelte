@@ -2,7 +2,7 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-
+  import { isDefined } from '../utils'
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
   import NextButton from '../components/NextButton.svelte'
 
@@ -32,10 +32,14 @@
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
     }
   })
+
+  $: areQuestionsFilled = questions.every(({ grade }) => isDefined(grade))
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  <NextButton class="justify-content-center">{$_('continue')}</NextButton>
+  {#if areQuestionsFilled}
+    <NextButton class="justify-content-center">{$_('continue')}</NextButton>
+  {/if}
 </form>

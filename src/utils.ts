@@ -1,5 +1,6 @@
 import { ALPHANUMERIC_LENGTH, CHUNK_SIZES, DESKTOP_SCREEN_MIN_WIDTH } from './const'
 import type { ChunkLength, ExperienceConfig, Experiment } from './types'
+import type { User } from './types'
 
 export const getChunk = (str: string, size: number): string[] => {
   return str.match(new RegExp('.{1,' + size + '}', 'g'))
@@ -8,6 +9,8 @@ export const getChunk = (str: string, size: number): string[] => {
 export const reverseArray = <T>(arr: T[]): T[] => {
   return [].concat(arr).reverse()
 }
+
+export const isDefined = (val: any): boolean => val !== undefined && val !== null
 
 // from https://1loc.dev/ → Generate a random string with given length
 export const getGeneratedRandomString = (length = 18): string => Array(length).fill('').map(() => {
@@ -64,8 +67,9 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
   return getShuffledArray(config)
 }
 
-export const isScreenMobile = (width: number, height: number): boolean => {
-  return height > width && width <= DESKTOP_SCREEN_MIN_WIDTH
+export const getUserDevice = (hasTouchStart: boolean, width: number, height: number): User['device'] => {
+  return hasTouchStart
+  && (width <= DESKTOP_SCREEN_MIN_WIDTH || height <= DESKTOP_SCREEN_MIN_WIDTH) ? 'mobile' : 'desktop'
 }
 
 export const isNumberInt = (n: number): boolean => {

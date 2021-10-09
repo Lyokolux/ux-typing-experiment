@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store'
 import type Swiper from 'swiper'
+import type { User } from '../types'
 
 const createSwiperStore = () => {
   const { subscribe, update, set } = writable<Swiper | null>({} as Swiper)
@@ -14,13 +15,14 @@ const createSwiperStore = () => {
 interface Screen {
   width: number
   height: number
-  isMobile: boolean
+  device?: User['device']
 }
+
 const createScreenStore = () => {
   const { subscribe, update, set } = writable<Screen>({
     width: 0,
     height: 0,
-    isMobile: false
+    device: undefined
   })
 
   return {

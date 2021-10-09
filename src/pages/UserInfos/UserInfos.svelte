@@ -18,7 +18,8 @@
   import { _ } from 'svelte-i18n'
 
   import { AGES, SEXES } from '../../const'
-  import { api } from '../../stores'
+  import { user, screen } from '../../stores'
+  import { isDefined } from '../../utils'
   import Page from '../../components/Page.svelte'
   import SexeQuestion from './questions/Sexe.svelte'
   import AgeQuestion from './questions/Age.svelte'
@@ -42,26 +43,28 @@
         age: userInfos.age,
         sexe: userInfos.sexe,
         anyExperience: userInfos.anyExperience,
+        device: $screen.device,
         experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
           ids: experienceGrade.ids,
           grade: experienceGrade.grade
         })),
         experiments: []
       }
-      api.addUserRequest(payload)
+      user.store(payload)
     }).catch((err) => {
       errors = err.errors
     })
   }
+
+$: areExperienceGradesValid = userInfos.experienceGrades?.every(({ grade }) => isDefined(grade))
 </script>
 
   <Page>
     <fieldset class="d-flex flex-column align-items-center">
       <SexeQuestion bind:sexe={userInfos.sexe} />
     </fieldset>
-    <NextButton></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if userInfos.sexe}
+      <NextButton />
     {/if}
   </Page>
 
@@ -69,9 +72,8 @@
     <fieldset class="d-flex flex-column align-items-center">
       <AgeQuestion bind:age={userInfos.age} />
     </fieldset>
-    <NextButton></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if userInfos.age}
+      <NextButton />
     {/if}
   </Page>
 
@@ -79,9 +81,8 @@
     <fieldset class="d-flex flex-column align-items-center">
       <AnyExperience bind:grade={userInfos.anyExperience} />
     </fieldset>
-    <NextButton class="justify-content-center"></NextButton>
-    {#if errors}
-      <FormErrors {errors} />
+    {#if isDefined(userInfos.anyExperience) }
+      <NextButton class="justify-content-center" />
     {/if}
   </Page>
 
@@ -89,7 +90,9 @@
     <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    <NextButton class="justify-content-center" onClick={onSubmit}></NextButton>
+    {#if areExperienceGradesValid}
+      <NextButton class="justify-content-center" onClick={onSubmit} />
+    {/if}
     {#if errors}
       <FormErrors {errors} />
     {/if}

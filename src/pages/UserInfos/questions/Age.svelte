@@ -9,6 +9,10 @@ export let age: Age
 
 const AGE_QUESTION: { value: Age, label: string }[] = [
   {
+    value: undefined,
+    label: $_('user_infos.age.pick_between')
+  },
+  {
     value: '-15',
     label: $_('user_infos.age.-15')
   },
@@ -38,7 +42,7 @@ const AGE_QUESTION: { value: Age, label: string }[] = [
   },
   {
     value: '+65',
-    label: $_('user_infos.age.+65')
+    label: $_('user_infos.age.65+')
   }
 ]
 </script>
