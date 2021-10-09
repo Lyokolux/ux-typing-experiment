@@ -3,6 +3,7 @@
 
   import { user, swiperReactive } from '../stores'
   import DeleteUpdatePerChunksCount from '../components/graphs/DeleteUpdatePerChunksCount.svelte'
+import NextButton from 'src/components/NextButton.svelte'
 </script>
 
 
@@ -12,3 +13,5 @@
 {#if $user.experiments && $swiperReactive.activeIndex === $swiperReactive.slidesAmount - 2}
   <DeleteUpdatePerChunksCount experiments={$user.experiments}/>
 {/if}
+
+<NextButton />
