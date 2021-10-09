@@ -1,3 +1,82 @@
 {
-  "title": "Willkommen"
+  "title": "Willkommen",
+  "home": {
+    "title": "Willkommen",
+    "paragraph_1": "Merci de participer à cette étude qui porte sur la saisie de séquences alphanumériques sur Internet.",
+    "paragraph_2": "Ihre Aufgabe besteht darin, so schnell wie möglich und ohne Fehler eine Reihe von 18 Zahlen und Buchstaben zu kopieren, die Ihnen am oberen Rand des Bildschirms angezeigt werden.<br>Sie müssen diese Zahlen und Buchstaben in ein oder mehrere leere Felder in der Mitte des Bildschirms kopieren.",
+    "paragraph_3": "Beachten Sie, dass Sie nach Eingabe des 18. Zeichens automatisch zu einem kurzen Fragebogen weitergeleitet werden, in dem Ihr Feedback zur Darstellung der Informationen und zu Ihrer Tipperfahrung erfasst wird.<br><br> Nach diesem Fragebogen gelangen Sie zu einer neuen Eingabemaske, dann wieder zu einem kurzen Fragebogen ... und so weiter 16 Mal.<br><br>Die zu wiederholende alphanumerische Folge ist jedes Mal anders (sie wird vom System zufällig generiert).",
+    "paragraph_4": "Ihre Teilnahme wird jedoch nur 4-5 Minuten dauern.<br>Bevor Sie beginnen, füllen Sie bitte einige Informationen über Ihr Profil aus..."
+  },
+  "user_infos": {
+    "errors_in_form": "Bitte klären Sie die folgenden Punkte und senden Sie das Formular zurück",
+    "sexe": {
+      "you_are": "Sie sind",
+      "male": "ein Mann",
+      "female": "eine Frau",
+      "else": "keines der genannten Geschlechter",
+      "no_answer": "Ich sage lieber gar nichts",
+      "is_required": "Bitte füllen Sie das Feld für Ihr Geschlecht aus."
+    },
+    "age": {
+      "-15": "weniger als 15 Jahre alt",
+      "15-17": "Zwischen 15 und 17 Jahre alt",
+      "18-24": "Zwischen 18 und 24 Jahre alt",
+      "25-34": "Zwischen 25 und 34 Jahre alt",
+      "35-44": "Zwischen 35 und 44 Jahre alt",
+      "45-54": "Zwischen 45 und 54 Jahre alt",
+      "55-64": "Zwischen 55 und 64 Jahre alt",
+      "+65": "More than 65 years odl",
+      "what_is_your_age": "Wie alt sind Sie?",
+      "is_required": "Bitte füllen Sie das Feld für Ihr Alter aus."
+    },
+    "any_experience": {
+      "any_experience": "Müssen Sie jemals alphanumerische Informationen (Zahlen und Buchstaben) im Internet eingeben, z. B. eine ID, eine Bestellnummer, eine Vertragsnummer usw.?",
+      "never": "Nein nie",
+      "often": "Ja oft"
+    },
+    "experience_grade": {
+      "question": "Wenn Sie alphanumerische Informationen im Internet eingeben müssen, wie würden Sie diese Erfahrung im Allgemeinen beschreiben?"
+    }
+  },
+  "familirization_page": {
+    "here_an_example": "Hier sehen Sie ein Beispiel für einen Bildschirm, der Ihnen angezeigt wird.",
+    "instructions": "Anweisungen: Kopieren Sie bitte so schnell wie möglich und fehlerfrei die alphanumerische Folge in das/die leere(n) Feld(er) unten.",
+    "begin": "Beginnen"
+  },
+  "questions": {
+    "pleasant": "Angenehm",
+    "unpleasant": "Unangenehm",
+    "simple": "Einfach",
+    "complicated": "Kompliziert",
+    "practical": "praktisch",
+    "not-practical": "unpraktisch",
+    "tedious": "Mühsam",
+    "effective": "Wirksam",
+    "good": "Gut",
+    "bad": "Schlecht",
+    "motivating": "Motivierend",
+    "discouraging": "Demotivierend"
+  },
+  "experience_beginning": {
+    "title": "Willkommen",
+    "experiment_will_begin": "Das Experiment wird beginnen !",
+    "start_if_you_are_ready": "Wenn Sie bereit sind, klicken Sie auf die Schaltfläche \"Beginnen\"."
+  },
+  "results": {
+    "title": "Hier sind die Ergebnisse Ihrer Umfrage:",
+    "delete_update_per_chunks_count_graph": {
+      "title": "Anzahl der während einer Eingabe geänderten oder gelöschten Zeichen",
+      "yAxis": "Anzahl der Änderungen/Löschungen",
+      "xAxis": "Anzahl der Zeichen in jedem Chunk",
+      "display": "Anzeige",
+      "input": "Tastatureingabefehler"
+    }
+  },
+  "last_screen": {
+    "thanks": "Vielen Dank für Ihre Teilnahme!",
+    "contact": "Bei Fragen zu dieser Studie wenden Sie sich bitte an Guillaume Gronier, UX Design Researcher (<a href='mailto:abc@example.com'>guillaume.gronier@gmail.com</a>).",
+    "produced_by": "Diese Studie und die Webschnittstelle wurden mit ❤️ von durchgeführt:"
+  },
+  "continue": "Weitermachen",
+  "events_limit_reached": "Sie haben Ihre Eingabegrenze erreicht!"
 }
