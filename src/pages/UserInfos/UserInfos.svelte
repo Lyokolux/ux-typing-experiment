@@ -55,6 +55,8 @@
       errors = err.errors
     })
   }
+
+$: areExperienceGradesValid = userInfos.experienceGrades?.every(({ grade }) => isDefined(grade))
 </script>
 
   <Page>
@@ -88,7 +90,7 @@
     <fieldset class="d-flex flex-column align-items-center">
       <ExperienceGrade bind:questions={userInfos.experienceGrades} />
     </fieldset>
-    {#if userInfos.experienceGrades?.every(({ grade }) => isDefined(grade))}
+    {#if areExperienceGradesValid}
       <NextButton class="justify-content-center" onClick={onSubmit} />
     {/if}
     {#if errors}
