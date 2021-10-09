@@ -4,9 +4,8 @@
   import { _ } from 'svelte-i18n'
   import Highcharts from 'highcharts'
 
-  import type { ChunkLength, Experiment } from '../../types'
+  import type { Experiment } from '../../types'
 
-  import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from '../../const'
   import { getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
   import { getChartCategories } from './utils'
 
