@@ -1,4 +1,10 @@
-import { ALPHANUMERIC_LENGTH, CHUNK_SIZES, DESKTOP_SCREEN_MIN_WIDTH } from './const'
+import {
+  ALPHANUMERIC_LENGTH,
+  ALPHANUMERIC_REGEX,
+  CHUNK_SIZES,
+  DESKTOP_SCREEN_MIN_WIDTH,
+  NON_ALPHANUMERIC_REGEX
+} from './const'
 import type { ChunkLength, ExperienceConfig, Experiment } from './types'
 import type { User } from './types'
 
@@ -11,6 +17,14 @@ export const reverseArray = <T>(arr: T[]): T[] => {
 }
 
 export const isDefined = (val: any): boolean => val !== undefined && val !== null
+
+export const isAlphanumeric = (str: string): boolean => {
+  return ALPHANUMERIC_REGEX.test(str)
+}
+
+export const getWithAlphanumericOnly = (str: string): string => {
+  return str.replace(NON_ALPHANUMERIC_REGEX, '')
+}
 
 // from https://1loc.dev/ → Generate a random string with given length
 export const getGeneratedRandomString = (length = 18): string => Array(length).fill('').map(() => {
