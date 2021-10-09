@@ -3,7 +3,7 @@
 
   import { user, swiperReactive } from '../stores'
   import DeleteUpdatePerChunksCount from '../components/graphs/DeleteUpdatePerChunksCount.svelte'
-import NextButton from 'src/components/NextButton.svelte'
+import NextButton from '../components/NextButton.svelte'
 </script>
 
 
