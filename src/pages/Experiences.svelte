@@ -5,7 +5,7 @@
   import type { Experiment } from '../types'
   import type { Event } from '../components/AlphanumericInput/utils'
 
-  import { swiper, swiperReactive, api } from '../stores'
+  import { swiper, swiperReactive, user } from '../stores'
   import Page from '../components/Page.svelte'
   import Experience from '../components/Experience.svelte'
   import PostExperience from './PostExperience.svelte'
@@ -23,7 +23,7 @@
       questions: questions[index].map(v => ({ ids: v.ids, grade: v.grade })),
       events: events[index]
     }
-    api.addExperimentRequest(experimentResult)
+    user.addExperience(experimentResult)
   }
 
   const focusCurrentAlphanumericInput = (pageIndex: number): void => {
