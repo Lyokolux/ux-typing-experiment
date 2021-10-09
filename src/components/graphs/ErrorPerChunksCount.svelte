@@ -8,14 +8,11 @@
 
   import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from '../../const'
   import { getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
+  import { getChartCategories } from './utils'
 
   export let experiments: Experiment[]
 
   const CHART_ID = 'errorPerChunksCountChart'
-
-  const getChartCategories = (): ChunkLength[] => {
-    return [...CHUNK_SIZES, ALPHANUMERIC_LENGTH]
-  }
 
   const isExperimentInputValid = (experiment: Experiment): boolean => {
     const lastEvent = experiment.events[experiment.events.length - 1]

@@ -4,18 +4,14 @@
   import { _ } from 'svelte-i18n'
   import Highcharts from 'highcharts'
 
-  import type { ChunkLength, Experiment } from '../../types'
+  import type { Experiment } from '../../types'
 
-  import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from '../../const'
   import { getChunkSizes, getFilteredEventsByTypes, getFilteredExperiencesByChunkSize } from '../../utils'
+  import { getChartCategories } from './utils'
 
   export let experiments: Experiment[]
 
   const CHART_ID = 'deleteUpdatePerChunksCountChart'
-
-  const getChartCategories = (): ChunkLength[] => {
-    return [...CHUNK_SIZES, ALPHANUMERIC_LENGTH]
-  }
 
   const getEventsAmountOfDeleteOrReplace = (events: Experiment['events']): number=> {
     return getFilteredEventsByTypes(events, [
