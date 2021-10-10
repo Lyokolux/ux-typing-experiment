@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
-import type { Qualification } from '../../types'
+  /* eslint-disable no-multiple-empty-lines */
+  import type { Qualification } from '../../types'
 
-/* eslint-disable no-multiple-empty-lines */
-export interface Question {
+  export interface Question {
     ids: [Qualification, Qualification]
     labels: [string, string]
     // the labels are inverted
