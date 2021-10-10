@@ -16,6 +16,9 @@ export const USER_COLLECTION_NAME = dev ? 'staging' : 'users'
 
 export const CHUNK_SIZES = [2, 3, 4, 6, 9] as const
 
+export const ALPHANUMERIC_REGEX = /^[0-9a-zA-Z]+$/gi
+export const NON_ALPHANUMERIC_REGEX = /[^0-9a-zA-Z]/gi
+
 export const EXPERIENCES_AMOUNT = 16
 export const DESKTOP_SCREEN_MIN_WIDTH = 992
 export const FIRST_EXPERIENCES_PAGE_INDEX = 10

@@ -3,7 +3,7 @@
   import type { Event } from './utils'
 
   import { screen } from '../../stores'
-  import { getChunk } from '../../utils'
+  import { getChunk, getWithAlphanumericOnly, isAlphanumeric } from '../../utils'
   import { getNewEventFromInput } from './utils'
   import { KEY } from '../../const'
 
@@ -71,13 +71,23 @@
 
   const normalizeChunk = (i: number): void => {
     const chunckValue = enteredChunks[i]
+    const lastEvent = events[events.length - 1]
+
     let newChunckValue = chunckValue.toUpperCase()
+
+    const isValueAlphanumeric = isAlphanumeric(newChunckValue)
+
+    if (!isValueAlphanumeric) {
+      newChunckValue = getWithAlphanumericOnly(newChunckValue)
+      enteredChunks[i] = newChunckValue
+      return
+    }
 
     if (newChunckValue.length > chunkLength) {
       newChunckValue = newChunckValue.substring(0, chunkLength)
     }
 
-    const newEvent = getNewEventFromInput(value, getEnteredAlphanumeric(), events[events.length - 1])
+    const newEvent = getNewEventFromInput(value, getEnteredAlphanumeric(), lastEvent)
 
     events = [...events, newEvent]
     enteredChunks[i] = newChunckValue
