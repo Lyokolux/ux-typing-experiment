@@ -70,7 +70,7 @@
     > :global(.blob) {
       width: 100vw;
       bottom: -25%;
-      right: -35%;
+      right: -45%;
       transform: rotate(85deg);
       color: #B6E3FA;
       opacity: 0.4;
