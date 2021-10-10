@@ -33,6 +33,11 @@ export const getShuffledArray = <T>(array: T[]): T[] => {
   return array
 }
 
+export const getRandomInArray = <T>(array: T[]): T => {
+  const randomIndex = Math.floor(Math.random() * array.length)
+  return array[randomIndex]
+}
+
 export const getExperiencesConfigs = (): ExperienceConfig[] => {
   let config: ExperienceConfig[] = []
 
