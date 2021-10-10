@@ -25,7 +25,8 @@
       '.swiper',
       {
         allowTouchMove: dev,
-        direction: 'vertical'
+        direction: 'vertical',
+        speed: 800
       }
     )
 
