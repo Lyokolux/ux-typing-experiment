@@ -12,10 +12,17 @@
 
 <div class={`blobs-arrangement-${type} position-absolute w-100 h-100`}>
   {#if type === 1}
-     <Blob type='blob-line-bottom' />
-     <Blob type='blob-line-top' />
-     <Blob type='blob-2' />
+    <Blob type='blob-line-bottom' />
+    <Blob type='blob-line-top' />
+    <Blob type='blob-2' />
+  {:else if type === 2}
+    <span class="ctn position-absolute">
+      <Blob type='blob-3' />
+      <Blob type='blob-3' />
+    </span>
+    <Blob type='blob-3' />
   {/if}
+  
 </div>
 
 <style lang="scss">
@@ -37,6 +44,7 @@
       bottom: 0;
       width: 100vw;
       color: #FAE3CA;
+      opacity: 0.5;
     }
 
     :global(.blob-line-top) {
@@ -56,4 +64,35 @@
       }
     }
   }
+
+  .blobs-arrangement-2 {
+    > :global(.blob) {
+      width: 100vw;
+      bottom: -25%;
+      right: -35%;
+      transform: rotate(85deg);
+      color: #B6E3FA;
+      opacity: 0.4;
+    }
+
+    .ctn {
+      width: 50vw;
+      top: 70%;
+      left: -10%;
+
+      :global(.blob:first-of-type) {
+        color: #FEDC77;
+      }
+      :global(.blob:last-of-type) {
+        transform: translate(2%, 2%) rotate(5deg);
+        opacity: 0.9;
+
+        :global(path) {
+          fill: none;
+          stroke-width: 2;
+        }
+      }
+    }
+  }
+
 </style>
