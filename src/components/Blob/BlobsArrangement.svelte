@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   /* eslint-disable no-multiple-empty-lines */
-  export const BLOBS_ARRANGEMENT_IDS = [1, 2] as const
+  export const BLOBS_ARRANGEMENT_IDS = [1, 2, 3, null, null] as const
   export type BlobArrangementId = typeof BLOBS_ARRANGEMENT_IDS
 </script>
 
@@ -21,8 +21,10 @@
       <Blob type='blob-3' />
     </span>
     <Blob type='blob-3' />
+  {:else if type === 3 }
+    <Blob type='blob-3' />
+    <Blob type='blob-rain' />
   {/if}
-  
 </div>
 
 <style lang="scss">
@@ -43,8 +45,7 @@
     :global(.blob-line-top) {
       bottom: 0;
       width: 100vw;
-      color: #FAE3CA;
-      opacity: 0.5;
+      color: #F1F2DF;
     }
 
     :global(.blob-line-top) {
@@ -52,11 +53,11 @@
     }
 
     :global(.blob-2)  {
-      bottom: -25%;
-      right: -25%;
+      bottom: -15%;
+      right: -15%;
 
       :global(path) {
-        stroke-width: 2;
+        stroke-width: 1.5;
         stroke: "currentColor";
         fill: none;
         color: #FA92A0;
@@ -94,5 +95,25 @@
       }
     }
   }
+  .blobs-arrangement-3 {
+    :global(.blob-3) {
+      width: 50vw;
+      top: 70%;
+      left: -10%;
+      color: #FEDC77;
 
+      :global(path) {
+        fill: none;
+        stroke-width: 2;
+      }
+    }
+
+    :global(.blob-rain) {
+      top: 50%;
+      width: 20%;
+      right: -5%;
+      color: #79CDAA;
+      opacity: 0.8;
+    }
+  }
 </style>
