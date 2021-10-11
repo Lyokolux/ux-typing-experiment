@@ -14,7 +14,7 @@
   }, 1000)
 
   $: {
-    if(!visible) {
+    if (!visible) {
       clearInterval(intervalId)
     }
   }
@@ -27,10 +27,10 @@
   >
     <h1 class="mb-3 text-center">{ $_('loading') }</h1>
     <div class="d-flex row">
-      {#each inputSizes as element, i}
+      {#each inputSizes as element}
         <input
           type="text"
-          class={`alph anumeric-input chunk font-digit-readable form-control text-center fs-4 p-0 p-md-2 fw-bold`}
+          class={'alph anumeric-input chunk font-digit-readable form-control text-center fs-4 p-0 p-md-2 fw-bold'}
           style={`--width: ${element / 1.7}em`}
         />
       {/each}

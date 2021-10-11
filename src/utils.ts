@@ -33,7 +33,7 @@ export const getGeneratedRandomString = (length = 18): string => Array(length).f
 
 export const getShuffledArray = <T>(array: T[]): T[] => {
   let currentIndex = array.length
-  let randomIndex
+  let randomIndex: number
 
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
