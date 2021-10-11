@@ -78,7 +78,7 @@
     }
 
     .ctn {
-      width: 50vw;
+      width: max(30vw, 200px);
       top: 70%;
       left: -10%;
 
@@ -112,7 +112,7 @@
     :global(.blob-rain) {
       width: max(20vw, 115px);
       top: 50%;
-      right: -5%;
+      right: -3%;
       color: #79CDAA;
       opacity: 0.8;
     }
