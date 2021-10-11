@@ -7,7 +7,7 @@
   import type { Experiment } from '../../types'
 
   import { getAverage, getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
-  import { getChartCategories } from './utils'
+  import { getChartCategories, getExperienceDuration } from './utils'
 
   export let experiments: Experiment[]
 
@@ -18,7 +18,7 @@
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'display')
 
       return getAverage(filteredExperiments.map(experiment => {
-        return Number(experiment.events[experiment.events.length - 1].ms / 1000)
+        return getExperienceDuration(experiment)
       }))
     })
   }
@@ -28,7 +28,7 @@
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'input')
 
       return getAverage(filteredExperiments.map(experiment => {
-        return Number(experiment.events[experiment.events.length - 1].ms / 1000)
+        return getExperienceDuration(experiment)
       }))
     })
   }
