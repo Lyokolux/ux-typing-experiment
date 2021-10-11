@@ -4,10 +4,8 @@
     "title": "Bonjour,",
     "paragraph_1": "merci de participer à cette étude qui s'intéresse à la saisie de suites alphanumériques sur Internet.",
     "paragraph_2": "Votre tâche consistera à recopier, le plus rapidement possible et sans erreur, une série de 18 chiffres et lettres qui vous sera présentée en haut de votre écran.<br>Vous devrez recopier ces chiffres et lettres dans un ou plusieurs champs vides affichés au milieu de l'écran.",
-    "paragraph_3": "Notez que lorsque vous aurez fini de saisir le 18ième caractère, vous passerez automatiquement à un court questionnaire qui permettra de recueillir votre avis sur la façon dont les informations étaient présentées et sur votre expérience de saisie.<br>Après ce questionnaire, vous passerez à un nouvel écran de saisie, puis de nouveau à un court questionnaire… et ainsi de suite 16 fois.",
-    "paragraph_4": "Votre participation ne vous prendra toutefois que 4 à 5 minutes.",
-    "paragraph_5": "Notez qu'à chaque fois, la suite alphanumérique à recopier sera différente (elle est générée aléatoirement par le système).",
-    "paragraph_6": "Avant de commencer, merci de renseigner quelques informations sur votre profil…"
+    "paragraph_3": "Notez que lorsque vous aurez fini de saisir le 18ième caractère, vous passerez automatiquement à un court questionnaire qui permettra de recueillir votre avis sur la façon dont les informations étaient présentées et sur votre expérience de saisie.<br><br>Après ce questionnaire, vous passerez à un nouvel écran de saisie, puis de nouveau à un court questionnaire… et ainsi de suite 16 fois.<br><br>La suite alphanumérique à recopier sera différente à chaque fois (elle est générée aléatoirement par le système).",
+    "paragraph_4": "Votre participation ne vous prendra toutefois que 4 à 5 minutes.<br>Avant de commencer, merci de renseigner quelques informations sur votre profil…"
   },
   "user_infos": {
     "errors_in_form": "Merci de bien vouloir résoudre les points suivant et renvoyer le formulaire",
@@ -27,8 +25,9 @@
       "35-44": "Entre 35 et 44 ans",
       "45-54": "Entre 45 et 54 ans",
       "55-64": "Entre 55 et 64 ans",
-      "+65": "Plus de 65 ans",
-      "what_is_your_age": "Quel est votre âge",
+      "65+": "Plus de 65 ans",
+      "what_is_your_age": "Quel est votre âge ?",
+      "pick_between": "Choisir entre",
       "is_required": "Merci de remplir le champ concernant votre âge."
     },
     "any_experience": {
@@ -42,7 +41,8 @@
   },
   "familirization_page": {
     "here_an_example": "Voici un exemple d'écran qui vous sera présenté.",
-    "instructions": "Consigne : Merci de recopier, le plus rapidement possible et sans erreur, la suite alphanumérique dans le(s) champ(s) vide(s) ci-dessous."
+    "instructions": "Consigne : Merci de recopier, le plus rapidement possible et sans erreur, la suite alphanumérique dans le(s) champ(s) vide(s) ci-dessous.",
+    "begin": "Commencer"
   },
   "questions": {
     "pleasant": "Agréable",
@@ -63,11 +63,21 @@
     "experiment_will_begin": "L'étude va pouvoir commencer !",
     "start_if_you_are_ready": "Dès que vous êtes prêt•e, cliquez sur le bouton \"Commencer\"."
   },
-  
-  "last_screen": {
-    "merci": "Merci pour votre participation !",
-    "contact": "Pour toute question sur cette étude, merci de contacter Guillaume Gronier, chercheur en UX Design (guillaume.gronier@gmail.com)."
-    
+  "results": {
+    "title": "Voici les résultats suite à votre enquête:",
+    "delete_update_per_chunks_count_graph": {
+      "title": "Nombre de charactères modifiés ou supprimés lors d'une saisie",
+      "yAxis": "Nombre de modifications/suppressions",
+      "xAxis": "Nombre de charactères au sein de chaque chunks",
+      "display": "affichage",
+      "input": "saisie"
+    }
   },
-  "continue": "Continuer"
+  "last_screen": {
+    "thanks": "Merci pour votre participation !",
+    "contact": "Pour toute question sur cette étude, merci de contacter Guillaume Gronier, chercheur en UX Design (<a href='mailto:abc@example.com'>guillaume.gronier@gmail.com</a>).",
+    "produced_by": "Cette étude et cette interface web ont été réalisées avec ❤️ par:"
+  },
+  "continue": "Continuer",
+  "events_limit_reached": "Vous avez atteint la limite de saisie autorisée!"
 }

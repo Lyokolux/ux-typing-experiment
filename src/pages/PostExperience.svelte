@@ -2,20 +2,44 @@
   import { _ } from 'svelte-i18n'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
-  
+  import { isDefined } from '../utils'
   import PostExperienceQuestions from '../components/PostExperienceQuestions.svelte'
+  import NextButton from '../components/NextButton.svelte'
 
-  let questions: Question[]
+  export let onSubmit: () => void
+  export let questions: Question[]
 
-  let onSubmit = (): void => {
-    // TODO: send to firestore
-    console.log(questions)
-  }
+  const QUESTIONS: Omit<Question, 'labels'>[] = [
+    {
+      ids: ['unpleasant', 'pleasant'],
+      grade: null,
+      inverted: true
+    },
+    {
+      ids: ['not-practical', 'practical'],
+      grade: null,
+      inverted: true
+    },
+    {
+      ids: ['tedious', 'effective'],
+      grade: null
+    }
+  ]
+
+  questions = QUESTIONS.map(question => {
+    return {
+      ...question,
+      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
+    }
+  })
+
+  $: areQuestionsFilled = questions.every(({ grade }) => isDefined(grade))
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
   <PostExperienceQuestions bind:questions />
 
-  <!-- TODO: Better text for continue button -->
-  <button class="btn btn-primary mt-3">{$_('continue')}</button>
+  {#if areQuestionsFilled}
+    <NextButton class="justify-content-center">{$_('continue')}</NextButton>
+  {/if}
 </form>

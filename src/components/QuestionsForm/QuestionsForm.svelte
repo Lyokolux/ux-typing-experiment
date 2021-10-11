@@ -1,7 +1,10 @@
 <script lang="ts" context="module">
   /* eslint-disable no-multiple-empty-lines */
+  import type { Qualification } from '../../types'
+
   export interface Question {
-    labels: string[] // like ['Plaisante', 'Déplaisante']
+    ids: [Qualification, Qualification]
+    labels: [string, string]
     // the labels are inverted
     inverted?: boolean
     grade: number | null
@@ -13,8 +16,14 @@
   export let questions: Question[]
 </script>
 
-<table>
+<ul class="d-flex flex-column overflow-auto">
   {#each questions as question}
     <QuestionComponent bind:question />
   {/each}
-</table>
+</ul>
+
+<style>
+  ul {
+    max-width: 100%;
+  }
+</style>

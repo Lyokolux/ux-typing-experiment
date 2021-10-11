@@ -1,23 +1,32 @@
+<script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
+  import type {
+    Sexe, Age, User, Experiment
+} from '../../types'
+  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
+
+  export interface UserInfos {
+    sexe: Sexe
+    age: Age
+    anyExperience: number
+    experienceGrades: Pick<Question, 'ids' | 'grade'>[]
+    experiments: Experiment[]
+  }
+</script>
 <script lang="ts">
   import * as yup from 'yup'
   import { _ } from 'svelte-i18n'
 
-  import type { Sexe } from './questions/Sexe.svelte'
-  import type { Age } from './questions/Age.svelte'
-  import type { Question } from '../../components/QuestionsForm/QuestionsForm.svelte'
-
-  import SexeQuestion, { SEXES } from './questions/Sexe.svelte'
-  import AgeQuestion, { AGES } from './questions/Age.svelte'
-  import FormErrors from './FormErrors.svelte'
+  import { AGES, SEXES } from '../../const'
+  import { user, screen } from '../../stores'
+  import { isDefined } from '../../utils'
+  import Page from '../../components/Page.svelte'
+  import SexeQuestion from './questions/Sexe.svelte'
+  import AgeQuestion from './questions/Age.svelte'
   import AnyExperience from './questions/AnyExperience.svelte'
+  import FormErrors from './FormErrors.svelte'
   import ExperienceGrade from './questions/ExperienceGrade.svelte'
-
-  interface UserInfos {
-    sexe: Sexe
-    age: Age
-    anyExperience: number
-    experienceGrades: Question[]
-  }
+  import NextButton from '../../components/NextButton.svelte'
 
   let userInfos: Partial<UserInfos> = {}
   let errors: string[] = []
@@ -30,34 +39,61 @@
 
   const onSubmit = (): void => {
     schema.validate(userInfos).then(() => {
-      // TODO: Store data in firestore
-      console.log(userInfos)
+      const payload: User = {
+        age: userInfos.age,
+        sexe: userInfos.sexe,
+        anyExperience: userInfos.anyExperience,
+        device: $screen.device,
+        experienceGrades: userInfos.experienceGrades.map((experienceGrade) => ({
+          ids: experienceGrade.ids,
+          grade: experienceGrade.grade
+        })),
+        experiments: []
+      }
+      user.store(payload)
     }).catch((err) => {
       errors = err.errors
     })
   }
+
+$: areExperienceGradesValid = userInfos.experienceGrades?.every(({ grade }) => isDefined(grade))
 </script>
 
-<h2>User infos</h2>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <SexeQuestion bind:sexe={userInfos.sexe} />
+    </fieldset>
+    {#if userInfos.sexe}
+      <NextButton />
+    {/if}
+  </Page>
 
-<form on:submit|preventDefault={onSubmit}>
-  <fieldset class="d-flex flex-column">
-    <SexeQuestion bind:sexe={userInfos.sexe} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <AgeQuestion bind:age={userInfos.age} />
+    </fieldset>
+    {#if userInfos.age}
+      <NextButton />
+    {/if}
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <AgeQuestion bind:age={userInfos.age} />
-  </fieldset>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <AnyExperience bind:grade={userInfos.anyExperience} />
+    </fieldset>
+    {#if isDefined(userInfos.anyExperience) }
+      <NextButton class="justify-content-center" />
+    {/if}
+  </Page>
 
-  <fieldset class="d-flex flex-column mt-3">
-    <AnyExperience bind:grade={userInfos.anyExperience} />
-  </fieldset>
-
-  <fieldset class="d-flex flex-column mt-3">
-    <ExperienceGrade bind:questions={userInfos.experienceGrades} />
-  </fieldset>
-
-  <FormErrors {errors} />
-
-  <button class="btn btn-primary mt-3">{$_('continue')}</button>
-</form>
+  <Page>
+    <fieldset class="d-flex flex-column align-items-center">
+      <ExperienceGrade bind:questions={userInfos.experienceGrades} />
+    </fieldset>
+    {#if areExperienceGradesValid}
+      <NextButton class="justify-content-center" onClick={onSubmit} />
+    {/if}
+    {#if errors}
+      <FormErrors {errors} />
+    {/if}
+  </Page>

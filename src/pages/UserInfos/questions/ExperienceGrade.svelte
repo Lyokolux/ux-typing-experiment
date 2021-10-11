@@ -1,54 +1,60 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
-
-  import type { Qualification } from '../../../const'
+  import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
   import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
-  import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
-
-  type CustomQuestion = Omit<Question, 'labels'> & {ids: Qualification[]}
-
-  const QUESTIONS: CustomQuestion[] = [
+  const QUESTIONS: Omit<Question, 'labels'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['complicated', 'simple'],
-      grade: null,
-      inverted: true
+      grade: undefined,
+      inverted: false
     },
     {
       ids: ['not-practical', 'practical'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['tedious', 'effective'],
-      grade: null
+      grade: undefined,
+      inverted: false
     },
     {
       ids: ['bad', 'good'],
-      grade: null,
+      grade: undefined,
       inverted: true
     },
     {
       ids: ['discouraging', 'motivating'],
-      grade: null,
-      inverted: true
+      grade: undefined,
+      inverted: false
     }
   ]
 
-  export let questions: Question[] = QUESTIONS.map(question => {
+  let questionForForm: Question[] = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
     }
   })
+
+  export let questions: Omit<Question, 'labels'>[]
+  $: {
+    questions = questionForForm.map(q => {
+      // eslint-disable-next-line
+      const { labels, ...rest } = q
+      return rest
+    })
+  }
 </script>
+
 <h4>{$_('user_infos.experience_grade.question')}</h4>
 
 <QuestionsForm 
-  bind:questions
+  bind:questions={questionForForm}
 />

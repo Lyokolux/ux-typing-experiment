@@ -4,7 +4,7 @@
 
   export let question: Question
 
-  const HIGHER_GRADE = 6
+  const HIGHER_GRADE = 7
   const GRADES_RANGE = Array.from(Array(HIGHER_GRADE).keys()) // generate [0,1,2, ..., HIGHER_GRADE-1]
 
   $: labels = question.inverted ? [question.labels[1], question.labels[0]] : question.labels
@@ -12,9 +12,9 @@
 </script>
 
 
-<tr>
-  <td>{labels[0]}</td>
-  <td class="px-2">
+<li class="question fw-500 mb-2">
+  <span class="text-end">{labels[0]}</span>
+  <div class="d-flex">
     {#each grades as grade}
       <input
         name={`${question.labels[0]}-${question.labels[1]}`}
@@ -24,6 +24,31 @@
         bind:group={question.grade} value={grade}
       >
     {/each}
-  </td>
-  <td>{labels[1]}</td>
-</tr>
+  </div>
+  <span class="text-left">{labels[1]}</span>
+</li>
+
+<style lang="scss">
+  .question {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+  }
+
+  .question  span {
+    min-width: 7em;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 576px) {
+    .question {
+      font-size: 1.1rem;
+    }
+
+    .question span {
+      font-size: 1rem;
+    }
+  }
+</style>

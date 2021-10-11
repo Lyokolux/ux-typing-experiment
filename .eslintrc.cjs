@@ -3,7 +3,10 @@ module.exports = {
 	parser: '@typescript-eslint/parser',
 	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
 	plugins: ['svelte3', '@typescript-eslint'],
-	ignorePatterns: ['*.cjs'],
+	ignorePatterns: [
+		'*.cjs',
+		'src/components/Blob/BlobsArrangement.svelte'
+	],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
 	extends: "airbnb-base/legacy",
 	settings: {
@@ -20,6 +23,7 @@ module.exports = {
 	},
 	rules: {
 		"no-unused-vars": "off",
+		"no-undef-init": "off",
 		"indent": ["error", 2],
 		semi: ["error", "never"],
 		"@typescript-eslint/no-unused-vars": ["error"]

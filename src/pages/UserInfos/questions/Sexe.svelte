@@ -1,10 +1,7 @@
-<script lang="ts" context="module">
-  /* eslint-disable no-multiple-empty-lines */
-  export const SEXES = ['m', 'f', 'no-answer', 'else'] as const
-  export type Sexe = typeof SEXES[number]
-</script>
 <script lang="ts">
   import { _ } from 'svelte-i18n'
+
+  import type { Sexe } from '../../../types'
 
   export let sexe: Sexe
 
@@ -28,9 +25,10 @@
   ]
 </script>
 
-<h4>{$_('user_infos.sexe.you_are')}:</h4>
+<h4>{$_('user_infos.sexe.you_are')}</h4>
+<div>
 {#each SEXE_QUESTION as { value, label }}
-  <label>
+  <label class="d-flex fw-500 align-items-center fs-5">
     <input
       type="radio"
       class="form-check-input"
@@ -39,6 +37,7 @@
       required
       bind:group={sexe}
     >
-    {label}
+    <span class="px-2">{label}</span>
   </label>
 {/each}
+</div>

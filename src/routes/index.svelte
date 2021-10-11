@@ -3,7 +3,7 @@
   import { Swiper } from 'swiper'
   import 'swiper/css'
 
-  import { swiper } from '../stores'
+  import { swiper, swiperReactive } from '../stores'
   import Page from '../components/Page.svelte'
 
   // P A G E S
@@ -11,26 +11,40 @@
   import UserInfos from '../pages/UserInfos/UserInfos.svelte'
   import FamiliarizationPage from '../pages/FamiliarizationPage.svelte'
   import ExperienceBeginning from '../pages/ExperienceBeginning.svelte'
-  import Gratitude from '../pages/Gratitude.svelte'
-  import PostExperience from '../pages/PostExperience.svelte'
+  import LastScreen from '../pages/LastScreen.svelte'
+  import Experiences from '../pages/Experiences.svelte'
+  import Results from '../pages/Results.svelte'
+  import LoadingScreen from '../components/LoadingScreen.svelte'
+
+  import { dev } from '$app/env'
+
+  let isScreenReady = false
 
   onMount(() => {
-    swiper.set(new Swiper(
+    const swiperInstance = new Swiper(
       '.swiper',
       {
-        allowTouchMove: true, // TODO: Set to false in prod
-        direction: 'vertical'
+        allowTouchMove: dev,
+        direction: 'vertical',
+        speed: 800
       }
-    ))
+    )
+
+    swiperInstance.on('slideChange', () => {
+      $swiperReactive.activeIndex = swiperInstance.activeIndex
+    })
+
+    $swiperReactive.slidesAmount = swiperInstance.slides.length
+    swiper.set(swiperInstance)
+
+    setTimeout(() => {
+      isScreenReady = true
+    }, 200)
   })
 </script>
 
-<Page>
-  <Home />
-</Page >
-<Page>
-  <UserInfos />
-</Page>
+<Home />
+<UserInfos />
 <Page>
   <FamiliarizationPage />
 </Page>
@@ -38,15 +52,13 @@
   <ExperienceBeginning />
 </Page>
 
-{#each [1, 2] as pageId}
-  <Page>
-    Slide {pageId}
-  </Page>
-  <Page>
-    <PostExperience />
-  </Page>
-{/each}
+<Experiences />
 
 <Page>
-  <Gratitude />
+  <Results />
 </Page>
+<Page>
+  <LastScreen />
+</Page>
+
+<LoadingScreen visible={!isScreenReady} />
