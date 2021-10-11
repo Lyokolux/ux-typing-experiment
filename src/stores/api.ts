@@ -8,7 +8,13 @@ import {
   DocumentReference
 } from 'firebase/firestore'
 import { USER_COLLECTION_NAME } from '../const'
+
+import type { Event } from '../components/AlphanumericInput/utils'
 import type { User, Experiment } from '../types'
+
+interface FilteredExperiment extends Omit<Experiment, 'events'> {
+  events: Omit<Event, 'date' | 'value'>[]
+}
 
 const createApi = () => {
   const { db } = initFirestore()
@@ -23,7 +29,7 @@ const createApi = () => {
   /**
    * @param userDoc provided in the stores
    */
-  const addExperimentRequest = async (experiment: Experiment) => {
+  const addExperimentRequest = async (experiment: FilteredExperiment) => {
     updateDoc(get(userDoc), {
       experiments: arrayUnion(experiment)
     })
