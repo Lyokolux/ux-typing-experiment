@@ -13,9 +13,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: "Deploy to Vercel"
         run: |
+          yarn install
           VERCEL_ORG_ID=${VERCEL_ORG_ID} VERCEL_PROJECT_ID=${VERCEL_PROJECT_ID} yarn vercel --prod --token=${VERCEL_TOKEN}
 
         env:
