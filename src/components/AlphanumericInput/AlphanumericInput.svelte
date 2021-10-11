@@ -122,6 +122,10 @@
 </div>
 
 <style lang="scss">
+  .chunks-ctn {
+    overflow: auto;
+  }
+
   .chunk {
     width: var(--width);
   }  
