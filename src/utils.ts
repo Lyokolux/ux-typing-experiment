@@ -46,6 +46,8 @@ export const getShuffledArray = <T>(array: T[]): T[] => {
   return array
 }
 
+export const getAverage = (array: number[]) => array.reduce((a, b) => a + b, 0) / array.length
+
 export const getRandomInArray = <T extends readonly any[]>(array: T): T[number] => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]
