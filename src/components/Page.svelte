@@ -17,14 +17,16 @@
 </div>
 
 <style lang="scss">
+  .page {
+    padding-top: 3rem;
+  }
   section {
-    margin-top: 3rem;
     max-width: 900px;
   }
 
   @media screen and (min-width: 992px), (min-height: 600px) {
-    section {
-      margin-top: 20vh!important;
+    .page {
+      padding-top: 20vh;
     }
   }
 </style>

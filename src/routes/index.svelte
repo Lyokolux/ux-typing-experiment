@@ -54,7 +54,7 @@
 
 <Experiences />
 
-<Page>
+<Page class="pt-2">
   <Results />
 </Page>
 <Page>
