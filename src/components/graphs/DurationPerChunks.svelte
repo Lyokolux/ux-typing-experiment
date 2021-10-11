@@ -40,26 +40,26 @@
         type: 'column'
       },
       title: {
-        text: $_('results.error_per_chunks_count_graph.title')
+        text: $_('results.duration_per_chunks_graph.title')
       },
       xAxis: {
         categories: getChartCategories(),
         crosshair: true,
         title: {
-          text: $_('results.error_per_chunks_count_graph.xAxis')
+          text: $_('results.duration_per_chunks_graph.xAxis')
         }
       },
       yAxis: {
         min: 0,
         title: {
-          text: $_('results.error_per_chunks_count_graph.yAxis')
+          text: $_('results.duration_per_chunks_graph.yAxis')
         }
       },
       tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat:
           '<tr><td style="color:{series.color};padding:0">{series.name}: </td>'
-        + '<td style="padding:0"><b>{point.y}</b></td></tr>',
+        + '<td style="padding:0"><b>{point.y}s</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
