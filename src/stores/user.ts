@@ -33,7 +33,14 @@ const createUserStore = () => {
           ]
         }
       })
-      api.addExperimentRequest(experience)
+      api.addExperimentRequest({
+        ...experience,
+        events: experience.events.map(event => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { date, value, ...rest } = event
+          return rest
+        })
+      })
     }
   }
 }
