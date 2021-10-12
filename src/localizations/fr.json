@@ -75,6 +75,11 @@
       "yAxis": "Nombre de saisie avec erreur",
       "xAxis": "Nombre de charactères au sein de chaque chunks"
     },
+    "duration_per_chunks_graph": {
+      "title": "Temps utilisé pour recopier une suite alphanuméric en fonction de son découpage en chunks",
+      "yAxis": "Temps en secondes",
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
     "display": "affichage",
     "input": "saisie"
   },
