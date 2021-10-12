@@ -95,7 +95,7 @@
 </script>
 
 <div class={`d-flex flex-column ${className}`}>
-  <div class="chunks-ctn d-flex">
+  <div class="chunks-ctn d-flex overflow-auto">
     {#each chunks as chunk, i}
       <input
         type="text"
@@ -122,10 +122,6 @@
 </div>
 
 <style lang="scss">
-  .chunks-ctn {
-    overflow: auto;
-  }
-
   .chunk {
     width: var(--width);
   }  
