@@ -39,7 +39,7 @@
 
     setTimeout(() => {
       isScreenReady = true
-    }, 200)
+    }, 2000)
   })
 </script>
 

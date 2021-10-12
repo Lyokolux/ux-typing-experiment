@@ -1,6 +1,5 @@
 import {
   ALPHANUMERIC_LENGTH,
-  ALPHANUMERIC_REGEX,
   CHUNK_SIZES,
   DESKTOP_SCREEN_MIN_WIDTH,
   NON_ALPHANUMERIC_REGEX
@@ -34,7 +33,7 @@ export const getGeneratedRandomString = (length = 18): string => Array(length).f
 
 export const getShuffledArray = <T>(array: T[]): T[] => {
   let currentIndex = array.length
-  let randomIndex
+  let randomIndex: number
 
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
@@ -47,7 +46,7 @@ export const getShuffledArray = <T>(array: T[]): T[] => {
   return array
 }
 
-export const getRandomInArray = <T>(array: T[]): T => {
+export const getRandomInArray = <T extends readonly any[]>(array: T): T[number] => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]
 }
@@ -116,3 +115,7 @@ export const getFilteredExperiencesByChunkSize = (
       : experiment.id.startsWith(chunkSize.toString())
   })
 }
+
+export const getRandomAlphaCharacter = (amount: number):string => (
+  Math.random().toString(36).slice(amount)
+)
