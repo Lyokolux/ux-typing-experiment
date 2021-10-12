@@ -6,31 +6,20 @@
 
   import type { Experiment } from '../../types'
 
-  import { getChunkSizes, getFilteredEventsByTypes, getFilteredExperiencesByChunkSize } from '../../utils'
-  import { getChartCategories } from './utils'
+  import { getAverage, getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
+  import { getChartCategories, getExperienceDuration } from './utils'
 
   export let experiments: Experiment[]
 
-  const CHART_ID = 'deleteUpdatePerChunksCountChart'
-
-  const getEventsAmountOfDeleteOrReplace = (events: Experiment['events']): number=> {
-    return getFilteredEventsByTypes(events, [
-      'delete',
-      'replace'
-    ]).length
-  }
+  const CHART_ID = 'durationPerChunksChart'
 
   const getDisplaySerie = (): (number | null)[] => {
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'display')
 
-      let count = 0
-
-      filteredExperiments.forEach(filteredExperiment => {
-        count += getEventsAmountOfDeleteOrReplace(filteredExperiment.events)
-      })
-
-      return count
+      return getAverage(filteredExperiments.map(experiment => {
+        return getExperienceDuration(experiment)
+      }))
     })
   }
 
@@ -38,13 +27,9 @@
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'input')
 
-      let count = 0
-
-      filteredExperiments.forEach(filteredExperiment => {
-        count += getEventsAmountOfDeleteOrReplace(filteredExperiment.events)
-      })
-
-      return count
+      return getAverage(filteredExperiments.map(experiment => {
+        return getExperienceDuration(experiment)
+      }))
     })
   }
 
@@ -55,26 +40,26 @@
         type: 'column'
       },
       title: {
-        text: $_('results.delete_update_per_chunks_count_graph.title')
+        text: $_('results.duration_per_chunks_graph.title')
       },
       xAxis: {
         categories: getChartCategories(),
         crosshair: true,
         title: {
-          text: $_('results.delete_update_per_chunks_count_graph.xAxis')
+          text: $_('results.duration_per_chunks_graph.xAxis')
         }
       },
       yAxis: {
         min: 0,
         title: {
-          text: $_('results.delete_update_per_chunks_count_graph.yAxis')
+          text: $_('results.duration_per_chunks_graph.yAxis')
         }
       },
       tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat:
           '<tr><td style="color:{series.color};padding:0">{series.name}: </td>'
-        + '<td style="padding:0"><b>{point.y}</b></td></tr>',
+        + '<td style="padding:0"><b>{point.y}s</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true

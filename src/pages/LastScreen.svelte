@@ -15,7 +15,7 @@
     },
     {
       name: '@Alexandre Guidoux',
-      link: 'https://github.com/Lyokolux/ux-typing-experiment'
+      link: 'https://github.com/Lyokolux'
     },
     {
       name: '@Florian Weiss',

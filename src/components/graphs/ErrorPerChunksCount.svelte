@@ -6,18 +6,16 @@
 
   import type { Experiment } from '../../types'
 
-  import { getChunkSizes, getFilteredEventsByTypes, getFilteredExperiencesByChunkSize } from '../../utils'
+  import { getChunkSizes, getFilteredExperiencesByChunkSize } from '../../utils'
   import { getChartCategories } from './utils'
 
   export let experiments: Experiment[]
 
-  const CHART_ID = 'deleteUpdatePerChunksCountChart'
+  const CHART_ID = 'errorPerChunksCountChart'
 
-  const getEventsAmountOfDeleteOrReplace = (events: Experiment['events']): number=> {
-    return getFilteredEventsByTypes(events, [
-      'delete',
-      'replace'
-    ]).length
+  const isExperimentInputValid = (experiment: Experiment): boolean => {
+    const lastEvent = experiment.events[experiment.events.length - 1]
+    return lastEvent.success
   }
 
   const getDisplaySerie = (): (number | null)[] => {
@@ -27,7 +25,9 @@
       let count = 0
 
       filteredExperiments.forEach(filteredExperiment => {
-        count += getEventsAmountOfDeleteOrReplace(filteredExperiment.events)
+        if (!isExperimentInputValid(filteredExperiment)) {
+          count += 1
+        }
       })
 
       return count
@@ -41,7 +41,9 @@
       let count = 0
 
       filteredExperiments.forEach(filteredExperiment => {
-        count += getEventsAmountOfDeleteOrReplace(filteredExperiment.events)
+        if (!isExperimentInputValid(filteredExperiment)) {
+          count += 1
+        }
       })
 
       return count
@@ -55,19 +57,19 @@
         type: 'column'
       },
       title: {
-        text: $_('results.delete_update_per_chunks_count_graph.title')
+        text: $_('results.error_per_chunks_count_graph.title')
       },
       xAxis: {
         categories: getChartCategories(),
         crosshair: true,
         title: {
-          text: $_('results.delete_update_per_chunks_count_graph.xAxis')
+          text: $_('results.error_per_chunks_count_graph.xAxis')
         }
       },
       yAxis: {
         min: 0,
         title: {
-          text: $_('results.delete_update_per_chunks_count_graph.yAxis')
+          text: $_('results.error_per_chunks_count_graph.yAxis')
         }
       },
       tooltip: {

@@ -95,14 +95,14 @@
 </script>
 
 <div class={`d-flex flex-column ${className}`}>
-  <div class="chunks-ctn d-flex">
+  <div class="chunks-ctn d-flex overflow-auto">
     {#each chunks as chunk, i}
       <input
         type="text"
         class={`alphanumeric-input chunk font-digit-readable form-control m-1 text-center fs-4 p-0 p-md-2 fw-bold ${chunkClass}`}
         class:fs-5={$screen.device === 'mobile'}
         class:danger={isLimitReached}
-        style={`--width: ${chunk.length / ($screen.device === 'mobile' ? 1.7 : 1.2) + 0.7}em`}
+        style={`--width: ${chunk.length / ($screen.device === 'mobile' ? 1.8 : 1.2) + 0.7}em`}
         disabled={isLimitReached || allChunksFilled}
         bind:this={chunksRef[i]}
         bind:value={enteredChunks[i]}

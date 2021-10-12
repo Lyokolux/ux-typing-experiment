@@ -78,5 +78,6 @@
     "produced_by": "This study and web interface were conducted with ❤️ by:"
   },
   "continue": "Continue",
+  "loading": "Loading...",
   "events_limit_reached": "You have reached your input limit!"
 }

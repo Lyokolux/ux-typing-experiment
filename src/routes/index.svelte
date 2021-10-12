@@ -39,7 +39,7 @@
 
     setTimeout(() => {
       isScreenReady = true
-    }, 200)
+    }, 2000)
   })
 </script>
 
@@ -54,7 +54,7 @@
 
 <Experiences />
 
-<Page>
+<Page class="pt-2">
   <Results />
 </Page>
 <Page>

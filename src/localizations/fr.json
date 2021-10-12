@@ -68,10 +68,20 @@
     "delete_update_per_chunks_count_graph": {
       "title": "Nombre de charactères modifiés ou supprimés lors d'une saisie",
       "yAxis": "Nombre de modifications/suppressions",
-      "xAxis": "Nombre de charactères au sein de chaque chunks",
-      "display": "affichage",
-      "input": "saisie"
-    }
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
+    "error_per_chunks_count_graph": {
+      "title": "Nombre de suite alphanumériques recopiées avec une erreur",
+      "yAxis": "Nombre de saisie avec erreur",
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
+    "duration_per_chunks_graph": {
+      "title": "Temps utilisé pour recopier une suite alphanuméric en fonction de son découpage en chunks",
+      "yAxis": "Temps en secondes",
+      "xAxis": "Nombre de charactères au sein de chaque chunks"
+    },
+    "display": "affichage",
+    "input": "saisie"
   },
   "last_screen": {
     "thanks": "Merci pour votre participation !",
@@ -79,5 +89,6 @@
     "produced_by": "Cette étude et cette interface web ont été réalisées avec ❤️ par:"
   },
   "continue": "Continuer",
+  "loading": "Chargement...",
   "events_limit_reached": "Vous avez atteint la limite de saisie autorisée!"
 }
