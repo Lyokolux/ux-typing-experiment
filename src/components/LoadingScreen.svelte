@@ -30,7 +30,7 @@
       {#each inputSizes as element}
         <input
           type="text"
-          class={'alph anumeric-input chunk font-digit-readable form-control text-center fs-4 p-0 p-md-2 fw-bold'}
+          class={'chunk form-control mx-1 p-0 p-md-2'}
           style={`--width: ${element / 1.7}em`}
         />
       {/each}
