@@ -21,12 +21,17 @@
       inverted: true
     },
     {
+      ids: ['unenjoyable', 'nice'],
+      grade: null,
+      inverted: true
+    },
+    {
       ids: ['tedious', 'effective'],
       grade: null
     }
   ]
 
-  questions = QUESTIONS.map(question => {
+  $: questions = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
