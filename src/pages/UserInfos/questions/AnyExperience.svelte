@@ -6,7 +6,7 @@
 
   export let grade: number | null = null
 
-  let questions:  Question[];
+  let questions: Question[]
   $: questions = [
     {
       ids: ['any_experience', 'lot_of_experience'],

@@ -36,7 +36,7 @@
     }
   ]
 
-  let questionForForm: Question[];
+  let questionForForm: Question[]
   $: questionForForm = QUESTIONS.map(question => {
     return {
       ...question,
