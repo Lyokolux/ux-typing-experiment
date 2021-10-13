@@ -41,8 +41,8 @@
   $: areQuestionsFilled = questions.every(({ grade }) => isDefined(grade))
 </script>
 
+<h2 class="text-center mb-4 fs-4">{$_('post_experience.title')}</h2>
 <form on:submit|preventDefault={onSubmit}>
-  <h4 class="text-center mb-4">{$_('post_experience.title')}</h4>
 
   <PostExperienceQuestions bind:questions />
 
