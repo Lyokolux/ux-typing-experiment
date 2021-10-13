@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { _ } from 'svelte-i18n'
   import { getExperiencesConfigs, isNumberInt } from '../utils'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
@@ -57,7 +56,6 @@
       />
   </Page>
   <Page>
-    <h2 class="mb-5 fs-4">{$_('experience_evaluation_title')}</h2>
     <PostExperience 
       onSubmit={() => onFormSubmit(i)}
       bind:questions={questions[i]} 
