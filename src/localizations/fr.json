@@ -45,8 +45,10 @@
     "begin": "Commencer"
   },
   "questions": {
-    "pleasant": "Agréable",
-    "unpleasant": "Désagréable",
+    "pleasant": "Plaisante",
+    "unpleasant": "Déplaisante",
+    "nice": "Agréable",
+    "not-nice": "Désagréable",
     "simple": "Simple",
     "complicated": "Compliquée",
     "practical": "Pratique",

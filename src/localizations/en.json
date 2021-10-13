@@ -47,6 +47,8 @@
   "questions": {
     "pleasant": "Pleasant",
     "unpleasant": "Unpleasant",
+    "nice": "Nice",
+    "not-nice": "Not nice",
     "simple": "Simple",
     "complicated": "Complicated",
     "practical": "Convenient",

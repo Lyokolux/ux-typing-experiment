@@ -21,7 +21,7 @@
       inverted: true
     },
     {
-      ids: ['unenjoyable', 'nice'],
+      ids: ['not-nice', 'nice'],
       grade: null,
       inverted: true
     },

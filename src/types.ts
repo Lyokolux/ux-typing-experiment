@@ -13,7 +13,7 @@ import type { Event } from './components/AlphanumericInput/utils'
 // ------------
 export type Sexe = typeof SEXES[number]
 export type Age = typeof AGES[number]
-export type Qualification = 'pleasant' | 'unpleasant' | 'simple' | 'complicated' | 'practical' | 'not-practical' | 'tedious' | 'effective' | 'good' | 'bad' | 'motivating' | 'discouraging' | 'any_experience' | 'lot_of_experience'
+export type Qualification = 'pleasant' | 'unpleasant' | 'simple' | 'complicated' | 'practical' | 'not-practical' | 'tedious' | 'effective' | 'good' | 'bad' | 'motivating' | 'discouraging' | 'any_experience' | 'lot_of_experience' | 'nice' | 'not-nice'
 
 // ------------
 //  Experience
