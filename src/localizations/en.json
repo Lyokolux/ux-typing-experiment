@@ -25,9 +25,10 @@
       "35-44": "Between 35 and 44 years old",
       "45-54": "Between 45 and 54 years old",
       "55-64": "Between 55 and 64 years old",
-      "+65": "More than 65 years old",
+      "65+": "65 years old or more",
       "what_is_your_age": "How old are you?",
-      "is_required": "Please fill in the field concerning your age."
+      "is_required": "Please fill in the field concerning your age.",
+      "pick_between": "Choose between"
     },
     "any_experience": {
       "any_experience": "Do you ever have to enter alphanumeric information (numbers and letters) on the Internet, such as an ID, an order number, a contract number, etc.?",
@@ -46,6 +47,8 @@
   "questions": {
     "pleasant": "Pleasant",
     "unpleasant": "Unpleasant",
+    "nice": "Nice",
+    "not-nice": "Not nice",
     "simple": "Simple",
     "complicated": "Complicated",
     "practical": "Convenient",
@@ -62,15 +65,28 @@
     "experiment_will_begin": "The study will now begin!",
     "start_if_you_are_ready": "When you are ready, click on the \"Begin\" button."
   },
+  "post_experience": {
+    "title": "What do you think about this kind of presentation and way of entering this string?"
+  },
   "results": {
     "title": "Here are the results of your inputs:",
     "delete_update_per_chunks_count_graph": {
       "title": "Number of characters modified or deleted during an entry",
       "yAxis": "Number of changes/deletions",
-      "xAxis": "Number of characters in each chunk",
-      "display": "display",
-      "input": "input"
-    }
+      "xAxis": "Number of characters in each chunk"
+    },
+    "error_per_chunks_count_graph": {
+      "title": "Amount of errors for each chunk",
+      "yAxis": "Anount of inputs with error",
+      "xAxis": "Amount of characters in each chunk"
+    },
+    "duration_per_chunks_graph": {
+      "title": "Required time, depending on number of chunks",
+      "yAxis": "Time in seconds",
+      "xAxis": "Amount of characters in each chunk"
+    },
+    "display": "display",
+    "input": "input"
   },
   "last_screen": {
     "thanks": "Thank you for your participation!",
@@ -79,5 +95,6 @@
   },
   "continue": "Continue",
   "loading": "Loading...",
-  "events_limit_reached": "You have reached your input limit!"
+  "events_limit_reached": "You have reached your input limit!",
+  "experience_evaluation_title": "What do you think about this kind of presentation and way of entering this string?"
 }
