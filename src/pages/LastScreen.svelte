@@ -1,5 +1,6 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n'
+  import GithubIcon from 'svelte-bootstrap-icons/lib/Github/Github.svelte'
 
   import WavingHand from '../components/WavingHand.svelte'
 
@@ -45,5 +46,10 @@
     </li>
   {/each}
 </ul>
+
+<a class="d-flex align-items-center mt-3 ms-2 fw-bold text-decoration-none" target="_blank" href="https://github.com/Lyokolux/ux-typing-experiment">
+  <GithubIcon />
+  <span class="ms-1">GitHub</span>
+</a>
 
 <WavingHand />
