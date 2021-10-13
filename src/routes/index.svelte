@@ -57,7 +57,7 @@
 <Page class="pt-2">
   <Results />
 </Page>
-<Page>
+<Page class="pt-2">
   <LastScreen />
 </Page>
 
