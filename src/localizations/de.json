@@ -78,5 +78,6 @@
     "produced_by": "Diese Studie und die Webschnittstelle wurden mit ❤️ erstellt von:"
   },
   "continue": "Fortfahren",
-  "events_limit_reached": "Sie haben die maximale Anzahl an Eingaben erreicht!"
+  "events_limit_reached": "Sie haben die maximale Anzahl an Eingaben erreicht!",
+  "experience_evaluation_title": "Wie fanden Sie diese Art der Darstellung und Eingabe der Zeichenfolge?"
 }
