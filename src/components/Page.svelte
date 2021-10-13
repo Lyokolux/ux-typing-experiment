@@ -36,7 +36,7 @@
 
   @media screen and (max-width: 992px), (min-height: 620px) {
     .page {
-      padding-top: 20vh;
+      padding-top: 15vh;
     }
   }
 </style>
