@@ -25,6 +25,11 @@
 
   $: allChunksFilled = enteredChunks.join('').length === value.length
   $: {
+    if (allChunksFilled) {
+      onFilled()
+    }
+  }
+  $: {
     isLimitReached = events.length >= TRACK_EVENTS_LIMIT
     if (isLimitReached) {
       onCancel()
@@ -52,11 +57,6 @@
 
       if (isKeyIgnored) return
 
-      if (allChunksFilled) {
-        onFilled()
-        return
-      }
-  
       if (isChunkFull
           && !isLastChunck
           && !isKeyAnArrow) {
