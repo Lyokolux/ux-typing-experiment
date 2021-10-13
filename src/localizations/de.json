@@ -25,10 +25,10 @@
       "35-44": "Zwischen 35 und 44 Jahre alt",
       "45-54": "Zwischen 45 und 54 Jahre alt",
       "55-64": "Zwischen 55 und 64 Jahre alt",
-      "+65": "Älter als 65 Jahre",
+      "65+": "65 Jahre alt und älter",
       "what_is_your_age": "Wie alt sind Sie?",
-      "pick_between": "Wählen Sie zwischen",
-      "is_required": "Bitte füllen Sie das Feld für Ihr Alter aus."
+      "is_required": "Bitte füllen Sie das Feld für Ihr Alter aus.",
+      "pick_between": "Wählen Sie zwischen"
     },
     "any_experience": {
       "any_experience": "Mussten Sie jemals alphanumerische Informationen (Zahlen und Buchstaben) im Internet eingeben? z.B. eine ID, eine Bestellnummer, eine Vertragsnummer usw.?",
@@ -45,8 +45,10 @@
     "begin": "Beginnen"
   },
   "questions": {
-    "pleasant": "Angenehm",
-    "unpleasant": "Unangenehm",
+    "pleasant": "Nett",
+    "unpleasant": "Nicht nett",
+    "nice": "Angenehm",
+    "not-nice": "Unangenehm",
     "simple": "Einfach",
     "complicated": "Kompliziert",
     "practical": "Praktisch",
@@ -62,6 +64,9 @@
     "title": "Willkommen",
     "experiment_will_begin": "Die Studie kann nun beginnen !",
     "start_if_you_are_ready": "Wenn Sie bereit sind, klicken Sie auf die Schaltfläche \"Beginnen\"."
+  },
+  "post_experience": {
+    "title": "Wie fanden Sie diese Art der Darstellung und Eingabe der Zeichenfolge?"
   },
   "results": {
     "title": "Hier sind die Ergebnisse Ihrer Eingaben:",

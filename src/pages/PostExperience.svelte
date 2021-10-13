@@ -21,12 +21,17 @@
       inverted: true
     },
     {
+      ids: ['not-nice', 'nice'],
+      grade: null,
+      inverted: true
+    },
+    {
       ids: ['tedious', 'effective'],
       grade: null
     }
   ]
 
-  questions = QUESTIONS.map(question => {
+  $: questions = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
@@ -37,6 +42,8 @@
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
+  <h4 class="text-center mb-4">{$_('post_experience.title')}</h4>
+
   <PostExperienceQuestions bind:questions />
 
   {#if areQuestionsFilled}

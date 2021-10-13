@@ -25,7 +25,7 @@
       "35-44": "Entre 35 et 44 ans",
       "45-54": "Entre 45 et 54 ans",
       "55-64": "Entre 55 et 64 ans",
-      "65+": "Plus de 65 ans",
+      "65+": "65 ans et plus",
       "what_is_your_age": "Quel est votre âge ?",
       "pick_between": "Choisir entre",
       "is_required": "Merci de remplir le champ concernant votre âge."
@@ -45,8 +45,10 @@
     "begin": "Commencer"
   },
   "questions": {
-    "pleasant": "Agréable",
-    "unpleasant": "Désagréable",
+    "pleasant": "Plaisante",
+    "unpleasant": "Déplaisante",
+    "nice": "Agréable",
+    "not-nice": "Désagréable",
     "simple": "Simple",
     "complicated": "Compliquée",
     "practical": "Pratique",
@@ -62,6 +64,9 @@
     "title": "Bienvenue",
     "experiment_will_begin": "L'étude va pouvoir commencer !",
     "start_if_you_are_ready": "Dès que vous êtes prêt•e, cliquez sur le bouton \"Commencer\"."
+  },
+  "post_experience": {
+      "title": "Comment avez-vous trouvé cette manière de présenter et de recopier cette suite alphanumérique?"
   },
   "results": {
     "title": "Voici les résultats suite à votre enquête:",
