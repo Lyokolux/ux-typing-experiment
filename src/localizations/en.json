@@ -65,6 +65,9 @@
     "experiment_will_begin": "The study will now begin!",
     "start_if_you_are_ready": "When you are ready, click on the \"Begin\" button."
   },
+  "post_experience": {
+    "title": "What do you think about this kind of presentation and way of entering this string?"
+  },
   "results": {
     "title": "Here are the results of your inputs:",
     "delete_update_per_chunks_count_graph": {

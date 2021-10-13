@@ -65,6 +65,9 @@
     "experiment_will_begin": "L'étude va pouvoir commencer !",
     "start_if_you_are_ready": "Dès que vous êtes prêt•e, cliquez sur le bouton \"Commencer\"."
   },
+  "post_experience": {
+      "title": "Comment avez-vous trouvé cette manière de présenter et de recopier cette suite alphanumérique?"
+  },
   "results": {
     "title": "Voici les résultats suite à votre enquête:",
     "delete_update_per_chunks_count_graph": {

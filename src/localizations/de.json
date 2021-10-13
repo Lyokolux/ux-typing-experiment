@@ -65,6 +65,9 @@
     "experiment_will_begin": "Die Studie kann nun beginnen !",
     "start_if_you_are_ready": "Wenn Sie bereit sind, klicken Sie auf die Schaltfläche \"Beginnen\"."
   },
+  "post_experience": {
+    "title": "Wie fanden Sie diese Art der Darstellung und Eingabe der Zeichenfolge?"
+  },
   "results": {
     "title": "Hier sind die Ergebnisse Ihrer Eingaben:",
     "delete_update_per_chunks_count_graph": {

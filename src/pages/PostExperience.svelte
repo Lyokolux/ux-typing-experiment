@@ -42,6 +42,8 @@
 </script>
 
 <form on:submit|preventDefault={onSubmit}>
+  <h4 class="text-center mb-4">{$_('post_experience.title')}</h4>
+
   <PostExperienceQuestions bind:questions />
 
   {#if areQuestionsFilled}
