@@ -27,8 +27,8 @@
       "55-64": "Between 55 and 64 years old",
       "65+": "65 years old or more",
       "what_is_your_age": "How old are you?",
-      "pick_between": "Pick between",
-      "is_required": "Please fill in the field concerning your age."
+      "is_required": "Please fill in the field concerning your age.",
+      "pick_between": "Choose between"
     },
     "any_experience": {
       "any_experience": "Do you ever have to enter alphanumeric information (numbers and letters) on the Internet, such as an ID, an order number, a contract number, etc.?",

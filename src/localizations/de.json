@@ -27,8 +27,8 @@
       "55-64": "Zwischen 55 und 64 Jahre alt",
       "65+": "65 Jahre alt und älter",
       "what_is_your_age": "Wie alt sind Sie?",
-      "pick_between": "Wählen Sie zwischen",
-      "is_required": "Bitte füllen Sie das Feld für Ihr Alter aus."
+      "is_required": "Bitte füllen Sie das Feld für Ihr Alter aus.",
+      "pick_between": "Wählen Sie zwischen"
     },
     "any_experience": {
       "any_experience": "Mussten Sie jemals alphanumerische Informationen (Zahlen und Buchstaben) im Internet eingeben? z.B. eine ID, eine Bestellnummer, eine Vertragsnummer usw.?",
@@ -94,4 +94,3 @@
   "loading": "Lädt...",
   "events_limit_reached": "Sie haben die maximale Anzahl an Eingaben erreicht!",
   "experience_evaluation_title": "Wie fanden Sie diese Art der Darstellung und Eingabe der Zeichenfolge?"
-}
