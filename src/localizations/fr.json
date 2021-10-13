@@ -90,5 +90,6 @@
   },
   "continue": "Continuer",
   "loading": "Chargement...",
-  "events_limit_reached": "Vous avez atteint la limite de saisie autorisée!"
+  "events_limit_reached": "Vous avez atteint la limite de saisie autorisée!",
+  "experience_evaluation_title": "Comment avez-vous trouvé cette manière de présenter et de recopier cette suite alphanumérique?"
 }
