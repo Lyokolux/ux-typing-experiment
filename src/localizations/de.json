@@ -45,8 +45,8 @@
     "begin": "Beginnen"
   },
   "questions": {
-    "pleasant": "Nett",
-    "unpleasant": "Nicht nett",
+    "pleasant": "Geällt mir",
+    "unpleasant": "Gefällt mir nicht",
     "nice": "Angenehm",
     "not-nice": "Unangenehm",
     "simple": "Einfach",
