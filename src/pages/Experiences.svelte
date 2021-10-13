@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { _ } from 'svelte-i18n'
+  import { _ } from 'svelte-i18n'
   import { getExperiencesConfigs, isNumberInt } from '../utils'
 
   import type { Question } from '../components/QuestionsForm/QuestionsForm.svelte'
