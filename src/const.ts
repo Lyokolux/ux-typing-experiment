@@ -10,7 +10,7 @@ export const KEY = {
 export const ALPHANUMERIC_LENGTH = 18
 
 export const SEXES = ['m', 'f', 'no-answer', 'else'] as const
-export const AGES = ['-15', '15-17', '18-24', '25-34', '35-44', '45-54', '55-64', '+65'] as const
+export const AGES = ['-15', '15-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'] as const
 
 export const USER_COLLECTION_NAME = dev ? 'staging' : 'users'
 

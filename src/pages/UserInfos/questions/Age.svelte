@@ -41,7 +41,7 @@ const AGE_QUESTION: { value: Age, label: string }[] = [
     label: $_('user_infos.age.55-64')
   },
   {
-    value: '+65',
+    value: '65+',
     label: $_('user_infos.age.65+')
   }
 ]
