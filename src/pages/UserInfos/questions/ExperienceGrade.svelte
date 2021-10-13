@@ -36,7 +36,8 @@
     }
   ]
 
-  let questionForForm: Question[] = QUESTIONS.map(question => {
+  let questionForForm: Question[];
+  $: questionForForm = QUESTIONS.map(question => {
     return {
       ...question,
       labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
