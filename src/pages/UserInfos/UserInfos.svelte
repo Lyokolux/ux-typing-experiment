@@ -34,7 +34,7 @@
   const schema = yup.object().shape({
     sexe: yup.mixed().oneOf([...SEXES]).required($_('user_infos.sexe.is_required')),
     age: yup.mixed().oneOf([...AGES]).required($_('user_infos.age.is_required')),
-    anyExperience: yup.number().min(0).max(5).required()
+    anyExperience: yup.number().min(0).max(6).required()
   })
 
   const onSubmit = (): void => {
