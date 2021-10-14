@@ -3,7 +3,7 @@
   import QuestionsForm from '../../../components/QuestionsForm/QuestionsForm.svelte'
   import type { Question } from '../../../components/QuestionsForm/QuestionsForm.svelte'
 
-  const QUESTIONS: Omit<Question, 'labels'>[] = [
+  const QUESTIONS: Omit<Question, 'labelKeys'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: undefined,
@@ -37,18 +37,18 @@
   ]
 
   let questionForForm: Question[]
-  $: questionForForm = QUESTIONS.map(question => {
+  questionForForm = QUESTIONS.map(question => {
     return {
       ...question,
-      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
+      labelKeys: [`questions.${question.ids[0]}`, `questions.${question.ids[1]}`]
     }
   })
 
-  export let questions: Omit<Question, 'labels'>[]
+  export let questions: Omit<Question, 'labelKeys'>[]
   $: {
     questions = questionForForm.map(q => {
       // eslint-disable-next-line
-      const { labels, ...rest } = q
+      const { labelKeys, ...rest } = q
       return rest
     })
   }

@@ -9,7 +9,7 @@
   export let onSubmit: () => void
   export let questions: Question[]
 
-  const QUESTIONS: Omit<Question, 'labels'>[] = [
+  const QUESTIONS: Omit<Question, 'labelKeys'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: null,
@@ -31,10 +31,10 @@
     }
   ]
 
-  $: questions = QUESTIONS.map(question => {
+  questions = QUESTIONS.map(question => {
     return {
       ...question,
-      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
+      labelKeys: [`questions.${question.ids[0]}`, `questions.${question.ids[1]}`]
     }
   })
 

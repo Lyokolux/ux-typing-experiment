@@ -4,7 +4,7 @@
 
   export interface Question {
     ids: [Qualification, Qualification]
-    labels: [string, string]
+    labelKeys: [string, string]
     // the labels are inverted
     inverted?: boolean
     grade: number | null
