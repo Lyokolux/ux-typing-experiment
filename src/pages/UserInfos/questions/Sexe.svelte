@@ -5,29 +5,29 @@
 
   export let sexe: Sexe
 
-  const SEXE_QUESTION: { value: Sexe, label: string }[] = [
+  const SEXE_QUESTION: { value: Sexe, labelKey: string }[] = [
     {
       value: 'm',
-      label: $_('user_infos.sexe.male')
+      labelKey: 'user_infos.sexe.male'
     },
     {
       value: 'f',
-      label: $_('user_infos.sexe.female')
+      labelKey: 'user_infos.sexe.female'
     },
     {
       value: 'else',
-      label: $_('user_infos.sexe.else')
+      labelKey: 'user_infos.sexe.else'
     },
     {
       value: 'no-answer',
-      label: $_('user_infos.sexe.no_answer')
+      labelKey: 'user_infos.sexe.no_answer'
     }
   ]
 </script>
 
 <h4>{$_('user_infos.sexe.you_are')}</h4>
 <div>
-{#each SEXE_QUESTION as { value, label }}
+{#each SEXE_QUESTION as { value, labelKey }}
   <label class="d-flex fw-500 align-items-center fs-5">
     <input
       type="radio"
@@ -37,7 +37,7 @@
       required
       bind:group={sexe}
     >
-    <span class="px-2">{label}</span>
+    <span class="px-2">{$_(labelKey)}</span>
   </label>
 {/each}
 </div>

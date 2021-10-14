@@ -9,7 +9,7 @@
   export let onSubmit: () => void
   export let questions: Question[]
 
-  const QUESTIONS: Omit<Question, 'labels'>[] = [
+  const QUESTIONS: Omit<Question, 'labelKeys'>[] = [
     {
       ids: ['unpleasant', 'pleasant'],
       grade: null,
@@ -31,18 +31,18 @@
     }
   ]
 
-  $: questions = QUESTIONS.map(question => {
+  questions = QUESTIONS.map(question => {
     return {
       ...question,
-      labels: [$_(`questions.${question.ids[0]}`), $_(`questions.${question.ids[1]}`)]
+      labelKeys: [`questions.${question.ids[0]}`, `questions.${question.ids[1]}`]
     }
   })
 
   $: areQuestionsFilled = questions.every(({ grade }) => isDefined(grade))
 </script>
 
+<h2 class="text-center mb-4 fs-4">{$_('post_experience.title')}</h2>
 <form on:submit|preventDefault={onSubmit}>
-  <h4 class="text-center mb-4">{$_('post_experience.title')}</h4>
 
   <PostExperienceQuestions bind:questions />
 

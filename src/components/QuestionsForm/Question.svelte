@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n'
   import { reverseArray } from '../../utils'
   import type { Question } from './QuestionsForm.svelte'
 
@@ -7,17 +8,17 @@
   const HIGHER_GRADE = 7
   const GRADES_RANGE = Array.from(Array(HIGHER_GRADE).keys()) // generate [0,1,2, ..., HIGHER_GRADE-1]
 
-  $: labels = question.inverted ? [question.labels[1], question.labels[0]] : question.labels
+  $: labels = question.inverted ? [question.labelKeys[1], question.labelKeys[0]] : question.labelKeys
   $: grades = question.inverted ? reverseArray(GRADES_RANGE) : GRADES_RANGE
 </script>
 
 
 <li class="question fw-500 mb-2">
-  <span class="text-end">{labels[0]}</span>
+  <span class="text-end">{$_(labels[0])}</span>
   <div class="d-flex">
     {#each grades as grade}
       <input
-        name={`${question.labels[0]}-${question.labels[1]}`}
+        name={`${question.labelKeys[0]}-${question.labelKeys[1]}`}
         type="radio"
         class="form-check-input m-1"
         required
@@ -25,7 +26,7 @@
       >
     {/each}
   </div>
-  <span class="text-left">{labels[1]}</span>
+  <span class="text-left">{$_(labels[1])}</span>
 </li>
 
 <style lang="scss">
