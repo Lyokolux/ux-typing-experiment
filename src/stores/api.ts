@@ -5,7 +5,8 @@ import {
   addDoc,
   updateDoc,
   arrayUnion,
-  DocumentReference
+  DocumentReference,
+  getDocs
 } from 'firebase/firestore'
 import { USER_COLLECTION_NAME } from '../const'
 
@@ -15,12 +16,26 @@ import type { User, Experiment } from '../types'
 interface FilteredExperiment extends Omit<Experiment, 'events'> {
   events: Omit<Event, 'date' | 'value'>[]
 }
+export interface FirestoreStoredUser extends Omit<User, 'experiments'> {
+  experiments?: FilteredExperiment[]
+}
 
 const createApi = () => {
   const { db } = initFirestore()
   const dbCollection = collection(db, USER_COLLECTION_NAME)
 
   const userDoc = writable<DocumentReference>()
+
+  const getAllUsers = async (): Promise<FirestoreStoredUser[]> => {
+    const docs = await getDocs(dbCollection)
+    const users: FirestoreStoredUser[] = []
+
+    docs.forEach(doc => {
+      users.push(doc.data() as FirestoreStoredUser)
+    })
+
+    return users
+  }
 
   const addUserRequest = async (user: User) => {
     userDoc.set(await addDoc(dbCollection, user))
@@ -37,7 +52,8 @@ const createApi = () => {
 
   return {
     addUserRequest,
-    addExperimentRequest
+    addExperimentRequest,
+    getAllUsers
   }
 }
 
