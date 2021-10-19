@@ -17,6 +17,7 @@
   import AgeRepartition from '../../components/graphs/AgeRepartition.svelte'
   import ErrorPerChunksCount from '../../components/graphs/ErrorPerChunksCount.svelte'
   import DeleteUpdatePerChunksCount from '../../components/graphs/DeleteUpdatePerChunksCount.svelte'
+  import DevicesRepartition from '../../components/graphs/DevicesRepartition.svelte';
 
   import { getExperimentsAverage } from '../../components/graphs/utils';
 
@@ -27,10 +28,10 @@
   const experimentsAverage = getExperimentsAverage(users.map(user => user.experiments).flat())
 </script>
 
-<div class="p-4">
-  <h1>Results after {users.length} participations</h1>
+<div class="container">
+  <h1>Results after <b>{users.length}</b> participations:</h1>
 
-  <div class="row">
+  <div class="row mt-5">
     <div class="col">
       <AgeRepartition ages={users.map(user => user.age)} />
     </div>
@@ -39,6 +40,10 @@
     </div>
   </div>
   <div class="row mt-3">
+    <div class="col">
+      <DevicesRepartition devices={users.map(user => user.device)} />
+    </div>
+  </div>  <div class="row mt-3">
     <div class="col">
       <ErrorPerChunksCount experiments={users.map(user => user.experiments).flat()} />
     </div>

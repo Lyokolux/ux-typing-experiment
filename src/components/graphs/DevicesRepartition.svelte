@@ -1,37 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import Highcharts from 'highcharts'
-  import { _ } from 'svelte-i18n'
   
-  import type { Sexe } from '../../types'
+  export let devices: string[]
 
-  import { SEXES } from '../../const'
-
-  export let sexes: Sexe[]
-
-  const CHART_ID = 'sexeRepartition'
-
-  const getSexeName = (sexe: Sexe): string => {
-    switch (sexe) {
-      case 'f':
-        return 'Women'
-      case 'm':
-        return 'Man'
-      case 'else':
-        return 'Diver'
-    
-      case 'no-answer': default:
-        return 'No answer'
-    }
-  }
+  const DEVICES = ['desktop', 'mobile']
+  const CHART_ID = 'devicesRepartition'
 
   const getSerie = (): { name: string, y: number}[] => {
-    const sexesAmount = sexes.length
+    const devicesAmount = devices.length
 
-    return SEXES.map(SEXE => {
+    return DEVICES.map(DEVICE => {
       return {
-        name: getSexeName(SEXE),
-        y: Number(((sexes.filter(sexe => sexe === SEXE).length / sexesAmount) * 100).toFixed(2))
+        name: DEVICE,
+        y: Number(((devices.filter(device => device === DEVICE).length / devicesAmount) * 100).toFixed(2))
       }
     })
   }
@@ -46,10 +28,10 @@
             type: 'pie'
         },
         title: {
-            text: 'Sexe repartition'
+            text: 'Devices used'
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b>'
         },
         accessibility: {
             point: {
@@ -67,7 +49,7 @@
             }
         },
         series: [{
-          name: 'Sexe',
+          name: 'Device',
           colorByPoint: true,
           data: getSerie()
         }]
