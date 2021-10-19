@@ -13,6 +13,7 @@
 </script>
 
 <script lang="ts">
+  import SexeRepartition from '../../components/graphs/SexeRepartition.svelte'
   import AgeRepartition from '../../components/graphs/AgeRepartition.svelte'
 
   export let users: FirestoreStoredUser[]
@@ -23,6 +24,9 @@
   <div class="row">
     <div class="col">
       <AgeRepartition ages={users.map(user => user.age)} />
+    </div>
+    <div class="col">
+      <SexeRepartition sexes={users.map(user => user.sexe)} />
     </div>
   </div>
 </div>
