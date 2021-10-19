@@ -36,9 +36,6 @@
     })
   }
 
-  console.log(getSerie());
-  
-
   const initChart = (): void => {
     // @ts-ignore Why is that a problem?
     Highcharts.chart(CHART_ID, {
