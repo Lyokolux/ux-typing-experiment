@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+  /* eslint-disable no-multiple-empty-lines */
   import { api } from '../../stores/api'
 
   export async function load() {
@@ -11,17 +12,16 @@
     }
   }
 </script>
-
 <script lang="ts">
   import SexeRepartition from '../../components/graphs/SexeRepartition.svelte'
   import AgeRepartition from '../../components/graphs/AgeRepartition.svelte'
   import ErrorPerChunksCount from '../../components/graphs/ErrorPerChunksCount.svelte'
   import DeleteUpdatePerChunksCount from '../../components/graphs/DeleteUpdatePerChunksCount.svelte'
-  import DevicesRepartition from '../../components/graphs/DevicesRepartition.svelte';
+  import DevicesRepartition from '../../components/graphs/DevicesRepartition.svelte'
 
-  import { getExperimentsAverage } from '../../components/graphs/utils';
+  import { getExperimentsAverage } from '../../components/graphs/utils'
 
-  import type { User } from '../../types';
+  import type { User } from '../../types'
   
   export let users: User[]
 

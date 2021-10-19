@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import Highcharts from 'highcharts'
-  import { _ } from 'svelte-i18n'
   
   import type { Sexe } from '../../types'
 
@@ -13,15 +12,15 @@
 
   const getSexeName = (sexe: Sexe): string => {
     switch (sexe) {
-      case 'f':
-        return 'Women'
-      case 'm':
-        return 'Man'
-      case 'else':
-        return 'Diver'
-    
-      case 'no-answer': default:
-        return 'No answer'
+    case 'f':
+      return 'Women'
+    case 'm':
+      return 'Man'
+    case 'else':
+      return 'Diver'
+  
+    case 'no-answer': default:
+      return 'No answer'
     }
   }
 
@@ -39,38 +38,38 @@
   const initChart = (): void => {
     // @ts-ignore Why is that a problem?
     Highcharts.chart(CHART_ID, {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Sexe repartition'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
-            }
-        },
-        series: [{
-          name: 'Sexe',
-          colorByPoint: true,
-          data: getSerie()
-        }]
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: 'Sexe repartition'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+        point: {
+          valueSuffix: '%'
+        }
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+          }
+        }
+      },
+      series: [{
+        name: 'Sexe',
+        colorByPoint: true,
+        data: getSerie()
+      }]
     })
   }
 
