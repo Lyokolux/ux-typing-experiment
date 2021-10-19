@@ -21,7 +21,7 @@
         return 'Diver'
     
       case 'no-answer': default:
-        return 'no answer'
+        return 'No answer'
     }
   }
 
