@@ -15,7 +15,8 @@
 
   const isExperimentInputValid = (experiment: Experiment): boolean => {
     const lastEvent = experiment.events[experiment.events.length - 1]
-    return lastEvent.success
+    if (lastEvent) return lastEvent.success
+    return false
   }
 
   const getDisplaySerie = (): (number | null)[] => {
