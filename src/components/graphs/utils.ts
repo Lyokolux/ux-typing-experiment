@@ -1,5 +1,5 @@
 import type {
-  ChunkLength, Experiment, ExperimentID
+  ChunkLength, Experiment, ExperimentID, Qualification
 } from '../../types'
 import { ALPHANUMERIC_LENGTH, CHUNK_SIZES } from '../../const'
 import { getAverage, getExperienceIds } from '../../utils'
@@ -14,7 +14,7 @@ export const getExperienceDuration = (experience: Experiment): number => {
 
 export const getExperimentQuestionsAverage = (questions: Experiment['questions']): Experiment['questions'] => {
   // get unique ids
-  const questionIds: [string, string] = []
+  const questionIds: [string, string][] = []
 
   questions.map(question => question.ids).forEach(question => {
     const exists = questionIds.some(questionId => {
@@ -36,7 +36,7 @@ export const getExperimentQuestionsAverage = (questions: Experiment['questions']
     const grades = matchingQuestions.map(matchingQuestion => matchingQuestion.grade)
 
     average.push({
-      ids: questionId,
+      ids: questionId as [Qualification, Qualification],
       grade: Number(getAverage(grades).toFixed(2))
     })
   })
