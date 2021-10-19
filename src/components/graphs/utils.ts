@@ -37,7 +37,7 @@ export const getExperimentQuestionsAverage = (questions: Experiment['questions']
 
     average.push({
       ids: questionId,
-      grade: Math.round(getAverage(grades))
+      grade: Number(getAverage(grades).toFixed(2))
     })
   })
 
