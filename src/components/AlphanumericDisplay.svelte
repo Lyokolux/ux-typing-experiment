@@ -13,3 +13,13 @@
 <p class={`alphanumeric-display font-digit-readable ${className}`}>
   {getChunk(value, chunkLength).join(' ')}
 </p>
+
+<style>
+  .alphanumeric-display {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
