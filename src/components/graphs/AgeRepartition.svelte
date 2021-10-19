@@ -14,7 +14,7 @@
     const agesAmount = ages.length
   
     return AGES.map(AGE => {
-      return Number(((ages.filter(age => age === AGE).length / agesAmount) * 100).toFixed(2))
+      return ages.filter(age => age === AGE).length
     })
   }
 
@@ -37,7 +37,7 @@
       yAxis: {
         min: 0,
         title: {
-          text: 'percentage (%)'
+          text: 'Amount'
         }
       },
       tooltip: {
