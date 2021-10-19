@@ -53,4 +53,9 @@
       <DeleteUpdatePerChunksCount experiments={experimentsAverage} />
     </div>
   </div>
+  <div class="row mt-3">
+    <div class="col">
+      TODO: add duration per experiment
+    </div>
+  </div>
 </div>
