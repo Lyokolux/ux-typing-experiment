@@ -11,8 +11,6 @@
   const CHART_ID = 'ageRepartition'
 
   const getSerie = (): number[] => {
-    const agesAmount = ages.length
-  
     return AGES.map(AGE => {
       return ages.filter(age => age === AGE).length
     })
