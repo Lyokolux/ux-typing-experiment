@@ -13,23 +13,22 @@
 
   const CHART_ID = 'durationPerChunksChart'
 
-  const getDisplaySerie = (): (number | null)[] => {
+  const roundToNDigits = (n: number, precision = 2) => Math.floor(n * 10 ** precision) / (10 ** precision)
+
+  const getDisplaySerie = (): number[] => {
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'display')
 
-      return getAverage(filteredExperiments.map(experiment => {
-        return getExperienceDuration(experiment)
-      }))
+      return roundToNDigits(getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment))))
     })
   }
+  console.log(getDisplaySerie())
 
-  const getInputSerie = (): (number | null)[] => {
+  const getInputSerie = (): number[] => {
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'input')
 
-      return getAverage(filteredExperiments.map(experiment => {
-        return getExperienceDuration(experiment)
-      }))
+      return roundToNDigits(getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment))))
     })
   }
 
@@ -56,10 +55,10 @@
         }
       },
       tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        headerFormat: '<span style="font-size:12px">Chunk size: {point.key}</span><table>',
         pointFormat:
-          '<tr><td style="color:{series.color};padding:0">{series.name}: </td>'
-        + '<td style="padding:0"><b>{point.y}s</b></td></tr>',
+          '<tr><td style="color:{series.color};padding:0;font-size:13px">{series.name}: </td>'
+        + '<td style="padding:0;font-size:13px"><b>{point.y}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true

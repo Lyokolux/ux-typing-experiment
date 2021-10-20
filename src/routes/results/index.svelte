@@ -22,13 +22,15 @@
   import { getExperimentsAverage } from '../../components/graphs/utils'
 
   import type { User } from '../../types'
+  import DurationPerChunks from '../../components/graphs/DurationPerChunks.svelte';
   
   export let users: User[]
 
-  const experimentsAverage = getExperimentsAverage(users.map(user => user.experiments).flat())
+  const experiments = users.map(user => user.experiments).flat()
+  const experimentsAverage = getExperimentsAverage(experiments)
 </script>
 
-<div class="container">
+<div class="container mt-3">
   <h1>Results after <b>{users.length}</b> participations:</h1>
 
   <div class="row mt-5">
@@ -55,7 +57,7 @@
   </div>
   <div class="row mt-3">
     <div class="col">
-      TODO: add duration per experiment
+      <DurationPerChunks experiments={experiments} />
     </div>
   </div>
 </div>
