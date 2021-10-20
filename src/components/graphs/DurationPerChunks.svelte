@@ -13,13 +13,17 @@
 
   const CHART_ID = 'durationPerChunksChart'
 
-  const roundToNDigits = (n: number, precision = 2) => Math.floor(n * 10 ** precision) / (10 ** precision)
+  const roundToNDigits = (n: number, precision = 2) => (
+    Math.floor(n * 10 ** precision) / (10 ** precision)
+  )
 
   const getDisplaySerie = (): number[] => {
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'display')
 
-      return roundToNDigits(getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment))))
+      return roundToNDigits(
+        getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment)))
+      )
     })
   }
 
@@ -27,7 +31,9 @@
     return getChunkSizes().map((size) => {
       const filteredExperiments = getFilteredExperiencesByChunkSize(experiments, size, 'input')
 
-      return roundToNDigits(getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment))))
+      return roundToNDigits(
+        getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment)))
+      )
     })
   }
 

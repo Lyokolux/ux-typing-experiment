@@ -22,7 +22,7 @@
   import { getExperimentsAverage } from '../../components/graphs/utils'
 
   import type { User } from '../../types'
-  import DurationPerChunks from '../../components/graphs/DurationPerChunks.svelte';
+  import DurationPerChunks from '../../components/graphs/DurationPerChunks.svelte'
   
   export let users: User[]
 
