@@ -8,8 +8,14 @@ export const getChartCategories = (): ChunkLength[] => {
   return [...CHUNK_SIZES, ALPHANUMERIC_LENGTH]
 }
 
-export const getExperienceDuration = (experience: Experiment): number => {
-  return Number(experience.events[experience.events.length - 1].ms / 1000)
+export const getExperienceDuration = (experience: Experiment): number | null => {
+  const lastEvent = experience.events[experience.events.length - 1]
+
+  if (lastEvent) {
+    return lastEvent.ms / 1000
+  }
+
+  return null
 }
 
 export const getExperimentQuestionsAverage = (questions: Experiment['questions']): Experiment['questions'] => {
