@@ -22,7 +22,6 @@
       return roundToNDigits(getAverage(filteredExperiments.map(experiment => getExperienceDuration(experiment))))
     })
   }
-  console.log(getDisplaySerie())
 
   const getInputSerie = (): number[] => {
     return getChunkSizes().map((size) => {
