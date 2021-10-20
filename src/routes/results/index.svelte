@@ -47,7 +47,7 @@
     </div>
   </div>  <div class="row mt-3">
     <div class="col">
-      <ErrorPerChunksCount experiments={users.map(user => user.experiments).flat()} />
+      <ErrorPerChunksCount experiments={experiments} />
     </div>
   </div>
   <div class="row mt-3">
