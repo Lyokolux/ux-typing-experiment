@@ -4,7 +4,9 @@ import {
   DESKTOP_SCREEN_MIN_WIDTH,
   NON_ALPHANUMERIC_REGEX
 } from './const'
-import type { ChunkLength, ExperienceConfig, Experiment } from './types'
+import type {
+  ChunkLength, ExperienceConfig, Experiment
+} from './types'
 import type { User } from './types'
 
 export const getChunk = (str: string, size: number): string[] => {
@@ -46,7 +48,11 @@ export const getShuffledArray = <T>(array: T[]): T[] => {
   return array
 }
 
-export const getAverage = (array: number[]) => array.reduce((a, b) => a + b, 0) / array.length
+export const getAverage = (array: number[]) => {
+  return array.filter(elmt => {
+    return typeof elmt === 'number'
+  }).reduce((a, b) => a + b, 0) / array.length
+}
 
 export const getRandomInArray = <T extends readonly any[]>(array: T): T[number] => {
   const randomIndex = Math.floor(Math.random() * array.length)
@@ -85,6 +91,12 @@ export const getExperiencesConfigs = (): ExperienceConfig[] => {
   )
 
   return getShuffledArray(config)
+}
+
+export const getExperienceIds = (): string[] => {
+  return getExperiencesConfigs().map(config => {
+    return `${config.displayChunkLength}-${config.inputChunkLength}`
+  }).sort()
 }
 
 export const getUserDevice = (hasTouchStart: boolean, width: number, height: number): User['device'] => {
