@@ -30,7 +30,7 @@
   const experimentsAverage = getExperimentsAverage(experiments)
 </script>
 
-<div class="container mt-3">
+<div class="container">
   <h1>Results after <b>{users.length}</b> participations:</h1>
 
   <div class="row mt-5">
